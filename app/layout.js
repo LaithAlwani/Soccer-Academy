@@ -5,13 +5,16 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Rising Stars Academy",
-  description: "A youth soccer development located in Ottawa ON. serveing the Barrhaven/Riverside south community",
+  description:
+    "A youth soccer development located in Ottawa ON. serveing the Barrhaven/Riverside south community",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
