@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav>
       <Link href="/" className="logo">
         <div className="bg-red"></div>
-        <Image src="/logo.png" fill priority />
+        <Image src="/off_logo.png" fill priority />
         
       </Link>
       <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
