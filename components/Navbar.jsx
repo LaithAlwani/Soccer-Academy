@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,18 +10,19 @@ export default function Navbar() {
   return (
     <nav>
       <Link href="/" className="logo">
-        <h3>Rising Stars</h3>
+        <div className="test"></div>
+        <Image src="/logo1.png" fill/>
       </Link>
-      <div
+      {/* <div
         className={`mobile-nav-btn ${isMenuOpen ? "open" : ""}`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <div className="burger-icon"></div>
-      </div>
-      <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
+      </div> */}
+      {/* <div className={`sidebar ${isMenuOpen ? "open" : ""}`}> */}
         <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
           <NavLinks />
         </div>
-      </div>
+      {/* </div> */}
     </nav>
   );
 }
@@ -31,7 +33,7 @@ const NavLinks = () => {
       {/* <ActiveLink name="Home" path="/" /> */}
       <ActiveLink name="Programs" path="/programs" />
       <ActiveLink name="Register" path="/register" />
-      <ActiveLink name="About" path="/about" />
+      <ActiveLink name="Special Needs" path="/special-needs" />
     </>
   );
 };

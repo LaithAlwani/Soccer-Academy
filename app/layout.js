@@ -15,11 +15,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <main>{children}</main>
+        <main>
+          <Navbar />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );
 }
 
 
+const Footer = () => {
+  return (
+    <footer>CopyWrite Ottawa ON. 2024</footer>
+  )
+}
