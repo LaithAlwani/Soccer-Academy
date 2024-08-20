@@ -10,19 +10,20 @@ export default function Navbar() {
   return (
     <nav>
       <Link href="/" className="logo">
-        <div className="test"></div>
-        <Image src="/logo1.png" fill/>
+        <div className="bg-red"></div>
+        <Image src="/logo.png" fill />
       </Link>
-      {/* <div
+      <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
+        <NavLinks />
+      </div>
+      <div
         className={`mobile-nav-btn ${isMenuOpen ? "open" : ""}`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <div className="burger-icon"></div>
-      </div> */}
-      {/* <div className={`sidebar ${isMenuOpen ? "open" : ""}`}> */}
-        <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
-          <NavLinks />
-        </div>
-      {/* </div> */}
+      </div>
+      <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
+        <NavLinks />
+      </div>
     </nav>
   );
 }
