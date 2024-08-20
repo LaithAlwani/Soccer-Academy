@@ -117,6 +117,7 @@ nav .logo {
   width: 64px;
   height: 64px;
   background: transparent;
+  z-index: 1;
 }
 nav .logo .bg-red {
   position: absolute;
@@ -213,18 +214,16 @@ nav .burger-icon::after {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding-inline: 0;
-  padding-top: 5rem;
-  white-space:nowrap;
+  white-space: nowrap;
   font-size: 1.1rem;
 }
 .sidebar > * {
   padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 .sidebar.open {
   width: 100vw;
-  padding-inline: 1rem;
-
 }
 
 @media (prefers-color-scheme: dark) {
