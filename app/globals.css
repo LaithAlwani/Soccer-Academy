@@ -138,7 +138,8 @@ nav .nav-links > * {
 .active {
   color: red;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  text-shadow: 0px 0px 10px 1px red;
 }
 
 nav .nav-links a:hover,
@@ -214,6 +215,7 @@ nav .burger-icon::after {
   padding-inline: 0;
   padding-top: 5rem;
   white-space:nowrap;
+  font-size: 1.1rem;
 }
 .sidebar.open {
   width: 20rem;

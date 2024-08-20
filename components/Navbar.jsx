@@ -11,7 +11,8 @@ export default function Navbar() {
     <nav>
       <Link href="/" className="logo">
         <div className="bg-red"></div>
-        <Image src="/logo.png" fill />
+        <Image src="/logo.png" fill priority />
+        
       </Link>
       <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
         <NavLinks />
@@ -21,7 +22,7 @@ export default function Navbar() {
         onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <div className="burger-icon"></div>
       </div>
-      <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
+      <div className={`sidebar ${isMenuOpen ? "open" : ""}`} onClick={()=>setIsMenuOpen(false)}>
         <NavLinks />
       </div>
     </nav>
