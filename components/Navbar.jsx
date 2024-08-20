@@ -34,8 +34,8 @@ const NavLinks = () => {
     <>
       <ActiveLink name="Home" path="/" />
       <ActiveLink name="Programs" path="/programs" />
-      <ActiveLink name="Register" path="/register" />
       <ActiveLink name="Special Needs" path="/special-needs" />
+      <ActiveLink name="Register" path="/register" />
     </>
   );
 };
