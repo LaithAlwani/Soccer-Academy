@@ -102,14 +102,16 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  
   font-family: var(--font-mono);
+  scroll-behavior: smooth;
 }
 
 html,
 body {
   max-width: 100vw;
+  padding: 0;
+  margin: 0;
   overflow-x: hidden;
 }
 
@@ -126,11 +128,30 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+section{
+  max-width: 62rem;
+  width: 100%;
+  padding: 1rem;
+  /* text-align: center; */
+}
+ul{
+ 
+  list-style: none;
+ 
+}
+
+li{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
 a {
   color: inherit;
   text-decoration: none;
+  display: inline-block;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -264,6 +285,7 @@ nav .burger-icon::after {
   border: 1px solid;
   border-radius: var(--border-radius);
   cursor: pointer;
+  font-weight: bold;
 }
 .btn:is(:hover, :focus){
   opacity: 0.5;
@@ -273,7 +295,27 @@ nav .burger-icon::after {
   background-color: red;
   color: white;
 }
+.btn-group{
+  margin-block:1rem;
+  width: 100%;
+  text-align: center;
+}
 
+#hero{
+  min-height: 60svh;
+  max-width: 100vw;
+  padding: 0;
+}
+
+#hero .hero-img-wrapper{
+  position: relative;
+  width: 100vw;
+  height: 60svh;
+}
+
+#hero .hero-img-wrapper img{
+  object-fit: cover;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
