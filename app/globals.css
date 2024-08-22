@@ -171,14 +171,7 @@ nav .logo {
   background: transparent;
   z-index: 1;
 }
-nav .logo .bg-red {
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  bottom: 30px;
-  border-radius: 50%;
-  box-shadow: 0px 0px 45px 15px red;
-}
+
 nav .nav-links {
   display: none;
 }

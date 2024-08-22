@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav>
       <Link href="/" className="logo">
-        <div className="bg-red"></div>
+        
         <Image src="/off_logo.png" fill priority />
         
       </Link>
@@ -36,6 +36,7 @@ const NavLinks = () => {
       <ActiveLink name="Programs" path="/programs" />
       <ActiveLink name="Special Needs" path="/special-needs" />
       <ActiveLink name="Register" path="/register" />
+
     </>
   );
 };
