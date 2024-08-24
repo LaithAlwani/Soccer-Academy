@@ -50,6 +50,72 @@ export default function Home() {
       </section>
       <section id="register">
         <h2>Register Now</h2>
+        <p>As Low as $15 per session</p>
+        <div className="programs-container">
+          <div className="program">
+            <p>32 Sessions</p>
+            <h3>$430 Early bird</h3>
+            <p>regular price 480 </p>
+            <ul>
+              <li>2 sessions per week</li>
+              <li>1 Hour sessions</li>
+              <li>between 6-8PM</li>
+              <li>Sept. 30th - Jan. 31st</li>
+              <li>LongField HS (Barrhaven)</li>
+            </ul>
+            <Link href="/register" className="btn btn-primary">
+              Register
+            </Link>
+          </div>
+          <div className="program">
+            <p>64 Sessions</p>
+            <h3>$800 Early bird</h3>
+            <p>regular price 865 </p>
+            <ul>
+              <li>2 sessions per week</li>
+              <li>1 Hour sessions</li>
+              <li>between 6-8PM</li>
+              <li>Sept. 30th - May. 31st</li>
+              <li>LongField HS (Barrhaven)</li>
+            </ul>
+            <Link href="/register" className="btn btn-primary">
+              Register
+            </Link>
+            <p>10% discount</p>
+          </div>
+          <div className="program red">
+            <p>Special Needs program</p>
+            <p>1 session</p>
+            <h3>starting $75</h3>
+            <p>regular price $85</p>
+            <ul>
+              <li>Certified Behavoral Therapiest</li>
+              <li>30 - 60 min</li>
+              <li>between 6-8PM</li>
+              <li>LongField HS (Barrhaven)</li>
+            </ul>
+            <Link href="/register" className="btn btn-secondary">
+              Register
+            </Link>
+          </div>
+          <div className="program red">
+            <p>Special Needs program </p>
+            <p>6 sessions </p>
+            <h3>starting $400</h3>
+            <p>regular price $450</p>
+            <ul>
+              <li>Certified Behavoral Therapiest</li>
+              <li>1 session per week</li>
+              <li>30 - 60 min</li>
+              <li>between 6-8PM</li>
+              <li>LongField HS (Barrhaven)</li>
+            </ul>
+            <Link href="/register" className="btn btn-secondary">
+              Register
+            </Link>
+            <p>12% discount</p>
+          </div>
+        </div>
       </section>
       <section id="coaches">
         <h2>Meet the Coach!</h2>
