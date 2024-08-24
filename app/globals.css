@@ -149,7 +149,7 @@ a {
   display: inline-block;
 }
 
-input, textarea{
+input, select, textarea{
   width: 100%;
   padding: 1rem;
   line-height: 1.5;
