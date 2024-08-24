@@ -149,6 +149,16 @@ a {
   display: inline-block;
 }
 
+input, textarea{
+  width: 100%;
+  padding: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  border: 1px solid;
+  margin-block: 0.5rem;
+  resize: none;
+}
+
 nav {
   display: flex;
   justify-content: space-between;

@@ -40,6 +40,7 @@ const NavLinks = () => {
       <ActiveLink name="Programs" path="/programs" />
       <ActiveLink name="Special Needs" path="/special-needs" />
       <ActiveLink name="Register" path="/register" />
+      <ActiveLink name="Contact" path="/contact" />
     </>
   );
 };
