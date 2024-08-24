@@ -349,6 +349,14 @@ nav .burger-icon::after {
   justify-content: center;
   padding-block: 0.5rem;
 }
+footer{
+  width: 100%;
+  text-align: center;
+  padding-block: 1rem;
+}
+footer span{
+display: block;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

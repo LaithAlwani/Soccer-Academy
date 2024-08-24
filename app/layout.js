@@ -30,6 +30,9 @@ export default function RootLayout({ children }) {
 
 const Footer = () => {
   return (
-    <footer>CopyWrite Ottawa ON. 2024</footer>
+    <footer>
+      <span>&copy; Ottawa ON. 2024</span>
+      <span>laithalwani@gmail.com</span>  
+    </footer>
   )
 }
