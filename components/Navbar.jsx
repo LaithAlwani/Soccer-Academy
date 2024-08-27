@@ -18,6 +18,7 @@ export default function Navbar() {
       <Link href="/" className="logo">
         <Image src="/off_logo.png" fill priority />
       </Link>
+      <h3>Ottawa Stars</h3>
       <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
         <NavLinks />
       </div>
