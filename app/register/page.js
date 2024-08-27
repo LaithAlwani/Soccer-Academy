@@ -35,12 +35,19 @@ export default function RegisterPage() {
     setPlayersInputFields(data);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { name, email, password, phone, ...playersInputFields };
-    console.log(data);
-    toast.success(`Thank you ${name} for Registring ${playersInputFields.length} kids`);
-    resetForm();
+    const res = await fetch("/api/register", {
+      method: "POST",
+      body: JSON.stringify({ data }),
+    });
+    if (res.ok) {
+      const data = await res.json();
+      toast.success(data.message);
+      resetForm();
+      toast.success(`Thank you ${name} for Registring ${playersInputFields.length} kids`);
+    }
   };
 
   const resetForm = () => {
@@ -48,7 +55,7 @@ export default function RegisterPage() {
     setEmail("");
     setPassword("");
     setPhone("");
-    const data = { name: "", dob: "", sessions: 32 }
+    const data = { name: "", dob: "", sessions: 32 };
     setPlayersInputFields([data]);
   };
 
@@ -61,31 +68,35 @@ export default function RegisterPage() {
           placeholder="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
         <input
           type="email"
           placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <input
           type="password"
-          placeholder="password"
+          placeholder="password (optional)"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <span>*adding a password will create an account, login in makes kids registration easier.</span>
         <input
           type="text"
-          placeholder="phone"
+          placeholder="phone number"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+          required
         />
 
         {playersInputFields.map((playerInput, i) => (
           <>
-            <h2>
-              Player {i + 1}{" "}
-              {i > 0 && (
+            <h2 className="player-info">
+              Player {playersInputFields.length > 1 && i + 1} information
+              {playersInputFields.length > 1 && (
                 <span type="button" onClick={() => removePlayer(i)}>
                   <MdOutlineDeleteOutline size={32} color="red" />
                 </span>
@@ -114,7 +125,7 @@ export default function RegisterPage() {
         <button type="button" className="btn" onClick={addPlayer}>
           Add Player
         </button>
-        <button className="btn btn-primary">Register</button>
+        <button className="btn btn-primary">Checkout</button>
       </form>
     </section>
   );

@@ -354,6 +354,12 @@ nav .burger-icon::after {
   padding-block: 0.5rem;
 }
 
+.player-info{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 footer{
   width: 100%;
   text-align: center;
