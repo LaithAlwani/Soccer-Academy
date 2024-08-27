@@ -8,16 +8,29 @@ export default function ContactPage() {
   const [email, setEmail] = useState("");
   const [topic, setTopic] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = { name, email, topic, message };
-    console.log(data);
-    toast.success(`Thank you ${name}, Message Sent!`);
-    setName("");
-    setEmail("");
-    setTopic("");
-    setMessage("");
+    try {
+      setLoading(true);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify({ name, email, topic, message })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        toast.success(data.message);
+        setName("");
+        setEmail("");
+        setTopic("");
+        setMessage("");
+      }
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setLoading(false)
+    }
   };
 
   return (
@@ -54,7 +67,11 @@ export default function ContactPage() {
           onChange={(e) => setMessage(e.target.value)}
           required
         />
-        <button className="btn btn-primary">Submit</button>
+        {loading ? (
+          <img src="/ball.gif" alt="" style={{ width: "64px", height: "64px" }} />
+        ) : (
+          <button className="btn btn-primary">Submit</button>
+        )}
       </form>
     </section>
   );
