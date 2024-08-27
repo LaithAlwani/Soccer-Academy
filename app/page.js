@@ -8,7 +8,8 @@ export default function Home() {
       <section id="hero">
         <div className="hero-img-wrapper">
           <Image
-            src="https://t3.ftcdn.net/jpg/02/06/97/12/360_F_206971263_PGblLDBkfmhCNSHC6zoCOQEf2BwSsFb7.jpg"
+            // src="https://t3.ftcdn.net/jpg/02/06/97/12/360_F_206971263_PGblLDBkfmhCNSHC6zoCOQEf2BwSsFb7.jpg"
+            src="/hero.png"
             alt=""
             priority
             fill

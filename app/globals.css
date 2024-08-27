@@ -320,6 +320,7 @@ nav .burger-icon::after {
 
 #hero .hero-img-wrapper img {
   object-fit: cover;
+  object-position:  -6rem 30% ;
 }
 
 .programs-container {
@@ -369,5 +370,9 @@ display: block;
   }
   nav .nav-links {
     display: block;
+  }
+  #hero .hero-img-wrapper img {
+    object-fit: cover;
+    object-position:  bottom ;
   }
 }
