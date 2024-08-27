@@ -3,6 +3,8 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +21,7 @@ export default function RootLayout({ children }) {
         <main>
           <Toaster />
           <Navbar />
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <Footer />
         </main>
       </body>
@@ -27,12 +29,11 @@ export default function RootLayout({ children }) {
   );
 }
 
-
 const Footer = () => {
   return (
     <footer>
       <span>&copy; Ottawa ON. 2024</span>
-      <span>laithalwani@gmail.com</span>  
+      <span>laithalwani@gmail.com</span>
     </footer>
-  )
-}
+  );
+};
