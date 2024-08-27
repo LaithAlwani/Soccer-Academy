@@ -9,9 +9,9 @@ import Loading from "./loading";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Rising Stars Academy",
+  title: "Ottawa Stars Soccer Academy",
   description:
-    "A youth soccer development located in Ottawa ON. serveing the Barrhaven/Riverside south community",
+    "A youth soccer development located in Ottawa ON. serveing the Barrhaven/Riverside South community",
 };
 
 export default function RootLayout({ children }) {
