@@ -175,9 +175,14 @@ nav .logo {
   align-items: center;
   justify-content: center;
   width: 64px;
-  height: 64px;
+  /* height: 64px; */
   background: transparent;
   top: -0.25rem;
+  aspect-ratio: 1.05;
+}
+
+nav .logo-container{
+  display: flex;
 }
 
 nav .logo, nav h3 {
@@ -196,6 +201,7 @@ nav .nav-links > * {
 }
 .active {
   color: red;
+  font-size: 1.25rem;
 }
 
 nav .nav-links a:hover,
@@ -298,7 +304,7 @@ nav .burger-icon::after {
 
 .btn-primary {
   background-color: red;
-  color: white;
+  color: #000;
 }
 .btn-secondary {
   background-color: lightgray;
@@ -347,7 +353,7 @@ nav .burger-icon::after {
 
 .programs-container .red {
   background-color: red;
-  color: white;
+  color: #000;
 }
 
 .programs-container ul {

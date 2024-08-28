@@ -15,10 +15,12 @@ export default function Navbar() {
 
   return (
     <nav>
-      <Link href="/" className="logo">
-        <Image src="/off_logo.png" fill priority />
+      <Link href="/" className="logo-container">
+        <div className="logo">
+          <Image src="/off_logo.png" alt="academy logo" fill priority />
+        </div>
+        <h3>Ottawa Stars</h3>
       </Link>
-      <h3>Ottawa Stars</h3>
       <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
         <NavLinks />
       </div>
