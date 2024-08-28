@@ -83,7 +83,9 @@ export default function RegisterPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <span>*adding a password will create an account, login in makes kids registration easier.</span>
+        <span>
+          *adding a password will create an account, login in makes kids registration easier.
+        </span>
         <input
           type="text"
           placeholder="phone number"
@@ -108,6 +110,7 @@ export default function RegisterPage() {
               value={playerInput.name}
               placeholder="Player Name"
               onChange={(e) => handleChange(e, i)}
+              required
             />
             <input
               type="date"
@@ -115,8 +118,9 @@ export default function RegisterPage() {
               value={playerInput.dob}
               placeholder="Date of Birth"
               onChange={(e) => handleChange(e, i)}
+              required
             />
-            <select name="sessions" id="" onChange={(e) => handleChange(e, i)}>
+            <select name="sessions" id="" onChange={(e) => handleChange(e, i)} required>
               <option value="32">32 Weeks</option>
               <option value="64">64 Weeks</option>
             </select>
