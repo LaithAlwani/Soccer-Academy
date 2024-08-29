@@ -335,7 +335,7 @@ nav .burger-icon::after {
 
 .programs-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   justify-content: center;
   gap: 3rem;
@@ -343,17 +343,16 @@ nav .burger-icon::after {
 
 .programs-container .program {
   width: 18rem;
-  text-align: center;
   background-color: rgb(var(--background-start-rgb));
   padding: 1rem;
   border-radius: 5rem;
-  height: 31rem;
+  text-align: center;
   box-shadow: 2px 2px 10px 2px rgb(var(--background-end-rgb));
 }
 
 .programs-container .red {
   background-color: red;
-  color: #000;
+  
 }
 
 .programs-container ul {
