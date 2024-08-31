@@ -5,16 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
-const fetchPrograms = async () => {
+const getPrograms = async () => {
   await connectToDB();
   const programs = await Program.find();
-  console.log('here:',programs[0]);
-  revalidatePath("/");
   return programs;
 };
 
 export default async function Home() {
-  const programs = await fetchPrograms();
+  const programs = await getPrograms();
   return (
     <>
       <section id="hero">
@@ -71,8 +69,8 @@ export default async function Home() {
               <h3>${program.is_early_bird ? program.early_bird_price : program.price}</h3>
 
               <ul>
-                <li>Number of sessions:{program.sessions}</li>
-                <li>session length:{program.session_length}</li>
+                <li>Number of sessions: {program.sessions}</li>
+                <li>session length: {program.session_length}</li>
                 <li>{program.time}</li>
                 <li>
                   {program.start_date} - {program.end_date}

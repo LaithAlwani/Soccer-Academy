@@ -1,7 +1,16 @@
+import Cart from "@/models/cart";
+import connectToDB from "@/utils/database";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
   const { data } = await req.json();
-  console.log(data);
-  return NextResponse.json({message:`Registarion complete, Thank you!`},{status:201})
+  const { parent, players } = data;
+  try {
+    await connectToDB();
+    await Cart.create({ parent, players });
+    return NextResponse.json({ message: `please compelete payment` }, { status: 201 });
+  } catch (err) {
+    console.log(err);
+    return NextResponse.json({ message: `error in creating cart` }, { status: 500 });
+  }
 }
