@@ -7,8 +7,8 @@ export async function POST(req) {
   const { parent, players } = data;
   try {
     await connectToDB();
-    await Cart.create({ parent, players });
-    return NextResponse.json({ message: `please compelete payment` }, { status: 201 });
+    const cart = await Cart.create({ parent, players });
+    return NextResponse.json({ message: `please compelete payment`, cart }, { status: 201 });
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: `error in creating cart` }, { status: 500 });

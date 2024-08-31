@@ -1,9 +1,11 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
 export default function RegistrationForm({ programs }) {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,7 +40,7 @@ export default function RegistrationForm({ programs }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = { parent:{ name, email, password, phone }, players:[...playersInputFields] };
+    const data = { parent: { name, email, password, phone }, players: [...playersInputFields] };
     const res = await fetch("/api/register", {
       method: "POST",
       body: JSON.stringify({ data }),
@@ -46,8 +48,8 @@ export default function RegistrationForm({ programs }) {
     if (res.ok) {
       const data = await res.json();
       toast.success(data.message);
+      router.push(`cart/${data.cart._id}`);
       resetForm();
-      toast.success(`Thank you ${name} for Registring ${playersInputFields.length} kids`);
     }
   };
 
@@ -126,7 +128,9 @@ export default function RegistrationForm({ programs }) {
             </select>
             <select name="term" id="" onChange={(e) => handleChange(e, i)} required>
               {programs.map((program) => (
-                <option key={program._id} value={program._id}>{program.title}</option>
+                <option key={program._id} value={program._id}>
+                  {program.title}
+                </option>
               ))}
             </select>
           </>
