@@ -29,13 +29,13 @@ export default async function CartPage({ params }) {
       <h2>Thank you {parent.name}</h2>
       <p>Please review your cart and make a payment.</p>
       {players.map((player) => (
-        <>
+        <div key={player._id}>
           <h3>{player.name}</h3>
           <p>{player.term.title}</p>
           <p>${player.term.is_early_bird ? player.term.early_bird_price : player.term.price}</p>
           {adjustTotal(player.term.early_bird_price)}
           <span>remove</span>
-        </>
+        </div>
       ))}
       <h4>Total: {total}</h4>
       <button className="btn btn-primary">PayPal  ${total}</button>
