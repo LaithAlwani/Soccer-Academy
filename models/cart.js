@@ -13,7 +13,7 @@ const cartSchema = new Schema(
         name: { type: String, required: true },
         dob: { type: Date, required: true },
         gender: { type: String, required: true },
-        term: { type: Schema.Types.ObjectId, required: true },
+        term: { type: Schema.Types.ObjectId, Ref: "Program", required: true },
       },
     ],
   },
