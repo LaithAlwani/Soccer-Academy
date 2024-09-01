@@ -22,12 +22,10 @@ export default function RegistrationForm({ programs }) {
     let data = [...playersInputFields];
     if (e.target.name === "term") {
       const prog = programs.find((program) => program._id === e.target.value);
-      console.log(prog);
       data[index][e.target.name] = prog;
     } else {
       data[index][e.target.name] = e.target.value;
     }
-    console.log(data);
     setPlayersInputFields(data);
   };
 

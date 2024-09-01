@@ -64,20 +64,19 @@ export default async function Home() {
         <p>As Low as $15 per session</p>
         <div className="programs-container">
           {programs.map((program) => (
-            <div key={program._id} className="program">    
+            <div key={program._id} className="program">
               <h2>{program.title}</h2>
-              <h3>${program.is_early_bird ? program.early_bird_price : program.price}</h3>
-
+              <h3>${program.price}</h3>
               <ul>
                 <li>Number of sessions: {program.sessions}</li>
-                <li>session length: {program.session_length}</li>
+                <li>sessions are {program.sessions_length}min each</li>
                 <li>{program.time}</li>
                 <li>
                   {program.start_date} - {program.end_date}
                 </li>
                 <li>location: {program.location}</li>
               </ul>
-              <Link href="/register" className="btn btn-primary">
+              <Link href={program.payment_link} className="btn btn-primary">
                 Register
               </Link>
             </div>

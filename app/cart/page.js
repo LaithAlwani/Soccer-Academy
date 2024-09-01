@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 // import Cart from "@/models/cart";
 // import Program from "@/models/program"; //need to call the model to populate the programs
@@ -33,6 +35,18 @@ export default function CartPage() {
     // if (!cart) return <h3>Cart is Empty</h3>;
   }, []);
 
+  useEffect(() => {
+    // Check to see if this is a redirect back from Checkout
+    const query = new URLSearchParams(window.location.search);
+    if (query.get("success")) {
+      toast.success("Order placed! You will receive an email confirmation.");
+    }
+
+    if (query.get("canceled")) {
+      toast.error("Order canceled -- continue to shop around and checkout when you’re ready.");
+    }
+  }, []);
+
   // const { parent, players } = cart;
   let total = 0;
   const adjustTotal = (value) => {
@@ -59,7 +73,13 @@ export default function CartPage() {
         </div>
       ))}
       <h4>Total: {total}</h4>
-      <button className="btn btn-primary">PayPal ${total}</button>
+      <form action="/api/checkout_sessions" method="POST">
+        <section>
+          <button type="submit" role="link">
+            Checkout
+          </button>
+        </section>
+      </form>
     </section>
   ) : (
     <h3>Cart is Empty</h3>

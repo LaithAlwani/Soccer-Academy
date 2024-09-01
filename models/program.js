@@ -20,10 +20,14 @@ const programSchema = new Schema(
     },
     location: String,
     sessions: Number,
-    session_length: Number,
+    sessions_length: Number,
     time: String,
     is_early_bird: Boolean,
-    early_bird_price:Number
+    early_bird_price: Number,
+    payment_link: {
+      type: String,
+      required:true
+    }
     
   },
   { timestamps: true }
