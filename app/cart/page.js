@@ -1,4 +1,7 @@
 "use client";
+
+import { useEffect, useState } from "react";
+
 // import Cart from "@/models/cart";
 // import Program from "@/models/program"; //need to call the model to populate the programs
 // import connectToDB from "@/utils/database";
@@ -14,12 +17,15 @@
 // };
 
 export default function CartPage() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || null;
-  if (!cart) {
-    return <h3>Cart is Empty</h3>;
-  }
-  
-  const { parent, players } = cart;
+  const [cart, setCart] = useState(null);
+
+  useEffect(() => {
+    if (localStorage.getItem("cart")) setCart(JSON.parse(localStorage?.getItem("cart")));
+
+    // if (!cart) return <h3>Cart is Empty</h3>;
+  }, []);
+  console.log(cart);
+  // const { parent, players } = cart;
   let total = 0;
   const adjustTotal = (value) => {
     total += value;
@@ -30,11 +36,11 @@ export default function CartPage() {
   // save users cart in local storage for later use
   // add a cart button
 
-  return (
+  return cart &&
     <section>
-      <h2>Thank you {parent.name}</h2>
+      <h2>Thank you {cart.parent.name}</h2>
       <p>Please review your cart and make a payment.</p>
-      {players.map((player) => (
+      {cart.players.map((player) => (
         <div key={player._id}>
           <h3>{player.name}</h3>
           <h3>{player.dob}</h3>
@@ -47,5 +53,5 @@ export default function CartPage() {
       <h4>Total: {total}</h4>
       <button className="btn btn-primary">PayPal ${total}</button>
     </section>
-  );
+  
 }
