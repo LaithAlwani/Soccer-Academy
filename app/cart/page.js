@@ -1,19 +1,24 @@
-import Cart from "@/models/cart";
-import Program from "@/models/program"; //need to call the model to populate the programs
-import connectToDB from "@/utils/database";
+"use client";
+// import Cart from "@/models/cart";
+// import Program from "@/models/program"; //need to call the model to populate the programs
+// import connectToDB from "@/utils/database";
 
-const getCart = async (id) => {
-  await connectToDB();
-  const cart = await Cart.findById({ _id: id }).populate({
-    path: "players.term",
-    model: "Program",
-  });
+// const getCart = async (id) => {
+//   await connectToDB();
+//   const cart = await Cart.findById({ _id: id }).populate({
+//     path: "players.term",
+//     model: "Program",
+//   });
 
-  return cart;
-};
+//   return cart;
+// };
 
-export default async function CartPage({ params }) {
-  const cart = await getCart(params.id);
+export default function CartPage() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || null;
+  if (!cart) {
+    return <h3>Cart is Empty</h3>;
+  }
+  
   const { parent, players } = cart;
   let total = 0;
   const adjustTotal = (value) => {
@@ -32,6 +37,7 @@ export default async function CartPage({ params }) {
       {players.map((player) => (
         <div key={player._id}>
           <h3>{player.name}</h3>
+          <h3>{player.dob}</h3>
           <p>{player.term.title}</p>
           <p>${player.term.is_early_bird ? player.term.early_bird_price : player.term.price}</p>
           {adjustTotal(player.term.early_bird_price)}

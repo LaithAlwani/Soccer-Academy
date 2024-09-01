@@ -15,20 +15,25 @@ export default function RegistrationForm({ programs }) {
       name: "",
       dob: null,
       gender: "male",
-      term: programs[0]._id,
+      term: programs[0],
     },
   ]);
 
   const handleChange = (e, index) => {
     let data = [...playersInputFields];
-    console.log(e.target.name);
-    data[index][e.target.name] = e.target.value;
-    console.log(data[index]);
+    if (e.target.name === "term") {
+      const prog = programs.find((program) => program._id === e.target.value);
+      console.log(prog);
+      data[index][e.target.name] = prog;
+    } else {
+      data[index][e.target.name] = e.target.value;
+    }
+    console.log(data);
     setPlayersInputFields(data);
   };
 
   const addPlayer = () => {
-    let newField = { name: "", dob: null, gender: "male", term: programs[0]._id };
+    let newField = { name: "", dob: null, gender: "male", term: programs[0] };
     setPlayersInputFields((prev) => [...prev, newField]);
   };
 
@@ -40,27 +45,11 @@ export default function RegistrationForm({ programs }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = { parent: { name, email, password, phone }, players: [...playersInputFields] };
-    const res = await fetch("/api/register", {
-      method: "POST",
-      body: JSON.stringify({ data }),
-    });
-    if (res.ok) {
-      const data = await res.json();
-      toast.success(data.message);
-      router.push(`cart/${data.cart._id}`);
-      resetForm();
-    }
+    const data = { parent: { name, email, phone }, players: [...playersInputFields] };
+    localStorage.setItem("cart", JSON.stringify(data));
+    router.push('/cart');
   };
 
-  const resetForm = () => {
-    setName("");
-    setEmail("");
-    setPassword("");
-    setPhone("");
-    const data = { name: "", dob: "", sessions: 32 };
-    setPlayersInputFields([data]);
-  };
   return (
     <section>
       <form onSubmit={handleSubmit}>
@@ -129,7 +118,7 @@ export default function RegistrationForm({ programs }) {
             <select name="term" id="" onChange={(e) => handleChange(e, i)} required>
               {programs.map((program) => (
                 <option key={program._id} value={program._id}>
-                  {program.title}
+                  {program.title} ({program.start_date} - {program.end_date})
                 </option>
               ))}
             </select>

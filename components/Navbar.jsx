@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { MdOutlineShoppingCart } from "react-icons/md";
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,6 +46,7 @@ const NavLinks = () => {
       <ActiveLink name="Special Needs" path="/special-needs" />
       <ActiveLink name="Register" path="/register" />
       <ActiveLink name="Contact" path="/contact" />
+      <ActiveLink name={<MdOutlineShoppingCart  size={24} />} path="/cart" />
     </>
   );
 };
