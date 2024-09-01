@@ -42,11 +42,11 @@ const NavLinks = () => {
   return (
     <>
       <ActiveLink name="Home" path="/" />
-      <ActiveLink name="Programs" path="/programs" />
+      {/* <ActiveLink name="Programs" path="/programs" /> */}
       <ActiveLink name="Special Needs" path="/special-needs" />
-      <ActiveLink name="Register" path="/register" />
+      {/* <ActiveLink name="Register" path="/register" /> */}
       <ActiveLink name="Contact" path="/contact" />
-      <ActiveLink name={<MdOutlineShoppingCart  size={24} />} path="/cart" />
+      {/* <ActiveLink name={<MdOutlineShoppingCart  size={24} />} path="/cart" /> */}
     </>
   );
 };

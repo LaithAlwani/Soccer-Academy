@@ -7,7 +7,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const getPrograms = async () => {
   await connectToDB();
-  const programs = await Program.find();
+  const programs = await Program.find().sort("title");
   return programs;
 };
 
@@ -26,9 +26,9 @@ export default async function Home() {
           />
         </div>
         <div className="btn-group">
-          <Link href={"/register"} className="btn btn-primary">
+          <a href="#register" className="btn btn-primary">
             Register
-          </Link>
+          </a>
           <a href="#highlights" className="btn">
             Learn More
           </a>
