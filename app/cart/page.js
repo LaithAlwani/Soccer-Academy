@@ -19,6 +19,14 @@ import { useEffect, useState } from "react";
 export default function CartPage() {
   const [cart, setCart] = useState(null);
 
+  const removeCartItem = (player) => {
+    const data = cart.players;
+    const players = data.filter((pl) => pl.name !== player.name);
+    const newData = { parent: cart.parent, players };
+    localStorage.setItem("cart", JSON.stringify(newData));
+    setCart(newData);
+  };
+
   useEffect(() => {
     if (localStorage.getItem("cart")) setCart(JSON.parse(localStorage?.getItem("cart")));
 
@@ -36,7 +44,7 @@ export default function CartPage() {
   // save users cart in local storage for later use
   // add a cart button
 
-  return cart &&
+  return cart && cart.players.length > 0 ? (
     <section>
       <h2>Thank you {cart.parent.name}</h2>
       <p>Please review your cart and make a payment.</p>
@@ -47,11 +55,13 @@ export default function CartPage() {
           <p>{player.term.title}</p>
           <p>${player.term.is_early_bird ? player.term.early_bird_price : player.term.price}</p>
           {adjustTotal(player.term.early_bird_price)}
-          <span>remove</span>
+          <span onClick={() => removeCartItem(player)}>remove</span>
         </div>
       ))}
       <h4>Total: {total}</h4>
       <button className="btn btn-primary">PayPal ${total}</button>
     </section>
-  
+  ) : (
+    <h3>Cart is Empty</h3>
+  );
 }
