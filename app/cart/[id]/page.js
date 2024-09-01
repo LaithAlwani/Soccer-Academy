@@ -1,4 +1,5 @@
 import Cart from "@/models/cart";
+import Program from "@/models/program"; //need to call the model to populate the programs
 import connectToDB from "@/utils/database";
 
 const getCart = async (id) => {
@@ -19,7 +20,7 @@ export default async function CartPage({ params }) {
     total += value;
   };
 
-  //remove methond that removes a child and updates UI 
+  //remove methond that removes a child and updates UI
   // Edit button that take user back to registration to edit thier entries.
   // save users cart in local storage for later use
   // add a cart button
@@ -38,7 +39,7 @@ export default async function CartPage({ params }) {
         </div>
       ))}
       <h4>Total: {total}</h4>
-      <button className="btn btn-primary">PayPal  ${total}</button>
+      <button className="btn btn-primary">PayPal ${total}</button>
     </section>
   );
 }
