@@ -24,7 +24,7 @@ export default function CartPage() {
 
     // if (!cart) return <h3>Cart is Empty</h3>;
   }, []);
-  console.log(cart);
+
   // const { parent, players } = cart;
   let total = 0;
   const adjustTotal = (value) => {
@@ -40,8 +40,8 @@ export default function CartPage() {
     <section>
       <h2>Thank you {cart.parent.name}</h2>
       <p>Please review your cart and make a payment.</p>
-      {cart.players.map((player) => (
-        <div key={player._id}>
+      {cart.players.map((player, idx) => (
+        <div key={idx}>
           <h3>{player.name}</h3>
           <h3>{player.dob}</h3>
           <p>{player.term.title}</p>

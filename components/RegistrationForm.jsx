@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
 export default function RegistrationForm({ programs }) {
@@ -13,7 +12,7 @@ export default function RegistrationForm({ programs }) {
   const [playersInputFields, setPlayersInputFields] = useState([
     {
       name: "",
-      dob: null,
+      dob: "",
       gender: "male",
       term: programs[0],
     },
@@ -33,7 +32,7 @@ export default function RegistrationForm({ programs }) {
   };
 
   const addPlayer = () => {
-    let newField = { name: "", dob: null, gender: "male", term: programs[0] };
+    let newField = { name: "", dob: "", gender: "male", term: programs[0] };
     setPlayersInputFields((prev) => [...prev, newField]);
   };
 
@@ -86,7 +85,7 @@ export default function RegistrationForm({ programs }) {
         />
 
         {playersInputFields.map((playerInput, i) => (
-          <>
+          <div key={i}>
             <h2 className="player-info">
               Player {playersInputFields.length > 1 && i + 1} information
               {playersInputFields.length > 1 && (
@@ -122,7 +121,7 @@ export default function RegistrationForm({ programs }) {
                 </option>
               ))}
             </select>
-          </>
+          </div>
         ))}
         <button type="button" className="btn" onClick={addPlayer}>
           Add Player
