@@ -153,6 +153,11 @@ a {
   display: inline-block;
 }
 
+form{
+  max-width: 38rem;
+  margin-inline: auto;
+}
+
 input,
 select,
 textarea {

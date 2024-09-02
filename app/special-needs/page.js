@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -13,17 +13,17 @@ export default function SpecialNeedsPage() {
     if (res.ok) {
       const data = await res.json();
       toast.success(data.message);
-      setEmail("")
+      setEmail("");
     } else {
       toast.error("Internal error");
     }
   };
   return (
     <section className="animate__animated animate__fadeIn">
-      <h2>Special Needs program</h2>
-      <p>More information coming soon!</p>
-      <span>Sign up to our news letter to learn more</span>
       <form onSubmit={handleSubmit}>
+        <h2>Special Needs program</h2>
+        <p>More information coming soon!</p>
+        <span>Sign up to our news letter to learn more</span>
         <input
           type="email"
           placeholder="email"
