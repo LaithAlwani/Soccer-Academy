@@ -7,7 +7,7 @@ export async function POST(req) {
   console.log(email);
   try {
     await connectToDB();
-    const sub = await Subscriber.findOne({ emai: email });
+    const sub = await Subscriber.findOne({ email: email });
     if (!sub) await Subscriber.create({ email });
     else return NextResponse.json({ message: "Email address already exists!" })
     return NextResponse.json({ message: "Thank you!" }, { status: 200 });
