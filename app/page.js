@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
+
 const getPrograms = async () => {
   await connectToDB();
   const programs = await Program.find().sort("title");
