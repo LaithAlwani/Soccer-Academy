@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "animate.css"
 
 import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
@@ -33,7 +34,7 @@ const Footer = () => {
   return (
     <footer>
       <span>&copy; Ottawa ON. 2024</span>
-      <span>laithalwani@gmail.com</span>
+      <span>admin@ottawastars.com</span>
     </footer>
   );
 };

@@ -34,9 +34,9 @@ export default function ContactPage() {
   };
 
   return (
-    <section>
+    <section className="animate__animated animate__fadeInRight">
       <h2>Get In Touch</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <input
           type="text"
           placeholder="Name"

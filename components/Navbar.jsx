@@ -6,6 +6,7 @@ import Image from "next/image";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,7 +17,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav>
+    <nav className="animate__animated animate__fadeInDown">
       <Link href="/" className="logo-container">
         <div className="logo">
           <Image src="/off_logo.png" alt="academy logo" fill priority />

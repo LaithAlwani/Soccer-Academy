@@ -24,9 +24,10 @@ export default async function Home() {
             alt=""
             priority
             fill
+            className="animate__animated animate__fadeIn animate__slow"
           />
         </div>
-        <div className="btn-group">
+        <div className="btn-group animate__animated animate__fadeIn animate__slow">
           <a href="#register" className="btn btn-primary">
             Register
           </a>
@@ -35,7 +36,7 @@ export default async function Home() {
           </a>
         </div>
       </section>
-      <section id="highlights">
+      <section id="highlights" className="animate__animated animate__fadeInUp animate__fast">
         <h2>What our program offers</h2>
         <ul>
           <li>
