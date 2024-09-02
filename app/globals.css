@@ -298,7 +298,7 @@ nav .burger-icon::after {
 .btn {
   min-width: 7rem;
   padding: 1rem;
-  margin: 0.25rem;
+  margin-right: 0.5rem;
   border: 1px solid;
   border-radius: var(--border-radius);
   cursor: pointer;
