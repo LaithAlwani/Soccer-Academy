@@ -303,7 +303,7 @@ nav .burger-icon::after {
 .btn {
   min-width: 7rem;
   padding: 1rem;
-  margin-right: 0.5rem;
+  margin-right: 0;
   border: 1px solid;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -326,6 +326,9 @@ nav .burger-icon::after {
   margin-block: 1rem;
   width: 100%;
   text-align: center;
+}
+.btn-group > .btn {
+  margin-inline: 0.25rem;
 }
 
 #hero {
