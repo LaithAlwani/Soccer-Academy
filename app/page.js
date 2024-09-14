@@ -70,7 +70,7 @@ export default async function Home() {
       </section>
       <section id="register">
         <h2>Registerations:</h2>
-        <h3 className="coupon">USE CODE "earlybird50" FOR $50 OFF!</h3>
+        <h3 className="coupon">USE CODE &quot;earlybird50&quot; FOR $50 OFF!</h3>
 
         <div className="programs-container">
           {programs.map((program) => (
