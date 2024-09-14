@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import Program from "@/models/program";
 import connectToDB from "@/utils/database";
 import Image from "next/image";
@@ -105,6 +106,9 @@ export default async function Home() {
           academies. Now back in Canada, Ottawa Stars Soccer Academy is his latest creation where
           players can have fun, develop, and achieve results.
         </p>
+      </section>
+      <section id="contact">
+        <ContactForm />
       </section>
     </>
   );

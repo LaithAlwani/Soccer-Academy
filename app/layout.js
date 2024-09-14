@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import Loading from "./loading";
-import ContactForm from "@/components/ContactForm";
 import BackToTop from "@/components/BackToTop";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -36,9 +35,6 @@ export default function RootLayout({ children }) {
 const Footer = () => {
   return (
     <footer>
-      <section id="contact">
-        <ContactForm />
-      </section>
       <span>&copy; Ottawa ON. 2024</span>
       <span>admin@ottawastars.com</span>
     </footer>
