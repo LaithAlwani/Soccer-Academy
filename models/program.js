@@ -26,13 +26,13 @@ const programSchema = new Schema(
     early_bird_price: Number,
     payment_link: {
       type: String,
-      required:true
-    }
-    
+      required: true,
+    },
+    test_payment_link: String,
   },
   { timestamps: true }
 );
 
 const Program = models.Program || model("Program", programSchema);
 
-export default Program
+export default Program;

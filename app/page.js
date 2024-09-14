@@ -70,17 +70,20 @@ export default async function Home() {
           {programs.map((program) => (
             <div key={program._id} className="program">
               <h2>{program.title}</h2>
-              <h3>${program.price}</h3>
               <ul>
                 <li>Number of sessions: {program.sessions}</li>
-                <li>sessions are {program.sessions_length}min each</li>
                 <li>{program.time}</li>
                 <li>
                   {program.start_date} - {program.end_date}
                 </li>
-                <li>location: {program.location}</li>
               </ul>
-              <Link href={program.payment_link} className="btn btn-primary">
+              <Link
+                href={
+                  process.env.NODE_ENV === "development"
+                    ? program.test_payment_link
+                    : program.payment_link
+                }
+                className="btn btn-primary">
                 Register
               </Link>
             </div>
