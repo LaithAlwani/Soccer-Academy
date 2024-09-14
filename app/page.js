@@ -66,6 +66,8 @@ export default async function Home() {
       </section>
       <section id="register">
         <h2>Registerations:</h2>
+        <h3 style={{marginBlockEnd:"0"}}>use code earlybird50 for $50 discount</h3>
+        <p style={{marginBlockStart:"0"}}>code valid till September 22nd, 2024</p>
         {/* <p>As Low as $15 per session</p> */}
         <div className="programs-container">
           {programs.map((program) => (
