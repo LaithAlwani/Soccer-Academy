@@ -43,38 +43,40 @@ export default async function Home() {
           </a>
         </div>
       </section>
-      <section id="program" className="animate__animated animate__fadeInUp animate__fast">
+      <section id="program" className="">
         <h2>Our Program Offers:</h2>
         <ul>
           <li>
-            <FaCheckCircle color="green" size={24} />
+            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
             <h3>Soccer Fundamentals and Skills</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={24} />
+            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
             <h3>Teamwork and Sportsmanship</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={24} />
+            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
             <h3>Youth Development Experienced Coaches</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={24} />
+            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
             <h3>Fun and Engaging Evironment</h3>
+          </li>
+          <li>
+            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
+            <h3>2 sessions per week</h3>
           </li>
         </ul>
       </section>
       <section id="register">
         <h2>Registerations:</h2>
-        <h3 style={{marginBlockEnd:"0"}}>use code earlybird50 for $50 discount</h3>
-        <p style={{marginBlockStart:"0"}}>code valid till September 22nd, 2024</p>
-        {/* <p>As Low as $15 per session</p> */}
+        <h3 className="coupon">USE CODE "earlybird50" FOR $50 OFF!</h3>
+
         <div className="programs-container">
           {programs.map((program) => (
             <div key={program._id} className="program">
               <h2>{program.title}</h2>
               <ul>
-                <li>Number of sessions: {program.sessions}</li>
                 <li>{program.time}</li>
                 <li>
                   {program.start_date} - {program.end_date}
@@ -91,6 +93,28 @@ export default async function Home() {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+      <section id="location">
+        <h2>Location:</h2>
+        <div className="location-container">
+          <p>
+            All practices will be held at <strong style={{fontSize:"1.2rem"}}>St. Mary School.</strong>
+          </p>
+
+          <strong>5536 Bank St, Gloucester, ON K1X 1G9</strong>
+          <p>
+            Weekdays between <strong>6:30-8:30PM</strong>
+          </p>
+          <p>
+            please check{" "}
+            <strong>
+              <em>
+                <a href="#register">Registeration</a>
+              </em>
+            </strong>{" "}
+            section for more information on time and date.
+          </p>
         </div>
       </section>
       <section id="coach">

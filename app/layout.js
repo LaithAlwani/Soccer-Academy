@@ -7,6 +7,8 @@ import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import Loading from "./loading";
 import BackToTop from "@/components/BackToTop";
+import { FaInstagram, FaFacebookF } from "react-icons/fa6";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +26,7 @@ export default function RootLayout({ children }) {
           <Toaster />
           <Navbar />
           <Suspense fallback={<Loading />}>{children}</Suspense>
-          <BackToTop />
+          {/* <BackToTop /> */}
           <Footer />
         </main>
       </body>
@@ -33,10 +35,26 @@ export default function RootLayout({ children }) {
 }
 
 const Footer = () => {
+  const size = 22;
   return (
     <footer>
-      <span>&copy; Ottawa ON. 2024</span>
-      <span>admin@ottawastars.com</span>
+      <div className="footer-container">
+        <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+          <div className="logo">
+            <Image src="/off_logo.png" alt="academy logo" fill priority />
+          </div>
+          <span>&copy; Ottawa ON. 2024</span>
+          <span>admin@ottawastars.com</span>
+        </div>
+        <div className="social-links">
+          <a href="https://www.instagram.com/ottawa_stars/" target="_blank">
+            <FaInstagram size={size} />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61564830781676" target="_blank">
+            <FaFacebookF size={size} />
+          </a>
+        </div>
+      </div>
     </footer>
   );
 };
