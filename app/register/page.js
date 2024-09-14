@@ -13,7 +13,6 @@ export default async function RegisterPage() {
 
   return (
     <section>
-      <img src="/recipt.svg" alt="" />
       <RegistrationForm programs={programs} />
     </section>
   );

@@ -1,11 +1,13 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "animate.css"
+import "animate.css";
 
 import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import Loading from "./loading";
+import ContactForm from "@/components/ContactForm";
+import BackToTop from "@/components/BackToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
           <Toaster />
           <Navbar />
           <Suspense fallback={<Loading />}>{children}</Suspense>
+          <BackToTop />
           <Footer />
         </main>
       </body>
@@ -33,6 +36,9 @@ export default function RootLayout({ children }) {
 const Footer = () => {
   return (
     <footer>
+      <section id="contact">
+        <ContactForm />
+      </section>
       <span>&copy; Ottawa ON. 2024</span>
       <span>admin@ottawastars.com</span>
     </footer>

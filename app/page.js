@@ -1,10 +1,8 @@
 import Program from "@/models/program";
 import connectToDB from "@/utils/database";
-import { revalidatePath } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
-
 
 const getPrograms = async () => {
   await connectToDB();
@@ -28,20 +26,28 @@ export default async function Home() {
           />
         </div>
         <div className="btn-group animate__animated animate__fadeIn animate__slow">
+          <p className="school-intro">
+            Welcome to Ottawa Stars Soccer Academy, where young athletes embark on an exciting
+            journey to learn soccer fundamentals. Our academy is dedicated to nurturing the talents
+            of both boys and girls through top-tier training programs. Led by a seasoned coach with
+            over 25 years of international youth development experience, we provide a supportive and
+            dynamic environment that fosters growth, teamwork, and a lifelong passion for the
+            beautiful game. Join us and watch your child thrive both on and off the field!
+          </p>
           <a href="#register" className="btn btn-primary">
             Register
           </a>
-          <a href="#highlights" className="btn">
+          <a href="#program" className="btn">
             Learn More
           </a>
         </div>
       </section>
-      <section id="highlights" className="animate__animated animate__fadeInUp animate__fast">
-        <h2>What our program offers</h2>
+      <section id="program" className="animate__animated animate__fadeInUp animate__fast">
+        <h2>Our Program Offers:</h2>
         <ul>
           <li>
             <FaCheckCircle color="green" size={24} />
-            <h3>Skill Development</h3>
+            <h3>Soccer Fundamentals and Skills</h3>
           </li>
           <li>
             <FaCheckCircle color="green" size={24} />
@@ -49,21 +55,17 @@ export default async function Home() {
           </li>
           <li>
             <FaCheckCircle color="green" size={24} />
-            <h3>Physical Fitness</h3>
+            <h3>Youth Development Experienced Coaches</h3>
           </li>
           <li>
             <FaCheckCircle color="green" size={24} />
-            <h3>Professional Coaching</h3>
-          </li>
-          <li>
-            <FaCheckCircle color="green" size={24} />
-            <h3>Fun and Engaging Environment</h3>
+            <h3>Fun and Engaging Evironment</h3>
           </li>
         </ul>
       </section>
       <section id="register">
-        <h2>Register Now</h2>
-        <p>As Low as $15 per session</p>
+        <h2>Registerations:</h2>
+        {/* <p>As Low as $15 per session</p> */}
         <div className="programs-container">
           {programs.map((program) => (
             <div key={program._id} className="program">
@@ -85,9 +87,22 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <section id="coaches">
-        <h2>Meet the Coach!</h2>
+      <section id="coach">
+        <h2>Meet the Head Coach!</h2>
+        
+          <img src={"/coach.jpeg"} alt="coach rafed with seth platter" className="coach-rafed" />
+        
+        <p>
+          Coach Rafed Alwani is a Soccer Academies Consultant and a Canada Soccer certified coach
+          with over 25 years of experience in youth soccer coaching and development. He began his
+          coaching career with A.C. Fiorentina Canada, where he coached for seven years. In 2008, he
+          moved to Saudi Arabia, where he coached Al-Nasser Club Youth for four years, established
+          one of the country’s largest academies, acted as a consultant for several soccer
+          academies. Now back in Canada, Ottawa Stars Soccer Academy is his latest creation where
+          players can have fun, develop, and achieve results.
+        </p>
       </section>
+  
     </>
   );
 }

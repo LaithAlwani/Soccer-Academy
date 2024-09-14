@@ -3,9 +3,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { MdOutlineShoppingCart } from "react-icons/md";
-
-
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +19,10 @@ export default function Navbar() {
         <div className="logo">
           <Image src="/off_logo.png" alt="academy logo" fill priority />
         </div>
-        <h3>Ottawa Stars</h3>
+        <div>
+          <h2>Ottawa Stars</h2>
+          <span>Soccer Academy</span>
+        </div>
       </Link>
       <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
         <NavLinks />
@@ -42,11 +42,12 @@ export default function Navbar() {
 const NavLinks = () => {
   return (
     <>
-      <ActiveLink name="Home" path="/" />
-      {/* <ActiveLink name="Programs" path="/programs" /> */}
-      <ActiveLink name="Special Needs" path="/special-needs" />
-      {/* <ActiveLink name="Register" path="/register" /> */}
-      <ActiveLink name="Contact" path="/contact" />
+      {/* <ActiveLink name="Home" path="/" /> */}
+      <ActiveLink name="Program" path="#program" />
+      {/* <ActiveLink name="Special Needs" path="/special-needs" /> */}
+      <ActiveLink name="Register" path="#register" />
+      <ActiveLink name="Meet the Coach" path="#coach" />
+      <ActiveLink name="Contact" path="#contact" />
       {/* <ActiveLink name={<MdOutlineShoppingCart  size={24} />} path="/cart" /> */}
     </>
   );
@@ -54,11 +55,10 @@ const NavLinks = () => {
 
 const ActiveLink = ({ name, path }) => {
   const pathname = usePathname();
-  const active = pathname === path ? "active" : "";
-
+  // const active = pathname === path ? "active" : "";
   return (
-    <Link href={path} className={`${active}`}>
+    <a href={path} >
       {name}
-    </Link>
+    </a>
   );
 };
