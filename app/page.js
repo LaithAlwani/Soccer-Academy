@@ -8,7 +8,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const getPrograms = async () => {
   await connectToDB();
-  const programs = await Program.find().sort("title");
+  const programs = await Program.find();
   return programs;
 };
 
@@ -135,7 +135,7 @@ export default async function Home() {
             alt="coach rafed with seth platter"
             className="coach-rafed"
           />
-          <span>*Coach Rafid with Sepp Blatter, Riyadh SA.</span>
+          <span>*Coach Rafid with former FIFA president Sepp Blatter, Riyadh SA.</span>
         </div>
         <p>
           Coach Rafed Alwani is a Soccer Academies Consultant and a Canada
