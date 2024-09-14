@@ -410,6 +410,19 @@ nav .burger-icon::after {
   width: 100%;
 }
 
+.location-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.location-container .map{
+  width: 100%;
+  height: 300px;
+}
+
 .back-to-top {
   position: fixed;
   bottom: 1rem;
@@ -494,6 +507,12 @@ form .btn {
   #hero .hero-img-wrapper img {
     object-fit: cover;
     object-position: bottom;
+  }
+  .location-container .map{
+    max-width: 50%;
+  }
+  .location-container .location-info{
+    max-width: 33%;
   }
 }
 

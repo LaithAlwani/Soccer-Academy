@@ -3,6 +3,7 @@ import Program from "@/models/program";
 import connectToDB from "@/utils/database";
 import Image from "next/image";
 import Link from "next/link";
+import Map from "@/components/Map";
 import { FaCheckCircle } from "react-icons/fa";
 
 const getPrograms = async () => {
@@ -28,12 +29,14 @@ export default async function Home() {
         </div>
         <div className="btn-group animate__animated animate__fadeIn animate__slow">
           <p className="school-intro">
-            Welcome to Ottawa Stars Soccer Academy, where young athletes embark on an exciting
-            journey to learn soccer fundamentals. Our academy is dedicated to nurturing the talents
-            of both boys and girls through top-tier training programs. Led by a seasoned coach with
-            over 25 years of international youth development experience, we provide a supportive and
-            dynamic environment that fosters growth, teamwork, and a lifelong passion for the
-            beautiful game. Join us and watch your child thrive both on and off the field!
+            Welcome to Ottawa Stars Soccer Academy, where young athletes embark
+            on an exciting journey to learn soccer fundamentals. Our academy is
+            dedicated to nurturing the talents of both boys and girls through
+            top-tier training programs. Led by a seasoned coach with over 25
+            years of international youth development experience, we provide a
+            supportive and dynamic environment that fosters growth, teamwork,
+            and a lifelong passion for the beautiful game. Join us and watch
+            your child thrive both on and off the field!
           </p>
           <a href="#register" className="btn btn-primary">
             Register
@@ -70,7 +73,9 @@ export default async function Home() {
       </section>
       <section id="register">
         <h2>Registerations:</h2>
-        <h3 className="coupon">USE CODE &quot;earlybird50&quot; FOR $50 OFF!</h3>
+        <h3 className="coupon">
+          USE CODE &quot;earlybird50&quot; FOR $50 OFF!
+        </h3>
 
         <div className="programs-container">
           {programs.map((program) => (
@@ -88,7 +93,8 @@ export default async function Home() {
                     ? program.test_payment_link
                     : program.payment_link
                 }
-                className="btn btn-primary">
+                className="btn btn-primary"
+              >
                 Register
               </Link>
             </div>
@@ -98,39 +104,49 @@ export default async function Home() {
       <section id="location">
         <h2>Location:</h2>
         <div className="location-container">
-          <p>
-            All practices will be held at <strong style={{fontSize:"1.2rem"}}>St. Mary School.</strong>
-          </p>
+          <div className="location-info">
+            <p>
+              All practices will be held at{" "}
+              <strong style={{ fontSize: "1.2rem" }}>St. Mary School.</strong>
+            </p>
 
-          <strong>5536 Bank St, Gloucester, ON K1X 1G9</strong>
-          <p>
-            Weekdays between <strong>6:30-8:30PM</strong>
-          </p>
-          <p>
-            please check{" "}
-            <strong>
-              <em>
-                <a href="#register">Registeration</a>
-              </em>
-            </strong>{" "}
-            section for more information on time and date.
-          </p>
+            <strong>5536 Bank St, Gloucester, ON K1X 1G9</strong>
+            <p>
+              Weekdays between <strong>6:30-8:30PM</strong>
+            </p>
+            <p>
+              please check{" "}
+              <strong>
+                <em>
+                  <a href="#register">Registeration</a>
+                </em>
+              </strong>{" "}
+              section for more information on time and date.
+            </p>
+          </div>
+          <Map />
         </div>
       </section>
       <section id="coach">
         <h2>Meet the Head Coach!</h2>
         <div className="coach-img-wrapper">
-          <img src={"/coach.jpeg"} alt="coach rafed with seth platter" className="coach-rafed" />
+          <img
+            src={"/coach.jpeg"}
+            alt="coach rafed with seth platter"
+            className="coach-rafed"
+          />
           <span>*Coach Rafid with Sepp Blatter, Riyadh SA.</span>
         </div>
         <p>
-          Coach Rafed Alwani is a Soccer Academies Consultant and a Canada Soccer certified coach
-          with over 25 years of experience in youth soccer coaching and development. He began his
-          coaching career with A.C. Fiorentina Canada, where he coached for seven years. In 2008, he
-          moved to Saudi Arabia, where he coached Al-Nasser Club Youth for four years, established
-          one of the country’s largest academies, acted as a consultant for several soccer
-          academies. Now back in Canada, Ottawa Stars Soccer Academy is his latest creation where
-          players can have fun, develop, and achieve results.
+          Coach Rafed Alwani is a Soccer Academies Consultant and a Canada
+          Soccer certified coach with over 25 years of experience in youth
+          soccer coaching and development. He began his coaching career with
+          A.C. Fiorentina Canada, where he coached for seven years. In 2008, he
+          moved to Saudi Arabia, where he coached Al-Nasser Club Youth for four
+          years, established one of the country’s largest academies, acted as a
+          consultant for several soccer academies. Now back in Canada, Ottawa
+          Stars Soccer Academy is his latest creation where players can have
+          fun, develop, and achieve results.
         </p>
       </section>
       <section id="contact">
