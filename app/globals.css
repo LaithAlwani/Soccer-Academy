@@ -358,7 +358,7 @@ nav .burger-icon::after {
   object-position: -6rem 30%;
 }
 
-.school-intro{
+.school-intro {
   padding: 1rem;
   max-width: 600px;
   margin-inline: auto;
@@ -399,16 +399,21 @@ nav .burger-icon::after {
   align-items: center;
   justify-content: flex-start;
 }
-#coach{
+#coach {
   margin-bottom: 6rem;
+  max-width: 600px;
 }
 
-#coach .coach-rafed{
+#coach .coach-img-wrapper span{
+  font-size: 0.75rem;
+}
+
+#coach .coach-rafed {
   max-width: 500px;
   width: 100%;
 }
 
-.back-to-top{
+.back-to-top {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
@@ -422,10 +427,9 @@ nav .burger-icon::after {
   align-items: center;
 }
 
-
 footer {
   width: 100%;
-  
+
   padding-block: 1rem;
   background-color: red;
 }
@@ -434,8 +438,10 @@ footer span {
   text-align: center;
   color: #fff;
 }
-footer #contact{max-width: 100vw;}
-footer #contact > form{
+footer #contact {
+  max-width: 100vw;
+}
+footer #contact > form {
   background-color: rgb(var(--background-start-rgb));
   border-radius: 0.25rem;
   padding: 1rem;
@@ -444,7 +450,7 @@ footer #contact > form{
   margin-top: -6rem;
   box-shadow: 1px 1px 10px rgb(var(--background-start-rgb));
 }
-form .btn{
+form .btn {
   width: 100%;
   border-radius: 0.25rem;
   color: #fff;
@@ -477,5 +483,21 @@ form .btn{
   #hero .hero-img-wrapper img {
     object-fit: cover;
     object-position: bottom;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #coach .coach-img-wrapper{
+    float: right;
+    width: 275px;
+    margin-left: 0.5rem;
+  }
+  
+  #coach .coach-rafed {
+    width: 100%;
+    
+    height: 12rem;
+    object-fit: cover;
+    object-position: top;
   }
 }

@@ -89,9 +89,10 @@ export default async function Home() {
       </section>
       <section id="coach">
         <h2>Meet the Head Coach!</h2>
-        
+        <div className="coach-img-wrapper">
           <img src={"/coach.jpeg"} alt="coach rafed with seth platter" className="coach-rafed" />
-        
+          <span>*Coach Rafid with Sepp Blatter, Riyadh SA.</span>
+        </div>
         <p>
           Coach Rafed Alwani is a Soccer Academies Consultant and a Canada Soccer certified coach
           with over 25 years of experience in youth soccer coaching and development. He began his
@@ -102,7 +103,6 @@ export default async function Home() {
           players can have fun, develop, and achieve results.
         </p>
       </section>
-  
     </>
   );
 }
