@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import Loading from "./loading";
-import BackToTop from "@/components/BackToTop";
+import { Analytics } from "@vercel/analytics/react";
 import { FaInstagram, FaFacebookF } from "react-icons/fa6";
 import Image from "next/image";
 
@@ -25,8 +25,10 @@ export default function RootLayout({ children }) {
         <main>
           <Toaster />
           <Navbar />
-          <Suspense fallback={<Loading />}>{children}</Suspense>
-          {/* <BackToTop /> */}
+          <Suspense fallback={<Loading />}>
+            {children}
+            <Analytics />
+          </Suspense>
           <Footer />
         </main>
       </body>
@@ -39,7 +41,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-container">
-        <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div className="logo">
             <Image src="/off_logo.png" alt="academy logo" fill priority />
           </div>
