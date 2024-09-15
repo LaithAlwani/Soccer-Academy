@@ -68,7 +68,7 @@ export default function ContactPage() {
           required
         />
         {loading ? (
-          <img src="/ball.gif" alt="" style={{ width: "64px", height: "64px" }} />
+          <img src="/ball.gif" alt="soccer ball bouncing" style={{ width: "64px", height: "64px" }} />
         ) : (
           <button className="btn btn-primary">Submit</button>
         )}

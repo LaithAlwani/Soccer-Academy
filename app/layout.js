@@ -17,6 +17,17 @@ export const metadata = {
   title: "Ottawa Stars Soccer Academy",
   description:
     "A youth soccer development located in Ottawa ON. serveing the Barrhaven/Riverside South community",
+    keywords: ["soccer", "ottawa", "youth development", "Barrhaven", "Riverside South", "Greeely"],
+    authors: [
+      {
+        name: "Laith Alwani",
+        url: "https://www.laithalwani.ca",
+      },
+    ],
+    icons: [
+      { rel: "apple-touch-icon", url: "/off_logo.png" },
+      { rel: "icon", url: "/off_logo.png" },
+    ],
 };
 
 export default function RootLayout({ children }) {
@@ -45,7 +56,7 @@ const Footer = () => {
       <div className="footer-container">
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div className="logo">
-            <Image src="/off_logo.png" alt="academy logo" fill priority />
+            <Image src="/off_logo.png" alt="ottawa stars soccer academy logo" fill priority />
           </div>
           <span>&copy; Ottawa ON. 2024</span>
           <span>admin@ottawastars.com</span>

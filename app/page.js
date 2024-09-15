@@ -21,7 +21,7 @@ export default async function Home() {
           <Image
             // src="https://t3.ftcdn.net/jpg/02/06/97/12/360_F_206971263_PGblLDBkfmhCNSHC6zoCOQEf2BwSsFb7.jpg"
             src="/hero.png"
-            alt=""
+            alt="ottawa stars hero image of youth playing soccer"
             priority
             fill
             className="animate__animated animate__fadeIn animate__slow"
@@ -80,7 +80,7 @@ export default async function Home() {
         <div className="programs-container">
           {programs.map((program) => (
             <div key={program._id} className="program">
-              <h2>{program.title}</h2>
+              <h3>{program.title}</h3>
               <ul>
                 <li>{program.time}</li>
                 <li>
@@ -132,7 +132,7 @@ export default async function Home() {
         <div className="coach-img-wrapper">
           <img
             src={"/coach.jpeg"}
-            alt="coach rafed with seth platter"
+            alt="coach rafed holding soccer ball with former FIFA president sepp Blatter"
             className="coach-rafed"
           />
           <span>*Coach Rafid with former FIFA president Sepp Blatter, Riyadh SA.</span>

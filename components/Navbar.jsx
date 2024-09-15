@@ -17,10 +17,10 @@ export default function Navbar() {
     <nav className="animate__animated animate__fadeInDown">
       <Link href="/" className="logo-container">
         <div className="logo">
-          <Image src="/off_logo.png" alt="academy logo" fill priority />
+          <Image src="/off_logo.png" alt="ottawa stars soccer academy logo" fill priority />
         </div>
         <div>
-          <h2>Ottawa Stars</h2>
+          <h1>Ottawa Stars</h1>
           <span>Soccer Academy</span>
         </div>
       </Link>
