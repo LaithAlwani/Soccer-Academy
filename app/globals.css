@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap");
 
 :root {
-  
   --border-radius: 2rem;
   --font-mono: "Roboto", sans-serif;
 
@@ -52,7 +51,6 @@ section {
   max-width: 62rem;
   width: 100%;
   padding: 1rem;
-  
 }
 ul {
   list-style: none;
@@ -97,7 +95,7 @@ nav {
   z-index: 1;
 }
 
- .logo {
+.logo {
   position: relative;
   display: flex;
   align-items: center;
@@ -232,21 +230,22 @@ nav .burger-icon::after {
 
 .btn {
   min-width: 7rem;
-  padding: 1rem;
+  padding: 0.5rem;
   margin-right: 0;
   border: 1px solid;
   border-radius: var(--border-radius);
   cursor: pointer;
   font-weight: bold;
   text-align: center;
+  background-color: #333;
+  color: #fff;
 }
-.btn:focus{
+.btn:focus {
   opacity: 0.5;
 }
 
 .btn-primary {
-  background-color: #333;
-  color: #fff;
+  background-color: red;
 }
 .btn-secondary {
   background-color: lightgray;
@@ -320,7 +319,7 @@ nav .burger-icon::after {
   max-width: 600px;
 }
 
-#coach .coach-img-wrapper span{
+#coach .coach-img-wrapper span {
   font-size: 0.75rem;
 }
 
@@ -329,7 +328,7 @@ nav .burger-icon::after {
   width: 100%;
 }
 
-.location-container{
+.location-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -337,12 +336,12 @@ nav .burger-icon::after {
   align-items: flex-start;
   gap: 1rem;
 }
-.location-container .map{
+.location-container .map {
   width: 100%;
   height: 300px;
 }
 
-.coupon{
+.coupon {
   margin: 0 0 1rem;
   background-color: rgba(255, 0, 0, 0.8);
   padding: 1rem;
@@ -353,14 +352,40 @@ nav .burger-icon::after {
   margin-inline: auto;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.call-btn {
+  position: fixed;
+  bottom: 3.5rem;
+  right: 0.65rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 0.25rem;
+  background-color: red;
+  color: #fff;
+}
+.whatsapp-btn {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  
+  z-index: 99;
+  
+}
+
 footer {
   width: 100%;
   padding: 2rem 1rem;
   background-color: #333;
-  color: #f2f2f2
+  color: #f2f2f2;
 }
 
-footer .footer-container{
+footer .footer-container {
   max-width: 62rem;
   margin-inline: auto;
   display: flex;
@@ -372,9 +397,8 @@ footer .footer-container{
 footer span {
   display: block;
   text-align: center;
-  
 }
-footer .social-links{
+footer .social-links {
   display: flex;
   gap: 0.5rem;
 }
@@ -413,21 +437,24 @@ form .btn {
     object-fit: cover;
     object-position: bottom;
   }
-  .location-container .map{
+  .location-container .map {
     max-width: 50%;
   }
-  .location-container .location-info{
+  .location-container .location-info {
     max-width: 33%;
+  }
+  .flex-reverse {
+    flex-direction: row-reverse;
   }
 }
 
 @media only screen and (min-width: 571px) {
-  #coach .coach-img-wrapper{
+  #coach .coach-img-wrapper {
     float: right;
     width: 275px;
     margin-left: 0.5rem;
   }
-  
+
   #coach .coach-rafed {
     width: 100%;
     height: 12rem;

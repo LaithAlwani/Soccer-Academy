@@ -93,7 +93,7 @@ export default async function Home() {
                     ? program.test_payment_link
                     : program.payment_link
                 }
-                className="btn btn-primary"
+                className="btn"
               >
                 Register
               </Link>
