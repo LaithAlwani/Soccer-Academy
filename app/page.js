@@ -24,10 +24,10 @@ export default async function Home() {
             alt="ottawa stars hero image of youth playing soccer"
             priority
             fill
-            className="animate__animated animate__fadeIn animate__slow"
+            className=""
           />
         </div>
-        <div className="btn-group animate__animated animate__fadeIn animate__slow">
+        <div className="btn-group">
           <p className="school-intro">
             Welcome to Ottawa Stars Soccer Academy, where young athletes embark
             on an exciting journey to learn soccer fundamentals. Our academy is

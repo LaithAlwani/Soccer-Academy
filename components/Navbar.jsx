@@ -14,7 +14,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="animate__animated animate__fadeInDown">
+    <nav className="">
       <Link href="/" className="logo-container">
         <div className="logo">
           <Image src="/off_logo.png" alt="ottawa stars soccer academy logo" fill priority />
@@ -42,13 +42,11 @@ export default function Navbar() {
 const NavLinks = () => {
   return (
     <>
-      {/* <ActiveLink name="Home" path="/" /> */}
       <ActiveLink name="Program" path="#program" />
-      {/* <ActiveLink name="Special Needs" path="/special-needs" /> */}
       <ActiveLink name="Register" path="#register" />
+      <ActiveLink name="Location" path="#location" />
       <ActiveLink name="Meet the Coach" path="#coach" />
       <ActiveLink name="Contact" path="#contact" />
-      {/* <ActiveLink name={<MdOutlineShoppingCart  size={24} />} path="/cart" /> */}
     </>
   );
 };
@@ -56,9 +54,5 @@ const NavLinks = () => {
 const ActiveLink = ({ name, path }) => {
   const pathname = usePathname();
   // const active = pathname === path ? "active" : "";
-  return (
-    <a href={path} >
-      {name}
-    </a>
-  );
+  return <a href={path}>{name}</a>;
 };
