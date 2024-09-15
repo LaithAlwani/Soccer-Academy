@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { FaInstagram, FaFacebookF } from "react-icons/fa6";
 import Image from "next/image";
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
           <Suspense fallback={<Loading />}>
             {children}
             <Analytics />
+            <SpeedInsights />
           </Suspense>
           <Footer />
         </main>
