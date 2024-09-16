@@ -63,10 +63,6 @@ export default async function Home() {
             <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
             <h3>Fun and Engaging Evironment</h3>
           </li>
-          <li>
-            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
-            <h3>2 sessions per week</h3>
-          </li>
         </ul>
       </section>
       <section id="register">
