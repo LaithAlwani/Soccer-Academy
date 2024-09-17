@@ -29,6 +29,8 @@ const programSchema = new Schema(
       required: true,
     },
     test_payment_link: String,
+    price:Number,
+    sale_price:Number
   },
   { timestamps: true }
 );

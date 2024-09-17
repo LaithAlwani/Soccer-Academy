@@ -5,15 +5,15 @@ const cartSchema = new Schema(
     parent: {
       name: { type: String, required: true },
       email: { type: String, required: true },
-      password: { type: String },
+      // password: { type: String },
       phone: { type: String, required: true },
+      comments:{type:String},
     },
     players: [
       {
         name: { type: String, required: true },
-        dob: { type: Date, required: true },
+        age: { type: Number, required: true },
         gender: { type: String, required: true },
-        term: { type: Schema.Types.ObjectId, Ref: "Program", required: true },
       },
     ],
   },

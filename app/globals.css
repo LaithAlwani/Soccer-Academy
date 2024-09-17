@@ -68,6 +68,10 @@ a {
   display: inline-block;
 }
 
+h1{
+  font-size: 2rem;
+}
+
 form {
   max-width: 38rem;
   margin-inline: auto;
@@ -114,8 +118,9 @@ nav .logo-container {
   z-index: 1;
 }
 
-nav .logo-container h2 {
+nav .logo-container h1 {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 nav .logo-container span {
@@ -299,14 +304,17 @@ nav .burger-icon::after {
   text-align: center;
   box-shadow: 1px 1px 5px var(--box-shadow);
 }
-
+.program h2,
+.program h3{
+  margin: 0;
+}
 .programs-container ul {
   padding: 0;
 }
 
 .programs-container ul li {
   justify-content: center;
-  padding-block: 0.5rem;
+  padding-block-end: 0.5rem;
 }
 
 .player-info {
@@ -367,7 +375,10 @@ nav .burger-icon::after {
   height: 35px;
   border-radius: 0.25rem;
   background-color: red;
-  color: #fff;
+  color: #fff;  
+}
+.call-btn-nav{
+  display: none;
 }
 .whatsapp-btn {
   position: fixed;
@@ -446,6 +457,7 @@ form .btn {
   .flex-reverse {
     flex-direction: row-reverse;
   }
+  
 }
 
 @media only screen and (min-width: 571px) {
@@ -460,5 +472,8 @@ form .btn {
     height: 12rem;
     object-fit: cover;
     object-position: top;
+  }
+  .call-btn-nav{
+    display: block;
   }
 }

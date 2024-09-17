@@ -26,7 +26,7 @@ export default function Navbar() {
         </div>
       </Link>
       <div className="flex-center flex-reverse">
-        <a href="tel:6138841155" target="_blank" className="btn btn-primary flex-center">
+        <a href="tel:6138841155" target="_blank" className="btn btn-primary flex-center call-btn-nav">
           CALL NOW<FaPhoneFlip />
         </a>
         <a href="tel:6138841155" target="_blank" className="flex-center call-btn">
@@ -55,16 +55,17 @@ const NavLinks = () => {
   return (
     <>
       {/* <ActiveLink name="Program" path="#program" /> */}
-      <ActiveLink name="Register" path="#register" />
-      <ActiveLink name="Location" path="#location" />
-      <ActiveLink name="Meet the Coach" path="#coach" />
-      <ActiveLink name="Contact" path="#contact" />
+      <ActiveLink name="Register" path="/register" />
+      <ActiveLink name="Location" path="/#location" />
+      <ActiveLink name="Meet the Coach" path="/#coach" />
+      <ActiveLink name="Contact" path="/contact" />
     </>
   );
 };
 
 const ActiveLink = ({ name, path }) => {
   const pathname = usePathname();
-  // const active = pathname === path ? "active" : "";
-  return <a href={path}>{name}</a>;
+  console.log(pathname)
+  const active = pathname === path ? "active" : "";
+  return <a href={path} className={active}>{name}</a>;
 };

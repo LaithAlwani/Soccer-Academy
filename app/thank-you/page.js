@@ -11,8 +11,9 @@ export default function page() {
         className="animate__animated animate__fadeIn animate__slower"
       />
       <div className="animate__animated animate__fadeInRight">
-        <h2>Thanks for your payment</h2>
-        <p>A payment to OTTAWASTARS will appear on your statement.</p>
+        <h2>Thank you for registring!</h2>
+        <p>An Ottawa Stars represintitve will contact you shortly!</p>
+
         <Link href="/" className="btn btn-primary">
           Home
         </Link>
