@@ -65,7 +65,6 @@ const NavLinks = () => {
 
 const ActiveLink = ({ name, path }) => {
   const pathname = usePathname();
-  console.log(pathname)
   const active = pathname === path ? "active" : "";
   return <a href={path} className={active}>{name}</a>;
 };

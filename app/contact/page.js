@@ -1,7 +1,6 @@
 import ContactForm from "@/components/ContactForm";
-import React from "react";
 
-export default function () {
+export default function ContactPage () {
   return (
     <section>
       <ContactForm />
