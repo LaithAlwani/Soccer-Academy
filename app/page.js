@@ -67,13 +67,14 @@ export default async function Home() {
       </section>
       <section id="register">
         <h2>Registerations:</h2>
-        <h3 className="coupon">Early Bird Pricing, Fees are discounted by %20</h3>
+        <h3 className="coupon">Early Bird discounts</h3>
 
         <div className="programs-container">
           {programs.map((program) => (
             <div key={program._id} className="program">
               <h2>{program.title}</h2>
-              <h3>${program.sale_price}</h3>  
+              <h3 className="sale-price">${program.sale_price}</h3>  
+              <h3 className="price">${program.price}</h3>  
               {/* <h5>${program.price}</h5> */}
               <ul>
                 <li>{program.time}</li>
@@ -82,6 +83,7 @@ export default async function Home() {
                 </li>
               </ul>
               <Link href="/register" className="btn">Register</Link>
+              <span className="small">*Register now and pay later!</span>
               {/* <Link
                 href={
                   process.env.NODE_ENV === "development"
