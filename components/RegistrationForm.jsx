@@ -38,8 +38,9 @@ export default function RegistrationForm({ programs }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      parent: { name, email, phone, comments },
+      parent: { name, email, phone },
       players: [...playersInputFields],
+      comments
     };
     const res = await fetch("/api/register", {
       method: "POST",

@@ -7,7 +7,7 @@ const cartSchema = new Schema(
       email: { type: String, required: true },
       // password: { type: String },
       phone: { type: String, required: true },
-      comments:{type:String},
+      
     },
     players: [
       {
@@ -16,6 +16,7 @@ const cartSchema = new Schema(
         gender: { type: String, required: true },
       },
     ],
+    comments:{type:String},
   },
   { timestamps: true }
 );
