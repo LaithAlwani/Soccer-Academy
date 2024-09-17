@@ -68,7 +68,7 @@ a {
   display: inline-block;
 }
 
-h1{
+h1 {
   font-size: 2rem;
 }
 
@@ -311,20 +311,29 @@ nav .burger-icon::after {
   box-shadow: 1px 1px 5px var(--box-shadow);
 }
 .program h2,
-.program h3{
+.program h3 {
   margin: 0;
 }
-.program .price{
+.program .price {
   text-decoration: line-through;
 }
-.program .sale-price{
-position: absolute;
-top: 3rem;
-left: 1rem;
-color: red;
-font-size: 1.5rem;
-font-weight: bold;
-transform: rotate(-45deg);
+.program .sale-price-container {
+  position: absolute;
+  top: -0.75rem;
+  left: -1.5rem;
+  transform: rotate(-15deg);
+}
+.program .sale-price-container img{
+  width: 128px;
+}
+.program .sale-price-container .sale-price {
+  position: absolute;
+  top: 1.85rem;
+  left: 2.25rem;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transform: rotate(-14deg);
 }
 
 .programs-container ul {
@@ -341,7 +350,7 @@ transform: rotate(-45deg);
   align-items: center;
   justify-content: flex-start;
 }
-.small{
+.small {
   font-size: 0.8rem;
   padding-top: 1rem;
 }
@@ -370,11 +379,14 @@ transform: rotate(-45deg);
 .location-container .map {
   width: 100%;
   height: 300px;
+  object-fit: cover;
+  position: center;
 }
 
 .coupon {
   margin: 0 0 1rem;
   background-color: rgba(255, 0, 0, 0.8);
+  color: #fff;
   padding: 1rem;
   border-radius: 2rem;
   display: block;
@@ -398,18 +410,17 @@ transform: rotate(-45deg);
   height: 35px;
   border-radius: 0.25rem;
   background-color: red;
-  color: #fff;  
+  color: #fff;
 }
-.call-btn-nav{
+.call-btn-nav {
   display: none;
 }
 .whatsapp-btn {
   position: fixed;
   bottom: 0.5rem;
   right: 0.5rem;
-  
+
   z-index: 99;
-  
 }
 
 footer {
@@ -480,7 +491,6 @@ form .btn {
   .flex-reverse {
     flex-direction: row-reverse;
   }
-  
 }
 
 @media only screen and (min-width: 571px) {
@@ -496,7 +506,7 @@ form .btn {
     object-fit: cover;
     object-position: top;
   }
-  .call-btn-nav{
-    display: block;
+  .call-btn-nav {
+    display: flex;
   }
 }

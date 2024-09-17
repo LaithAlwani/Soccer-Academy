@@ -73,8 +73,11 @@ export default async function Home() {
           {programs.map((program) => (
             <div key={program._id} className="program">
               <h2>{program.title}</h2>
-              <h3 className="sale-price">${program.sale_price}</h3>  
-              <h3 className="price">${program.price}</h3>  
+              <span className="sale-price-container">
+                <img src="/bubble.png" alt="" />
+                <h3 className="sale-price">${program.sale_price}</h3>
+              </span>
+              <h3 className="price">${program.price}</h3>
               {/* <h5>${program.price}</h5> */}
               <ul>
                 <li>{program.time}</li>
@@ -82,8 +85,10 @@ export default async function Home() {
                   {program.start_date} - {program.end_date}
                 </li>
               </ul>
-              <Link href="/register" className="btn">Register</Link>
-              <span className="small">*Register now and pay later!</span>
+              <Link href="/register" className="btn">
+                Register
+              </Link>
+              <span className="small">*Payment is to be made at first practice.</span>
               {/* <Link
                 href={
                   process.env.NODE_ENV === "development"
@@ -120,7 +125,7 @@ export default async function Home() {
               section for more information on time and date.
             </p>
           </div>
-          <Map />
+          <img src="/location.png" alt="" className="map" />
         </div>
       </section>
       <section id="coach">

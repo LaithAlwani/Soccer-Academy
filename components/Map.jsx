@@ -3,9 +3,9 @@ import GoogleMapReact from "google-map-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const SchoolLocation = ({ text }) => <div>{text}</div>;
 
-export default function SimpleMap() {
+export default function Map() {
   const defaultProps = {
     center: {
       lat: 45.28462480439077,
@@ -22,9 +22,9 @@ export default function SimpleMap() {
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
-        <AnyReactComponent
-          lat={45.28037950182421}
-          lng={-75.57115449028393}
+        <SchoolLocation
+          lat={45.28462480439077}
+          lng={-75.76100089207875}
           text={<FaMapMarkerAlt color="red" size={32} />}
         />
       </GoogleMapReact>
