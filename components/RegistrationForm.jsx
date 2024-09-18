@@ -20,7 +20,6 @@ export default function RegistrationForm({ programs }) {
   const handleChange = (e, index) => {
     let data = [...playersInputFields];
     data[index][e.target.name] = e.target.value;
-    console.log(data)
     setPlayersInputFields(data);
   };
 

@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   const { email } = await req.json();
-  console.log(email);
   try {
     await connectToDB();
     const sub = await Subscriber.findOne({ email: email });
