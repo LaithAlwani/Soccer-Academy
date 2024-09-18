@@ -12,7 +12,7 @@ export default function page() {
       />
       <div className="animate__animated animate__fadeInRight">
         <h2>Thank you for registring!</h2>
-        <p>An Ottawa Stars represintitve will contact you shortly!</p>
+        <p>An Ottawa Stars representitve will contact you.</p>
 
         <Link href="/" className="btn btn-primary">
           Home
