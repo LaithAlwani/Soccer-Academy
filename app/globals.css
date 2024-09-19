@@ -354,6 +354,7 @@ nav .burger-icon::after {
   font-size: 0.8rem;
   padding-top: 1rem;
 }
+.red {color: red;}
 
 #coach {
   max-width: 600px;

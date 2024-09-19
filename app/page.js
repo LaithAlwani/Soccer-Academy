@@ -19,7 +19,6 @@ export default async function Home() {
       <section id="hero">
         <div className="hero-img-wrapper">
           <Image
-            // src="https://t3.ftcdn.net/jpg/02/06/97/12/360_F_206971263_PGblLDBkfmhCNSHC6zoCOQEf2BwSsFb7.jpg"
             src="/hero-m.jpg"
             alt="ottawa stars hero image of youth playing soccer"
             priority
@@ -89,6 +88,7 @@ export default async function Home() {
                 Register
               </Link>
               <span className="small">*Payment is to be made at first practice.</span>
+             {program.spots_left <10 &&  <span className="small red">Only {program.spots_left} spots left!</span>}
               {/* <Link
                 href={
                   process.env.NODE_ENV === "development"
@@ -143,7 +143,7 @@ export default async function Home() {
           with over 25 years of experience in youth soccer coaching and development. He began his
           coaching career with A.C. Fiorentina Canada, where he coached for seven years. In 2008, he
           moved to Saudi Arabia, where he coached Al-Nasser Club Youth for four years, established
-          one of the country’s largest academies, acted as a consultant for several soccer
+          one of the country’s largest academies, and acted as a consultant for several soccer
           academies. Now back in Canada, Ottawa Stars Soccer Academy is his latest creation where
           players can have fun, develop, and achieve results.
         </p>

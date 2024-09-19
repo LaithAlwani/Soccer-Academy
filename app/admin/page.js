@@ -1,8 +1,7 @@
-
 import Cart from "@/models/cart";
 import connectToDB from "@/utils/database";
 import { SignOutButton } from "@clerk/nextjs";
-import { auth } from '@clerk/nextjs/server'
+import { auth } from "@clerk/nextjs/server";
 
 import React from "react";
 
@@ -12,16 +11,22 @@ const getPlayers = async () => {
   return players;
 };
 export default async function AdminPage() {
-  const { sessionClaims } = auth()
+  const { sessionClaims } = auth();
 
   // If the user does not have the admin role, redirect them to the home page
-  if (sessionClaims?.metadata.role !== 'admin') {
-    return <h1>Un Authorized Access.</h1>
+  if (sessionClaims?.metadata.role !== "admin") {
+    return (
+      <>
+        <h1>Un Authorized Access.</h1>
+        <p>This portal is only for Ottawa Stars staff</p>
+        <SignOutButton className="btn btn-primary" />
+      </>
+    );
   }
   const allPlayers = await getPlayers();
   return (
     <section>
-      <SignOutButton className="btn btn-primary"/>
+      <SignOutButton className="btn btn-primary" />
 
       {allPlayers.map((player) => {
         const { parent, players } = player;
@@ -45,6 +50,5 @@ export default async function AdminPage() {
         );
       })}
     </section>
-    
   );
 }

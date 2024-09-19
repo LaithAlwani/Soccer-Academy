@@ -30,7 +30,8 @@ const programSchema = new Schema(
     },
     test_payment_link: String,
     price:Number,
-    sale_price:Number
+    sale_price: Number,
+    spots_left:Number,
   },
   { timestamps: true }
 );
