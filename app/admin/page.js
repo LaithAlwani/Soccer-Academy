@@ -7,7 +7,7 @@ import React from "react";
 
 const getPlayers = async () => {
   await connectToDB();
-  const players = await Cart.find();
+  const players = await Cart.find({}).sort({"createdAt":-1});
   return players;
 };
 export default async function AdminPage() {
@@ -27,7 +27,7 @@ export default async function AdminPage() {
   return (
     <section>
       <SignOutButton className="btn btn-primary" />
-
+      <h3>Number of registrations: {allPlayers.length}</h3>
       {allPlayers.map((player) => {
         const { parent, players } = player;
         return (
