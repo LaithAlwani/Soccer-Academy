@@ -8,12 +8,12 @@ export default function RegistrationForm({ programs }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [comments, setComments] = useState("")
   const [playersInputFields, setPlayersInputFields] = useState([
     {
       name: "",
       age: 0,
       gender: "male",
+      comments: "",
     },
   ]);
 
@@ -24,7 +24,7 @@ export default function RegistrationForm({ programs }) {
   };
 
   const addPlayer = () => {
-    let newField = { name: "", age: 0, gender: "male" };
+    let newField = { name: "", age: 0, gender: "male", comments: "" };
     setPlayersInputFields((prev) => [...prev, newField]);
   };
 
@@ -37,9 +37,10 @@ export default function RegistrationForm({ programs }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      parent: { name, email, phone },
+      parent: name,
+      email,
+      phone,
       players: [...playersInputFields],
-      comments
     };
     const res = await fetch("/api/register", {
       method: "POST",
@@ -52,7 +53,7 @@ export default function RegistrationForm({ programs }) {
 
   return (
     <section>
-        <h1>Payments arangments to be made after first practice</h1>
+      <h1>Payments arangments to be made after first practice</h1>
       <form onSubmit={handleSubmit}>
         <h2>Parent Information</h2>
         <input
@@ -105,21 +106,23 @@ export default function RegistrationForm({ programs }) {
               onChange={(e) => handleChange(e, i)}
               required
             />
-            <select
-              name="gender"
-              id=""
-              onChange={(e) => handleChange(e, i)}
-              required
-            >
+            <select name="gender" id="" onChange={(e) => handleChange(e, i)} required>
               <option value="male">Boy</option>
               <option value="female">Girl</option>
             </select>
+            {playerInput?.name && (
+              <textarea
+                name="comments"
+                id=""
+                placeholder={`Is there anything we need about ${playerInput.name}? (optional)`}
+                onChange={(e) => handleChange(e, i)}></textarea>
+            )}
           </div>
         ))}
         <button type="button" className="btn" onClick={addPlayer}>
           Add Player
         </button>
-        <textarea rows={6} placeholder="Do you have any questions or concerns?" value={comments} onChange={e=>setComments(e.target.value)}/>
+        {/* <textarea rows={6} placeholder="Do you have any questions or concerns?" value={comments} onChange={e=>setComments(e.target.value)}/> */}
         <button className="btn btn-primary">Register</button>
       </form>
     </section>

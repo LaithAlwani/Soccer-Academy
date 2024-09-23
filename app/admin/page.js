@@ -1,4 +1,5 @@
-import Cart from "@/models/cart";
+
+import Player from "@/models/player";
 import connectToDB from "@/utils/database";
 import { SignOutButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
@@ -7,7 +8,7 @@ import React from "react";
 
 const getPlayers = async () => {
   await connectToDB();
-  const players = await Cart.find({}).sort({"createdAt":-1});
+  const players = await Player.find({}).sort({ createdAt: -1 });
   return players;
 };
 export default async function AdminPage() {
@@ -24,31 +25,32 @@ export default async function AdminPage() {
     );
   }
   const allPlayers = await getPlayers();
+
   return (
     <section>
       <SignOutButton className="btn btn-primary" />
       <h3>Number of registrations: {allPlayers.length}</h3>
       {allPlayers.map((player) => {
-        const { parent, players } = player;
+        const { parent, name, age, gender, comments, email, phone, program } = player;
         return (
           <div key={player._id}>
-            <h3>{parent.name}</h3>
+            <h3>{name}</h3>
             <ul>
-              <li>email: {parent.email}</li>
-              <li>phone: {parent.phone}</li>
-
-              <strong>players:</strong>
-              <ul>
-                {players.map((player, i) => (
-                  <li key={i}>
-                    {player.name} {player.age} {player.gender}
-                  </li>
-                ))}
-              </ul>
+              <li>age: {age}</li>
+              <li>gender: {gender}</li>
+              <li>email: {email}</li>
+              <li>phone: {phone}</li>
+              <li>
+                parent:
+                <strong>{parent}</strong>
+              </li>
+              <li>comments: {comments}</li>
+              <li>program: {program}</li>
             </ul>
           </div>
         );
       })}
+
     </section>
   );
 }
