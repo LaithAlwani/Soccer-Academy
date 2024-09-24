@@ -8,7 +8,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const getPrograms = async () => {
   await connectToDB();
-  const programs = await Program.find();
+  const programs = await Program.find().sort("createdAt");
   return programs;
 };
 
