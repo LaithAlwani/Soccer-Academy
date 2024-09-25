@@ -10,7 +10,8 @@ export async function POST(req) {
     await connectToDB();
     await players.forEach(async (player) => {
       console.log(player)
-      await Player.create({...player, parent,email, phone})
+      const tempP = await Player.create({ ...player, parent, email, phone })
+      console.log(tempP._id)
     })
     // const cart = await Cart.create({ parent, players, comments });
     return NextResponse.json({ message: `Thank you!`, data }, { status: 201 });
