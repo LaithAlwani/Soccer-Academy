@@ -4,7 +4,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
-export default function RegistrationForm({ programs }) {
+export default function RegistrationForm() {
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
