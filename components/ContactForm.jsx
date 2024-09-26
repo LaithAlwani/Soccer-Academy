@@ -1,5 +1,5 @@
-'use client'
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function ContactForm() {
@@ -15,7 +15,7 @@ export default function ContactForm() {
       setLoading(true);
       const res = await fetch("/api/contact", {
         method: "POST",
-        body: JSON.stringify({ name, email, topic, message })
+        body: JSON.stringify({ name, email, topic, message }),
       });
       if (res.ok) {
         const data = await res.json();
@@ -28,13 +28,13 @@ export default function ContactForm() {
     } catch (err) {
       toast.error(err.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   };
   return (
     <>
-      <form onSubmit={handleSubmit} >
-      <h2>Get In Touch</h2>
+      <form onSubmit={handleSubmit}>
+        <h2>Get In Touch</h2>
         <input
           type="text"
           placeholder="Name"
@@ -66,11 +66,15 @@ export default function ContactForm() {
           required
         />
         {loading ? (
-          <img src="/ball.gif" alt="soccer ball bouncing" style={{ width: "64px", height: "64px" }} />
+          <img
+            src="/ball.gif"
+            alt="soccer ball bouncing"
+            style={{ width: "64px", height: "64px" }}
+          />
         ) : (
           <button className="btn btn-primary">Submit</button>
         )}
       </form>
     </>
-  )
+  );
 }

@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
 export default function RegistrationForm({ programs }) {
@@ -16,6 +17,7 @@ export default function RegistrationForm({ programs }) {
       comments: "",
     },
   ]);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e, index) => {
     let data = [...playersInputFields];
@@ -36,18 +38,25 @@ export default function RegistrationForm({ programs }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      parent: name,
-      email,
-      phone,
-      players: [...playersInputFields],
-    };
-    const res = await fetch("/api/register", {
-      method: "POST",
-      body: JSON.stringify({ data }),
-    });
-    if (res.ok) {
-      router.push("/thank-you");
+    setLoading(true);
+    try {
+      const data = {
+        parent: name,
+        email,
+        phone,
+        players: [...playersInputFields],
+      };
+      const res = await fetch("/api/register", {
+        method: "POST",
+        body: JSON.stringify({ data }),
+      });
+      if (res.ok) {
+        router.push("/thank-you");
+      }
+    } catch (err) {
+      toast.error("please try again, or contact us!");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -123,7 +132,17 @@ export default function RegistrationForm({ programs }) {
           Add Player
         </button>
         {/* <textarea rows={6} placeholder="Do you have any questions or concerns?" value={comments} onChange={e=>setComments(e.target.value)}/> */}
-        <button className="btn btn-primary">Register</button>
+        {!loading ? (
+          <button className="btn btn-primary" disabled={loading}>
+            Register
+          </button>
+        ) : (
+          <img
+            src="/ball.gif"
+            alt="soccer ball bouncing"
+            style={{ width: "64px", height: "64px" }}
+          />
+        )}
       </form>
     </section>
   );
