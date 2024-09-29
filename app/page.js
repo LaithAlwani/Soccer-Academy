@@ -88,7 +88,7 @@ export default async function Home() {
                 Register
               </Link>
               <span className="small">*Payment is to be made at first practice.</span>
-             {program.spots_left <10 &&  <span className="small red">Only a few spots left!</span>}
+             {program.spots_left <10 &&  <span className="small red">Only {program.spots_left} spots left!</span>}
               {/* <Link
                 href={
                   process.env.NODE_ENV === "development"
