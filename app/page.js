@@ -27,20 +27,20 @@ export default async function Home() {
           />
         </div>
         <div className="btn-group">
-          <p className="school-intro">
-            Welcome to Ottawa Stars Soccer Academy, where young athletes embark on an exciting
-            journey to learn soccer fundamentals. Our academy is dedicated to nurturing the talents
-            of both boys and girls through top-tier training programs. Led by a seasoned coach with
-            over 25 years of international youth development experience, we provide a supportive and
-            dynamic environment that fosters growth, teamwork, and a lifelong passion for the
-            beautiful game. Join us and watch your child thrive both on and off the field!
-          </p>
           <a href="#register" className="btn btn-primary">
             Register
           </a>
           <a href="#program" className="btn">
             Learn More
           </a>
+          <p className="school-intro">
+            Welcome to <strong>Ottawa Stars Soccer Academy</strong>, where young athletes embark on an exciting
+            journey to learn soccer fundamentals. Our academy is dedicated to nurturing the talents
+            of both boys and girls through top-tier training programs. Led by a seasoned coach with
+            over 25 years of international youth development experience, we provide a supportive and
+            dynamic environment that fosters growth, teamwork, and a lifelong passion for the
+            beautiful game. Join us and watch your child thrive both on and off the field!
+          </p>
         </div>
       </section>
       <section id="program" className="">
@@ -88,7 +88,9 @@ export default async function Home() {
                 Register
               </Link>
               <span className="small">*Payment is to be made at first practice.</span>
-             {program.spots_left <10 &&  <span className="small red">Only {program.spots_left} spots left!</span>}
+              {program.spots_left < 10 && (
+                <span className="small red">Only {program.spots_left} spots left!</span>
+              )}
               {/* <Link
                 href={
                   process.env.NODE_ENV === "development"

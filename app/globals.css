@@ -263,6 +263,7 @@ nav .burger-icon::after {
 }
 .btn-group > .btn {
   margin-inline: 0.25rem;
+  margin-block: 1rem;
 }
 
 #hero {
@@ -285,7 +286,7 @@ nav .burger-icon::after {
 .school-intro {
   padding: 1rem;
   max-width: 600px;
-  margin-inline: auto;
+  margin: auto;
 }
 
 .programs-container {
