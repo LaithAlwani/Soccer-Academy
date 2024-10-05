@@ -126,7 +126,7 @@ export default function RegistrationForm({ programs }) {
             <select name="program" id="" onChange={(e) => handleChange(e, i)} required>
               <option>Choose program</option>
               {programs.map((program) => (
-                <option value={program._id}>
+                <option key={program._id} value={program._id}>
                   {program.title} {program.time}
                 </option>
               ))}
