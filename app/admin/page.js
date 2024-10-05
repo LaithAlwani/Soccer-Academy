@@ -1,5 +1,5 @@
-
 import Player from "@/models/player";
+import Program from "@/models/program";
 import connectToDB from "@/utils/database";
 import { SignOutButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
@@ -8,7 +8,8 @@ import React from "react";
 
 const getPlayers = async () => {
   await connectToDB();
-  const players = await Player.find({}).sort({ createdAt: -1 });
+  const players = await Player.find().sort({"createdAt":-1}).populate("program")
+    
   return players;
 };
 export default async function AdminPage() {
@@ -33,7 +34,7 @@ export default async function AdminPage() {
       {allPlayers.map((player) => {
         const { parent, name, age, gender, comments, email, phone, program } = player;
         return (
-          <div key={player._id}>
+          player && <div key={player._id}>
             <h3>{name}</h3>
             <ul>
               <li>age: {age}</li>
@@ -45,12 +46,11 @@ export default async function AdminPage() {
                 <strong>{parent}</strong>
               </li>
               <li>comments: {comments}</li>
-              <li>program: {program}</li>
+              <li>program: {program?.title} {program?.time}</li>
             </ul>
           </div>
         );
       })}
-
     </section>
   );
 }
