@@ -9,8 +9,8 @@ export async function POST(req) {
   try {
     await connectToDB();
     for (const player of players) {
-      const tempP = await Player.create({ ...player, parent, email, phone });
-      console.log(tempP._id);
+      await Player.create({ ...player, parent, email, phone });
+      
     }
     // await players.forEach(async (player) => {
     //   console.log(player)

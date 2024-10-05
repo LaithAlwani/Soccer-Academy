@@ -4,7 +4,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
-export default function RegistrationForm() {
+export default function RegistrationForm({ programs }) {
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,6 +15,7 @@ export default function RegistrationForm() {
       age: 0,
       gender: "male",
       comments: "",
+      program: null,
     },
   ]);
   const [loading, setLoading] = useState(false);
@@ -26,7 +27,7 @@ export default function RegistrationForm() {
   };
 
   const addPlayer = () => {
-    let newField = { name: "", age: 0, gender: "male", comments: "" };
+    let newField = { name: "", age: 0, gender: "male", comments: "", program: null };
     setPlayersInputFields((prev) => [...prev, newField]);
   };
 
@@ -38,8 +39,11 @@ export default function RegistrationForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    for (const input of playersInputFields) {
+      if (!input.program) return toast.error("please choose a program");
+    }
     try {
+      setLoading(true);
       const data = {
         parent: name,
         email,
@@ -118,6 +122,14 @@ export default function RegistrationForm() {
             <select name="gender" id="" onChange={(e) => handleChange(e, i)} required>
               <option value="male">Boy</option>
               <option value="female">Girl</option>
+            </select>
+            <select name="program" id="" onChange={(e) => handleChange(e, i)} required>
+              <option>Choose program</option>
+              {programs.map((program) => (
+                <option key={program._id} value={program._id}>
+                  {program.title} {program.time}
+                </option>
+              ))}
             </select>
             {playerInput?.name && (
               <textarea
