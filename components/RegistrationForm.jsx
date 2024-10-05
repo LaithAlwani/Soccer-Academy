@@ -66,7 +66,7 @@ export default function RegistrationForm({ programs }) {
 
   return (
     <section>
-      <h1>Payments arangments to be made after first practice</h1>
+      <h1>Registrations</h1>
       <form onSubmit={handleSubmit}>
         <h2>Parent Information</h2>
         <input
@@ -141,7 +141,7 @@ export default function RegistrationForm({ programs }) {
           </div>
         ))}
         <button type="button" className="btn" onClick={addPlayer}>
-          Add Player
+          Add Another Player
         </button>
         {/* <textarea rows={6} placeholder="Do you have any questions or concerns?" value={comments} onChange={e=>setComments(e.target.value)}/> */}
         {!loading ? (
