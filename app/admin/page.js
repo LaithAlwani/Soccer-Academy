@@ -35,6 +35,7 @@ export default async function AdminPage() {
         const { parent, name, age, gender, comments, email, phone, program } = player;
         return (
           player && <div key={player._id}>
+            
             <h3>{name}</h3>
             <ul>
               <li>age: {age}</li>
@@ -48,6 +49,7 @@ export default async function AdminPage() {
               <li>comments: {comments}</li>
               <li>program: {program?.title} {program?.time}</li>
             </ul>
+           {player.waiver && <a href={player.waiver} className="btn">Waiver</a>}
           </div>
         );
       })}

@@ -1,8 +1,11 @@
 {
-  "title": "U13 Boys",
-  "start_date": "September 25th",
-  "end_date": "January 31st",
-  "sessions": 32,
+  "title": "U9 Boys",
+  "start_date": "November 7th",
+  "end_date": "January 30th",
+  "sessions": 10,
   "payment_link": "https://buy.stripe.com/test_bIY4itcDm6c22nSfYY",
-  "time": "Wed. 7:30-8:30 & Fri. 6:30-7:30"
+  "time": "Thursdays 7:30-8:30PM",
+  "price":150,
+  "sale_price":135,
+  "spots_left":12
 }
