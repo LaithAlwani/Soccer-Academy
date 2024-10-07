@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { FaPhoneFlip, FaWhatsapp, FaSquareWhatsapp   } from "react-icons/fa6";
+import { FaPhoneFlip, FaWhatsapp, FaSquareWhatsapp } from "react-icons/fa6";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,14 +26,22 @@ export default function Navbar() {
         </div>
       </Link>
       <div className="flex-center flex-reverse">
-        <a href="tel:6138841155" target="_blank" className="btn btn-primary flex-center call-btn-nav">
-          CALL NOW<FaPhoneFlip />
+        <a
+          href="tel:6138841155"
+          target="_blank"
+          className="btn btn-primary flex-center call-btn-nav">
+          CALL NOW
+          <FaPhoneFlip />
         </a>
         <a href="tel:6138841155" target="_blank" className="flex-center call-btn">
-          <FaPhoneFlip size={20}/>
+          <FaPhoneFlip size={20} />
         </a>
-        <a aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/16138841155" className="whatsapp-btn">
-          <FaSquareWhatsapp  size={40} color="#25D366"/>
+        <a
+          aria-label="Chat on WhatsApp"
+          target="_blank"
+          href="https://wa.me/16138841155"
+          className="whatsapp-btn">
+          <FaSquareWhatsapp size={40} color="#25D366" />
         </a>
         <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
           <NavLinks />
@@ -56,8 +64,8 @@ const NavLinks = () => {
     <>
       <ActiveLink name="Programs" path="/programs" />
       <ActiveLink name="Register" path="/register" />
-      <ActiveLink name="Location" path="/#location" />
-      <ActiveLink name="Meet the Coach" path="/#coach" />
+      <ActiveLink name="About" path="/about" />
+      {/* <ActiveLink name="Meet the Coach" path="/#coach" /> */}
       <ActiveLink name="Contact" path="/contact" />
     </>
   );
@@ -66,5 +74,9 @@ const NavLinks = () => {
 const ActiveLink = ({ name, path }) => {
   const pathname = usePathname();
   const active = pathname === path ? "active" : "";
-  return <a href={path} className={active}>{name}</a>;
+  return (
+    <a href={path} className={active}>
+      {name}
+    </a>
+  );
 };

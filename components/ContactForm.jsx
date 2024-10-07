@@ -34,7 +34,6 @@ export default function ContactForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h2>Get In Touch</h2>
         <input
           type="text"
           placeholder="Name"

@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
           <span>&copy; Ottawa ON. 2024</span>
           <span>admin@ottawastars.com</span>
-          <Link href="/admin">admin login</Link>
+          <Link href="/admin">Admin Login</Link>
         </div>
         <div className="social-links">
           <a href="https://www.instagram.com/ottawa_stars/" target="_blank">

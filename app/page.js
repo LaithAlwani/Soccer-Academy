@@ -36,7 +36,7 @@ export default async function Home() {
           </a>
           <h1>Welcome to Ottawa Stars Soccer Academy</h1>
           <p className="school-intro">
-            At <strong>Ottawa Stars Soccer Academy</strong>, we’re committed to nurturing young
+            At <strong>Ottawa Stars Soccer Academy</strong>, we&apos;re committed to nurturing young
             soccer talents through high-quality coaching and a supportive environment. Open to boys
             and girls ages 5-12, we offer flexible, age-appropriate programs tailored to develop
             soccer skills, teamwork, and sportsmanship.
@@ -192,27 +192,9 @@ export default async function Home() {
           <img src="/location.png" alt="" className="map" />
         </div>
       </section>
-      <section id="coach">
-        <h2>Meet the Head Coach!</h2>
-        <div className="coach-img-wrapper">
-          <img
-            src={"/coach.jpeg"}
-            alt="coach rafed holding soccer ball with former FIFA president sepp Blatter"
-            className="coach-rafed"
-          />
-          <span>*Coach Rafid with former FIFA president Sepp Blatter, Riyadh SA.</span>
-        </div>
-        <p>
-          Coach Rafed Alwani is a Soccer Academies Consultant and a Canada Soccer certified coach
-          with over 25 years of experience in youth soccer coaching and development. He began his
-          coaching career with A.C. Fiorentina Canada, where he coached for seven years. In 2008, he
-          moved to Saudi Arabia, where he coached Al-Nasser Club Youth for four years, established
-          one of the country’s largest academies, and acted as a consultant for several soccer
-          academies. Now back in Canada, Ottawa Stars Soccer Academy is his latest creation where
-          players can have fun, develop, and achieve results.
-        </p>
-      </section>
+     
       <section id="contact">
+        <h2>Let&apos;s Get in Touch</h2>
         <ContactForm />
       </section>
     </>
