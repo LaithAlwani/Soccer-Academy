@@ -54,7 +54,7 @@ export default function Navbar() {
 const NavLinks = () => {
   return (
     <>
-      {/* <ActiveLink name="Program" path="#program" /> */}
+      <ActiveLink name="Programs" path="/programs" />
       <ActiveLink name="Register" path="/register" />
       <ActiveLink name="Location" path="/#location" />
       <ActiveLink name="Meet the Coach" path="/#coach" />

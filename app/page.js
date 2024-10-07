@@ -26,6 +26,7 @@ export default async function Home() {
             className=""
           />
         </div>
+        
         <div className="btn-group">
           <a href="#register" className="btn btn-primary">
             Register
@@ -33,39 +34,92 @@ export default async function Home() {
           <a href="#program" className="btn">
             Learn More
           </a>
+          <h1>Welcome to Ottawa Stars Soccer Academy</h1>
           <p className="school-intro">
-            Welcome to <strong>Ottawa Stars Soccer Academy</strong>, where young athletes embark on
-            an exciting journey to learn soccer fundamentals. Our academy is dedicated to nurturing
-            the talents of both boys and girls through top-tier training programs. Led by a seasoned
-            coach with over 25 years of international youth development experience, we provide a
-            supportive and dynamic environment that fosters growth, teamwork, and a lifelong passion
-            for the beautiful game. Join us and watch your child thrive both on and off the field!
+            At <strong>Ottawa Stars Soccer Academy</strong>, we’re committed to nurturing young
+            soccer talents through high-quality coaching and a supportive environment. Open to boys
+            and girls ages 5-12, we offer flexible, age-appropriate programs tailored to develop
+            soccer skills, teamwork, and sportsmanship.
           </p>
         </div>
       </section>
       <section id="program" className="">
-        <h2>Our Program Offers:</h2>
+        <h2>Why Choose Ottawa Stars?</h2>
         <ul>
           <li>
             <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
-            <h3>Soccer Fundamentals and Skills</h3>
+            <p>
+              <strong>Experienced Coaching:</strong> Led by Coach Rafed, with 25+ years of
+              expertise.
+            </p>
           </li>
           <li>
             <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
-            <h3>Teamwork and Sportsmanship</h3>
+            <p>
+              <strong>Skill Development:</strong> Tailored programs to build fundamentals and
+              advanced techniques.
+            </p>
           </li>
           <li>
             <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
-            <h3>Youth Development Experienced Coaches</h3>
+            <p>
+              <strong>Supportive Environment: </strong>
+              Promoting teamwork, discipline, and sportsmanship.
+            </p>
           </li>
           <li>
             <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
-            <h3>Fun and Engaging Evironment</h3>
+            <p>
+              <strong>Small Group Sizes:</strong> Ensuring personalized attention for every player.
+            </p>
+          </li>
+          <li>
+            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
+            <p>
+              <strong>Flexible Pricing:</strong> Affordable rates with financing options through
+              Affirm.
+            </p>
           </li>
         </ul>
       </section>
       <section id="register">
-        <h2>Registerations:</h2>
+        <h2>Register Now!</h2>
+        <h3>Our Age Groups:</h3>
+        <ul>
+          <li>
+            <strong>U7 (Ages 5-6):</strong> Learn soccer fundamentals in a fun and engaging way.
+          </li>
+          <li>
+            <strong>U9 (Ages 7-8):</strong> Enhance technical skills and game understanding.
+          </li>
+          <li>
+            <strong>U11 (Ages 9-10):</strong> Develop advanced skills and tactical knowledge.
+          </li>
+        </ul>
+
+        <h3>Flexible Registration Options</h3>
+        <p>
+          We offer three registration options, allowing you to choose what works best for your
+          schedule:
+        </p>
+        <ul>
+          <li><strong>1 session per week:</strong> $250 per season*</li>
+          <li><strong>2 session per week:</strong> $475 per season*</li>
+          <li><strong>3 session per week:</strong> $650 per season*</li>
+        </ul>
+        <p className="small">
+          * Each season runs for approximately <strong>4 months</strong>, giving your child plenty of
+          time to grow, develop their skills, and enjoy the game.
+        </p>
+        <div className="btn-group">
+        <Link href="/programs" className="btn btn-primary">
+            Learn More
+          </Link>
+          <Link href="/register" className="btn">
+            Register Now
+          </Link>
+        </div>
+        {/* <h2>Registerations:</h2>
         <h3 className="coupon">Early Bird discounts</h3>
 
         <div className="programs-container">
@@ -99,7 +153,7 @@ export default async function Home() {
                 <span className="small red">Only {program.spots_left} spots left!</span>
               )}
               {program.spots_left === 0 && <span className="small red">Program is Full</span>}
-              {/* <Link
+             <Link
                 href={
                   process.env.NODE_ENV === "development"
                     ? program.test_payment_link
@@ -107,10 +161,10 @@ export default async function Home() {
                 }
                 className="btn">
                 Register
-              </Link> */}
+              </Link>
             </div>
-          ))}
-        </div>
+          ))} 
+        </div>*/}
       </section>
       <section id="location">
         <h2>Location:</h2>

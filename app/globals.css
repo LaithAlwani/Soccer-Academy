@@ -25,6 +25,7 @@
   font-family: var(--font-mono);
   scroll-behavior: smooth;
   letter-spacing: 0.25px;
+  
 }
 
 html,
@@ -53,12 +54,19 @@ section {
   padding: 1rem;
 }
 ul {
-  list-style: none;
+  /* list-style: none; */
+  /* padding-left: 0.75rem; */
 }
-
 li {
+  margin-block: 1rem;
+}
+#program >ul{
+  list-style: none;
+  padding-left: 0.5rem;
+}
+#program > ul > li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
 }
 
@@ -71,6 +79,7 @@ a {
 h1 {
   font-size: 2rem;
 }
+h2{font-size: 1.5rem;}
 
 form {
   max-width: 38rem;
@@ -287,6 +296,11 @@ nav .burger-icon::after {
   padding: 1rem;
   max-width: 600px;
   margin: auto;
+  font-size: 1.17em;
+}
+
+#program ul > li > p {
+  margin: 0;
 }
 
 .programs-container {
@@ -324,7 +338,7 @@ nav .burger-icon::after {
   left: -1.5rem;
   transform: rotate(-15deg);
 }
-.program .sale-price-container img{
+.program .sale-price-container img {
   width: 128px;
 }
 .program .sale-price-container .sale-price {
@@ -355,10 +369,12 @@ nav .burger-icon::after {
   font-size: 0.8rem;
   padding-top: 1rem;
 }
-.red {color: red;}
+.red {
+  color: red;
+}
 
 #coach {
-  max-width: 600px;
+  max-width: 960px;
 }
 
 #coach .coach-img-wrapper span {
@@ -499,7 +515,7 @@ form .btn {
   #coach .coach-img-wrapper {
     float: right;
     width: 275px;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 
   #coach .coach-rafed {
