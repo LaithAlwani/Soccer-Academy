@@ -20,7 +20,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Ottawa Stars Soccer Academy",
   description:
-    "Ottawa Stars Soccer Academy provides professional soccer training for boys and girls ages 5-12 in Ottawa. Led by Coach Rafed Alwani, with over 25 years of international experience, the academy offers flexible registration options and tailored programs to develop soccer skills, teamwork, and sportsmanship.",
+    "Ottawa Stars Soccer Academy provides exceptional soccer training for children ages 5-12. Our experienced coaches focus on skill development and teamwork in a fun, supportive environment.",
   keywords: ["Ottawa soccer academy","soccer practice", "youth soccer", "soccer training", "kids soccer", "U7 soccer", "U9 soccer", "U11 soccer", "soccer registration", "youth development"," Ottawa soccer for kids"],
   authors: [
     {
