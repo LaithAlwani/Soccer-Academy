@@ -38,7 +38,7 @@ export default async function Home() {
           <p className="school-intro">
             At <strong>Ottawa Stars Soccer Academy</strong>, we&apos;re committed to nurturing young
             soccer talents through high-quality coaching and a supportive environment. Open to boys
-            and girls ages 5-12, we offer flexible, age-appropriate programs tailored to develop
+            and girls ages 5 to 12, we offer flexible, age-appropriate programs tailored to develop
             soccer skills, teamwork, and sportsmanship.
           </p>
         </div>
@@ -83,8 +83,7 @@ export default async function Home() {
         </ul>
       </section>
       <section id="register">
-        <h2>Register Now!</h2>
-        <h3>Our Age Groups:</h3>
+        <h2>Our Age Groups:</h2>
         <ul>
           <li>
             <strong>U7 (Ages 5-6):</strong> Learn soccer fundamentals in a fun and engaging way.
@@ -95,9 +94,12 @@ export default async function Home() {
           <li>
             <strong>U11 (Ages 9-10):</strong> Develop advanced skills and tactical knowledge.
           </li>
+          <li>
+            <strong>U13 (Ages 11-12):</strong> Develop game strategy and prepare for competitive play.
+          </li>
         </ul>
 
-        <h3>Flexible Registration Options</h3>
+        <h2>Flexible Registration Options</h2>
         <p>
           We offer three registration options, allowing you to choose what works best for your
           schedule:
