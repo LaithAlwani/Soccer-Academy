@@ -72,7 +72,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="academy-info">
           <div className="logo">
-            <Image src="/off_logo.png" alt="ottawa stars soccer academy logo" fill priority />
+            <Image src="/off_logo.webp" alt="ottawa stars soccer academy logo" fill priority />
           </div>
           <span>&copy; Ottawa ON. 2024</span>
           <a href="mailto: admin@ottawastars.com">admin@ottawastars.com</a>
