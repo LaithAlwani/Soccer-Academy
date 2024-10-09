@@ -152,7 +152,7 @@ export default function RegistrationForm({ programs }) {
           <img
             src="/ball.gif"
             alt="soccer ball bouncing"
-            style={{ width: "64px", height: "64px" }}
+            className="ball-img"
           />
         )}
       </form>

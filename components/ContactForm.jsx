@@ -69,7 +69,7 @@ export default function ContactForm() {
           <img
             src="/ball.gif"
             alt="soccer ball bouncing"
-            style={{ width: "64px", height: "64px" }}
+            className="ball-img"
           />
         ) : (
           <button className="btn btn-primary">Submit</button>

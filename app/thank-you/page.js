@@ -4,7 +4,7 @@ import "animate.css";
 
 export default function page() {
   return (
-    <section style={{ textAlign: "center" }}>
+    <section className="text-center" >
       <IoIosCheckmarkCircleOutline
         color="green"
         size={96}

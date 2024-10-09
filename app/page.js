@@ -19,7 +19,7 @@ export default async function Home() {
       <section id="hero">
         <div className="hero-img-wrapper">
           <Image
-            src="/hero-m.jpg"
+            src="/hero-m.webp"
             alt="ottawa stars hero image of youth playing soccer"
             priority
             fill
@@ -47,19 +47,19 @@ export default async function Home() {
         <h2>Our Program Offers:</h2>
         <ul>
           <li>
-            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
+            <FaCheckCircle color="green" size={16}  />
             <h3>Soccer Fundamentals and Skills</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
+            <FaCheckCircle color="green" size={16} />
             <h3>Teamwork and Sportsmanship</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
+            <FaCheckCircle color="green" size={16}  />
             <h3>Youth Development Experienced Coaches</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={24} style={{ minWidth: "24" }} />
+            <FaCheckCircle color="green" size={16}  />
             <h3>Fun and Engaging Evironment</h3>
           </li>
         </ul>
@@ -74,7 +74,7 @@ export default async function Home() {
               <h2>{program.title}</h2>
               {program.spots_left > 0 && (
                 <span className="sale-price-container">
-                  <img src="/bubble.png" alt="bubble icon" />
+                  <img src="/bubble.webp" alt="bubble icon" />
                   <h3 className="sale-price">${program.sale_price}</h3>
                 </span>
               )}
@@ -118,7 +118,7 @@ export default async function Home() {
           <div className="location-info">
             <p>
               All practices will be held at{" "}
-              <strong style={{ fontSize: "1.2rem" }}>St. Patrick School.</strong>
+              <strong>St. Patrick School.</strong>
             </p>
 
             <strong>68 Larkin Dr, Nepean, ON K2J 1A9</strong>
@@ -135,14 +135,14 @@ export default async function Home() {
               section for more information on time and date.
             </p>
           </div>
-          <img src="/location.png" alt="practice location" className="map" />
+          <img src="/location.webp" alt="practice location" className="map" />
         </div>
       </section>
       <section id="coach">
         <h2>Meet the Head Coach!</h2>
         <div className="coach-img-wrapper">
           <img
-            src={"/coach.jpeg"}
+            src={"/coach.webp"}
             alt="coach rafed holding soccer ball with former FIFA president sepp Blatter"
             className="coach-rafed"
           />

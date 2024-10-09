@@ -77,6 +77,10 @@ form {
   margin-inline: auto;
 }
 
+details{
+  margin-bottom: 1rem;
+}
+
 input,
 select,
 textarea {
@@ -88,6 +92,10 @@ textarea {
   border: 1px solid;
   margin-block: 0.5rem;
   resize: none;
+}
+
+.text-center{
+  text-align: center;
 }
 
 nav {
@@ -440,6 +448,11 @@ footer .footer-container {
   justify-content: space-between;
   align-items: center;
 }
+footer .footer-container .academy-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 footer span {
   display: block;
@@ -465,6 +478,11 @@ form .btn {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.ball-img{
+  width: 64px;
+  height: 64px;
 }
 
 @media (prefers-color-scheme: dark) {

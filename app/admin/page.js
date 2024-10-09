@@ -38,7 +38,7 @@ export default async function AdminPage() {
         return (
           player && (
             <div key={player._id}>
-              <details style={{marginBottom:"1rem"}}>
+              <details>
                 <summary>
                   <strong>{name}</strong>
                   <span>

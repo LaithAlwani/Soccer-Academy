@@ -70,19 +70,19 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-container">
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div className="academy-info">
           <div className="logo">
             <Image src="/off_logo.png" alt="ottawa stars soccer academy logo" fill priority />
           </div>
           <span>&copy; Ottawa ON. 2024</span>
-          <span>admin@ottawastars.com</span>
+          <a href="mailto: admin@ottawastars.com">admin@ottawastars.com</a>
           <Link href="/admin">admin login</Link>
         </div>
         <div className="social-links">
-          <a href="https://www.instagram.com/ottawa_stars/" target="_blank">
+          <a href="https://www.instagram.com/ottawa_stars/" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={size} />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61564830781676" target="_blank">
+          <a href="https://www.facebook.com/profile.php?id=61564830781676" target="_blank" rel="noopener noreferrer">
             <FaFacebookF size={size} />
           </a>
         </div>
