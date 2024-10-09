@@ -3,13 +3,15 @@ import Program from "@/models/program";
 import connectToDB from "@/utils/database";
 import { SignOutButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
+import { MdPhone } from "react-icons/md";
+
 
 import React from "react";
 
 const getPlayers = async () => {
   await connectToDB();
-  const players = await Player.find().sort({"createdAt":-1}).populate("program")
-    
+  const players = await Player.find().sort({ createdAt: -1 }).populate("program");
+
   return players;
 };
 export default async function AdminPage() {
@@ -34,23 +36,36 @@ export default async function AdminPage() {
       {allPlayers.map((player) => {
         const { parent, name, age, gender, comments, email, phone, program } = player;
         return (
-          player && <div key={player._id}>
-            
-            <h3>{name}</h3>
-            <ul>
-              <li>age: {age}</li>
-              <li>gender: {gender}</li>
-              <li>email: {email}</li>
-              <li>phone: {phone}</li>
-              <li>
-                parent:
-                <strong>{parent}</strong>
-              </li>
-              <li>comments: {comments}</li>
-              <li>program: {program?.title} {program?.time}</li>
-            </ul>
-           {player.waiver && <a href={player.waiver} className="btn">Waiver</a>}
-          </div>
+          player && (
+            <div key={player._id}>
+              <details style={{marginBottom:"1rem"}}>
+                <summary>
+                  <strong>{name}</strong>
+                  <span>
+                    {" "}
+                    {program?.title} {program?.time}
+                  </span>
+                </summary>
+                <ul>
+                  <li>age: {age}</li>
+                  <li>gender: {gender}</li>
+                  <li>email: {email}</li>
+                  <li>
+                    parent:
+                    <strong>{parent}</strong>
+                  </li>
+                  <li>comments: {comments}</li>
+                  
+                  <li><a href={`tel:+${phone}`}><MdPhone size={24} color="red" /></a></li>
+                </ul>
+                {player.waiver && (
+                  <a href={player.waiver} className="btn">
+                    Waiver
+                  </a>
+                )}
+              </details>
+            </div>
+          )
         );
       })}
     </section>
