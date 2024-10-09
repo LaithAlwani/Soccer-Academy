@@ -74,7 +74,7 @@ export default async function Home() {
               <h2>{program.title}</h2>
               {program.spots_left > 0 && (
                 <span className="sale-price-container">
-                  <img src="/bubble.png" alt="" />
+                  <img src="/bubble.png" alt="bubble icon" />
                   <h3 className="sale-price">${program.sale_price}</h3>
                 </span>
               )}
@@ -135,7 +135,7 @@ export default async function Home() {
               section for more information on time and date.
             </p>
           </div>
-          <img src="/location.png" alt="" className="map" />
+          <img src="/location.png" alt="practice location" className="map" />
         </div>
       </section>
       <section id="coach">
