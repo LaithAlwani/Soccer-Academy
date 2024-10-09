@@ -18,7 +18,7 @@ export default function Navbar() {
     <nav className="">
       <Link href="/" className="logo-container">
         <div className="logo">
-          <Image src="/off_logo.png" alt="ottawa stars soccer academy logo" fill priority />
+          <Image src="/off_logo.webp" alt="ottawa stars soccer academy logo" fill priority />
         </div>
         <div>
           <h1>Ottawa Stars</h1>
