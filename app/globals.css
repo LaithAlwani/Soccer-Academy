@@ -8,7 +8,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --box-shadow: #d7d7d7;
+  --box-shadow: #797979;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -77,7 +77,7 @@ form {
   margin-inline: auto;
 }
 
-details{
+details {
   margin-bottom: 1rem;
 }
 
@@ -94,7 +94,7 @@ textarea {
   resize: none;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
@@ -252,6 +252,7 @@ nav .burger-icon::after {
   text-align: center;
   background-color: #333;
   color: #fff;
+  text-shadow: 1px 1px #333;
 }
 .btn:focus {
   opacity: 0.5;
@@ -316,7 +317,6 @@ nav .burger-icon::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   box-shadow: 1px 1px 5px var(--box-shadow);
 }
 .program h2,
@@ -332,7 +332,12 @@ nav .burger-icon::after {
   left: -1.5rem;
   transform: rotate(-15deg);
 }
-.program .sale-price-container img{
+.bubble-container {
+  position: relative;
+  width: 128px;
+  height: 96px;
+}
+.program .sale-price-container img {
   width: 128px;
 }
 .program .sale-price-container .sale-price {
@@ -363,13 +368,30 @@ nav .burger-icon::after {
   font-size: 0.8rem;
   padding-top: 1rem;
 }
-.red {color: red;}
-
-#coach {
-  max-width: 600px;
+.red {
+  color: red;
+  font-weight: 900;
+  text-shadow: 1px 1px #969696;
 }
 
+#coach {
+  /* max-width: 600px; */
+}
+#coach .coach-img-wrapper{
+  position: relative;
+  width: 100%;
+  height: 450px;
+  margin-bottom: 2rem;
+}
+
+#coach .coach-img-wrapper img{
+  object-fit: cover;
+  position: top;
+}
 #coach .coach-img-wrapper span {
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
   font-size: 0.75rem;
 }
 
@@ -387,20 +409,19 @@ nav .burger-icon::after {
   gap: 1rem;
 }
 .location-container .map {
+  position: relative;
   width: 100%;
   height: 300px;
+}
+
+.location-container .map img {
   object-fit: cover;
-  position: center;
 }
 
 .coupon {
   margin: 0 0 1rem;
   background-color: rgba(255, 0, 0, 0.8);
-  color: #fff;
-  padding: 1rem;
-  border-radius: 2rem;
   display: block;
-  text-align: center;
   max-width: 600px;
   margin-inline: auto;
 }
@@ -444,11 +465,11 @@ footer .footer-container {
   max-width: 62rem;
   margin-inline: auto;
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-footer .footer-container .academy-info{
+footer .footer-container .academy-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -461,6 +482,11 @@ footer span {
 footer .social-links {
   display: flex;
   gap: 0.5rem;
+}
+footer .nav {
+  padding: 0;
+  display: flex;
+  gap: 1rem;
 }
 
 form .btn {
@@ -480,7 +506,7 @@ form .btn {
   justify-content: center;
 }
 
-.ball-img{
+.ball-img {
   width: 64px;
   height: 64px;
 }
@@ -508,15 +534,9 @@ form .btn {
   .location-container .location-info {
     max-width: 33%;
   }
-  .flex-reverse {
-    flex-direction: row-reverse;
-  }
-}
-
-@media only screen and (min-width: 571px) {
   #coach .coach-img-wrapper {
     float: right;
-    width: 275px;
+    width: 50%;
     margin-left: 0.5rem;
   }
 
@@ -526,6 +546,19 @@ form .btn {
     object-fit: cover;
     object-position: top;
   }
+  #coach p{
+    width: 50%;
+  }
+  .flex-reverse {
+    flex-direction: row-reverse;
+  }
+  footer .footer-container {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 571px) {
+  
   .call-btn-nav {
     display: flex;
   }

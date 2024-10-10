@@ -1,6 +1,10 @@
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title:"Terms of Service"
+}
+
 export default function TermsOfService() {
   return (
     <section>

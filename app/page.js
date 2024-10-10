@@ -27,10 +27,10 @@ export default async function Home() {
           />
         </div>
         <div className="btn-group">
-          <a href="#register" className="btn btn-primary">
+          <a href="#register" aria-label="register" className="btn btn-primary">
             Register
           </a>
-          <a href="#program" className="btn">
+          <a href="#program" aria-label="learn more" className="btn">
             Learn More
           </a>
           <p className="school-intro">
@@ -47,7 +47,7 @@ export default async function Home() {
         <h2>Our Program Offers:</h2>
         <ul>
           <li>
-            <FaCheckCircle color="green" size={16}  />
+            <FaCheckCircle color="green" size={16} />
             <h3>Soccer Fundamentals and Skills</h3>
           </li>
           <li>
@@ -55,18 +55,18 @@ export default async function Home() {
             <h3>Teamwork and Sportsmanship</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={16}  />
+            <FaCheckCircle color="green" size={16} />
             <h3>Youth Development Experienced Coaches</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={16}  />
+            <FaCheckCircle color="green" size={16} />
             <h3>Fun and Engaging Evironment</h3>
           </li>
         </ul>
       </section>
       <section id="register">
         <h2>Registerations:</h2>
-        <h3 className="coupon">Early Bird discounts</h3>
+        <h3 className="btn coupon">Early Bird discounts</h3>
 
         <div className="programs-container">
           {programs.map((program) => (
@@ -74,7 +74,9 @@ export default async function Home() {
               <h2>{program.title}</h2>
               {program.spots_left > 0 && (
                 <span className="sale-price-container">
-                  <img src="/bubble.webp" alt="bubble icon" />
+                  <div className="bubble-container">
+                    <Image src="/bubble.webp" alt="bubble icon" fill />
+                  </div>
                   <h3 className="sale-price">${program.sale_price}</h3>
                 </span>
               )}
@@ -117,8 +119,7 @@ export default async function Home() {
         <div className="location-container">
           <div className="location-info">
             <p>
-              All practices will be held at{" "}
-              <strong>St. Patrick School.</strong>
+              All practices will be held at <strong>St. Patrick School.</strong>
             </p>
 
             <strong>68 Larkin Dr, Nepean, ON K2J 1A9</strong>
@@ -129,22 +130,27 @@ export default async function Home() {
               please check{" "}
               <strong>
                 <em>
-                  <a href="#register">Registeration</a>
+                  <a href="#register" aria-label="register section">
+                    Registeration
+                  </a>
                 </em>
               </strong>{" "}
               section for more information on time and date.
             </p>
           </div>
-          <img src="/location.webp" alt="practice location" className="map" />
+          <div className="map">
+            <Image src="/location.webp" alt="practice location" fill />
+          </div>
         </div>
       </section>
       <section id="coach">
         <h2>Meet the Head Coach!</h2>
         <div className="coach-img-wrapper">
-          <img
+          <Image
             src={"/coach.webp"}
             alt="coach rafed holding soccer ball with former FIFA president sepp Blatter"
             className="coach-rafed"
+            fill
           />
           <span>*Coach Rafid with former FIFA president Sepp Blatter, Riyadh SA.</span>
         </div>

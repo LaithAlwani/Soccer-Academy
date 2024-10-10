@@ -2,6 +2,10 @@ import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import Link from "next/link";
 import "animate.css";
 
+export const metadata = {
+  title:"Thank You"
+}
+
 export default function page() {
   return (
     <section className="text-center" >

@@ -8,6 +8,10 @@ const getPrograms = async () => {
   return programs;
 };
 
+export const metadata = {
+  title:"Register"
+}
+
 export default async function RegisterPage() {
   const programs = await getPrograms();
 

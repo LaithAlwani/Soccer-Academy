@@ -29,7 +29,7 @@ export default function Navbar() {
         <a href="tel:6138841155" target="_blank" rel="noopener noreferrer" className="btn btn-primary flex-center call-btn-nav">
           CALL NOW<FaPhoneFlip />
         </a>
-        <a href="tel:6138841155" target="_blank" rel="noopener noreferrer" className="flex-center call-btn">
+        <a href="tel:6138841155" aria-label="Call Now" target="_blank" rel="noopener noreferrer" className="flex-center call-btn">
           <FaPhoneFlip size={20}/>
         </a>
         <a aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/16138841155" className="whatsapp-btn">

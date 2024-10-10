@@ -14,14 +14,28 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { ClerkProvider } from "@clerk/nextjs";
 import Link from "next/link";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Ottawa Stars Soccer Academy",
+  title: {
+    template: "%s | Ottawa Stars Soccer Academy",
+    default: "Ottawa Stars Soccer Academy", // a default is required when creating a template
+  },
   description:
-    "Ottawa Stars Soccer Academy provides exceptional soccer training for children ages 5-12. Our experienced coaches focus on skill development and teamwork in a fun, supportive environment.",
-  keywords: ["Ottawa soccer academy","soccer practice", "youth soccer", "soccer training", "kids soccer", "U7 soccer", "U9 soccer", "U11 soccer", "soccer registration", "youth development"," Ottawa soccer for kids"],
+    "Ottawa Stars Soccer Academy offers professional soccer training for kids ages 5-12. Led by experienced coaches, we focus on skill development and teamwork.",
+  keywords: [
+    "Ottawa soccer academy",
+    "soccer practice",
+    "youth soccer",
+    "soccer training",
+    "kids soccer",
+    "U7 soccer",
+    "U9 soccer",
+    "U11 soccer",
+    "soccer registration",
+    "youth development",
+    " Ottawa soccer for kids",
+  ],
   authors: [
     {
       name: "Laith Alwani",
@@ -34,33 +48,34 @@ export const metadata = {
   ],
   openGraph: {
     title: "Ottawa Stars Soccer Academy | Soccer Training for Kids Ages 5-12",
-    description: "Join Ottawa Stars Soccer Academy and give your child the opportunity to develop soccer skills, teamwork, and sportsmanship under the guidance of Coach Rafed.",
+    description:
+      "Join Ottawa Stars Soccer Academy and give your child the opportunity to develop soccer skills, teamwork, and sportsmanship under the guidance of Coach Rafed.",
     url: "https://www.ottawastars.com",
     image: "https://www.ottawastars.com/off_logo.png",
-    type:"website",
-  }
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <>
-    <ClerkProvider>
-      <html lang="en">
-        <GoogleAnalytics />
-        <body className={inter.className}>
-          <main>
-            <Toaster />
-            <Navbar />
-            <Suspense fallback={<Loading />}>
-              {children}
-              <Analytics />
-              <SpeedInsights />
-            </Suspense>
-            <Footer />
-          </main>
-        </body>
-      </html>
-    </ClerkProvider>
+      <ClerkProvider>
+        <html lang="en">
+          <GoogleAnalytics />
+          <body className={inter.className}>
+            <main>
+              <Toaster />
+              <Navbar />
+              <Suspense fallback={<Loading />}>
+                {children}
+                <Analytics />
+                <SpeedInsights />
+              </Suspense>
+              <Footer />
+            </main>
+          </body>
+        </html>
+      </ClerkProvider>
     </>
   );
 }
@@ -76,13 +91,29 @@ const Footer = () => {
           </div>
           <span>&copy; Ottawa ON. 2024</span>
           <a href="mailto: admin@ottawastars.com">admin@ottawastars.com</a>
-          <Link href="/admin">admin login</Link>
         </div>
+        <ul className="nav">
+          <li>
+            <Link href="/terms-of-service">Terms of Service</Link>
+          </li>
+          <li>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </li>
+          <li>
+            <Link href="/admin">admin login</Link>
+          </li>
+        </ul>
         <div className="social-links">
-          <a href="https://www.instagram.com/ottawa_stars/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/ottawa_stars/"
+            target="_blank"
+            rel="noopener noreferrer">
             <FaInstagram size={size} />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61564830781676" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.facebook.com/profile.php?id=61564830781676"
+            target="_blank"
+            rel="noopener noreferrer">
             <FaFacebookF size={size} />
           </a>
         </div>
