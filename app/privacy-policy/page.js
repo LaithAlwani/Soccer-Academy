@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
     <section>
       <h1>Privacy Policy</h1>
       <p>
-        Ottawa Stars Soccer Academy ("we", "our", "us") is committed to protecting the privacy of
+        Ottawa Stars Soccer Academy (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to protecting the privacy of
         our users and ensuring that any personal information collected is handled responsibly.
       </p>
       <h2>Information We Collect:</h2>
