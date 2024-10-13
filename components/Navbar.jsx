@@ -57,7 +57,6 @@ const NavLinks = () => {
       {/* <ActiveLink name="Program" path="#program" /> */}
       <ActiveLink name="Register" path="/register" />
       <ActiveLink name="Location" path="/#location" />
-      <ActiveLink name="Meet the Coach" path="/#coach" />
       <ActiveLink name="Contact" path="/contact" />
     </>
   );

@@ -483,7 +483,9 @@ footer .social-links {
 footer .nav {
   padding: 0;
   display: flex;
+  justify-content: center;
   gap: 1rem;
+  width: 370px;
 }
 
 form .btn {
@@ -519,7 +521,7 @@ form .btn {
     display: none;
   }
   nav .nav-links {
-    display: block;
+    display: flex;
   }
   #hero .hero-img-wrapper img {
     object-fit: cover;

@@ -21,9 +21,9 @@ export default async function Home() {
           <Image
             src="/hero-m.webp"
             alt="ottawa stars hero image of youth playing soccer"
+            sizes={"25vw"}
             priority
             fill
-            className=""
           />
         </div>
         <div className="btn-group">
