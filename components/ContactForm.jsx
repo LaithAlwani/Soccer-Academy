@@ -57,8 +57,7 @@ export default function ContactForm() {
           required
         />
         <textarea
-          name=""
-          id=""
+          name="message"
           rows={6}
           placeholder="Message..."
           value={message}

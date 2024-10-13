@@ -74,10 +74,10 @@ export default async function Home() {
               <h2>{program.title}</h2>
               {program.spots_left > 0 && (
                 <span className="sale-price-container">
-                  <div className="bubble-container">
+                  <span className="bubble-container">
                     <Image src="/bubble.webp" alt="bubble icon" fill />
-                  </div>
-                  <h3 className="sale-price">${program.sale_price}</h3>
+                  </span>
+                  <span className="sale-price">${program.sale_price}</span>
                 </span>
               )}
               <h3 className={program.spots_left > 0 ? "price" : ""}>${program.price}</h3>

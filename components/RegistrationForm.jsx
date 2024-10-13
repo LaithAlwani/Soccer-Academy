@@ -119,12 +119,12 @@ export default function RegistrationForm({ programs }) {
               onChange={(e) => handleChange(e, i)}
               required
             />
-            <select name="gender" id="" onChange={(e) => handleChange(e, i)} required>
+            <select name="gender" onChange={(e) => handleChange(e, i)} required>
               <option value="male">Boy</option>
               <option value="female">Girl</option>
             </select>
-            <select name="program" id="" onChange={(e) => handleChange(e, i)} required>
-              <option>Choose program</option>
+            <select name="program" onChange={(e) => handleChange(e, i)} required>
+              <option value="">Choose program</option>
               {programs.map((program) => (
                 <option key={program._id} value={program._id}>
                   {program.title} {program.time}
@@ -134,7 +134,6 @@ export default function RegistrationForm({ programs }) {
             {playerInput?.name && (
               <textarea
                 name="comments"
-                id=""
                 placeholder={`Is there anything we need about ${playerInput.name}? (optional)`}
                 onChange={(e) => handleChange(e, i)}></textarea>
             )}

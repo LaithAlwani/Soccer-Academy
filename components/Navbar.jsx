@@ -32,7 +32,7 @@ export default function Navbar() {
         <a href="tel:6138841155" aria-label="Call Now" target="_blank" rel="noopener noreferrer" className="flex-center call-btn">
           <FaPhoneFlip size={20}/>
         </a>
-        <a aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/16138841155" className="whatsapp-btn">
+        <a aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer" href="https://wa.me/16138841155" className="whatsapp-btn">
           <FaSquareWhatsapp  size={40} color="#25D366"/>
         </a>
         <div className="nav-links" onClick={() => setIsMenuOpen(false)}>

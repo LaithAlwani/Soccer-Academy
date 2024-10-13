@@ -90,7 +90,7 @@ const Footer = () => {
             <Image src="/off_logo.webp" alt="ottawa stars soccer academy logo" fill priority />
           </div>
           <span>&copy; Ottawa ON. 2024</span>
-          <a href="mailto: admin@ottawastars.com">admin@ottawastars.com</a>
+          <a href="mailto:admin@ottawastars.com">admin@ottawastars.com</a>
         </div>
         <ul className="nav">
           <li>

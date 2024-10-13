@@ -333,6 +333,7 @@ nav .burger-icon::after {
   transform: rotate(-15deg);
 }
 .bubble-container {
+  display: block;
   position: relative;
   width: 128px;
   height: 96px;
