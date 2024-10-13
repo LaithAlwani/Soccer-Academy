@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import "animate.css";
 
@@ -14,7 +14,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { ClerkProvider } from "@clerk/nextjs";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
@@ -51,7 +51,7 @@ export const metadata = {
     description:
       "Join Ottawa Stars Soccer Academy and give your child the opportunity to develop soccer skills, teamwork, and sportsmanship under the guidance of Coach Rafed.",
     url: "https://www.ottawastars.com",
-    image: "https://www.ottawastars.com/off_logo.png",
+    image: "https://www.ottawastars.com/og-image.png",
     type: "website",
   },
 };
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
       <ClerkProvider>
         <html lang="en">
           <GoogleAnalytics />
-          <body className={inter.className}>
+          <body className={montserrat.className}>
             <main>
               <Toaster />
               <Navbar />
@@ -94,10 +94,10 @@ const Footer = () => {
         </div>
         <ul className="nav">
           <li>
-            <Link href="/terms-of-service">Terms of Service</Link>
+            <Link href="/terms">Terms of Service</Link>
           </li>
           <li>
-            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/privacy">Privacy Policy</Link>
           </li>
           <li>
             <Link href="/admin">admin login</Link>
