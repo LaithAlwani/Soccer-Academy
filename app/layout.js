@@ -107,13 +107,15 @@ const Footer = () => {
           <a
             href="https://www.instagram.com/ottawa_stars/"
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
+            aria-label="instagram account">
             <FaInstagram size={size} />
           </a>
           <a
             href="https://www.facebook.com/profile.php?id=61564830781676"
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
+            aria-label="facebook account">
             <FaFacebookF size={size} />
           </a>
         </div>

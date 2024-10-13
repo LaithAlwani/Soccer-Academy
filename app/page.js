@@ -88,15 +88,15 @@ export default async function Home() {
                 </li>
               </ul>
               {program.spots_left === 0 ? (
-                <Link href="/register" className="btn">
+                <Link href="/register" aria-label="Join the waiting list" className="btn">
                   Join waiting list
                 </Link>
               ) : (
-                <Link href="/register" className="btn">
+                <Link href="/register" aria-label="register now" className="btn">
                   Register
                 </Link>
               )}
-              <span className="small">*Payment is to be made at first practice.</span>
+              <span className="small">*Register Now, Pay Later!</span>
               {program.spots_left < 10 && program.spots_left > 0 && (
                 <span className="small red">Only {program.spots_left} spots left!</span>
               )}

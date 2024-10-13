@@ -310,14 +310,14 @@ nav .burger-icon::after {
   position: relative;
   width: 18rem;
   min-height: 20rem;
-  background-color: rgb(var(--background-start-rgb));
+  background-color: rgb(175, 175, 175);
   padding: 2rem 0.5rem;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 1px 1px 5px var(--box-shadow);
+  box-shadow: 1px 5px 15px var(--box-shadow);
 }
 .program h2,
 .program h3 {
@@ -336,15 +336,13 @@ nav .burger-icon::after {
   display: block;
   position: relative;
   width: 128px;
-  height: 96px;
+  aspect-ratio: 1.51;
 }
-.program .sale-price-container img {
-  width: 128px;
-}
+
 .program .sale-price-container .sale-price {
   position: absolute;
-  top: 1.85rem;
-  left: 2.25rem;
+  top: 1.75rem;
+  left: 2.3rem;
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
@@ -366,22 +364,24 @@ nav .burger-icon::after {
   justify-content: flex-start;
 }
 .small {
-  font-size: 0.8rem;
+  font-size: 16px;
   padding-top: 1rem;
 }
 .red {
   color: red;
-  font-weight: 900;
+  font-weight: 700;
+  text-shadow: 1px 1px #7f7f7f;
+  letter-spacing: 1px;
 }
 
-#coach .coach-img-wrapper{
+#coach .coach-img-wrapper {
   position: relative;
   width: 100%;
   height: 450px;
   margin-bottom: 2rem;
 }
 
-#coach .coach-img-wrapper img{
+#coach .coach-img-wrapper img {
   object-fit: cover;
   position: top;
 }
@@ -545,7 +545,7 @@ form .btn {
     object-fit: cover;
     object-position: top;
   }
-  #coach p{
+  #coach p {
     width: 50%;
   }
   .flex-reverse {
@@ -557,7 +557,6 @@ form .btn {
 }
 
 @media only screen and (min-width: 571px) {
-  
   .call-btn-nav {
     display: flex;
   }
