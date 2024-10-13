@@ -21,16 +21,16 @@ export default async function Home() {
           <Image
             src="/hero-m.webp"
             alt="ottawa stars hero image of youth playing soccer"
-            sizes={"25vw"}
             priority
+            quality={75}
             fill
           />
         </div>
         <div className="btn-group">
-          <a href="#register" aria-label="register" className="btn btn-primary">
+          <a href="#register" aria-label="register a child" className="btn btn-primary">
             Register
           </a>
-          <a href="#program" aria-label="learn more" className="btn">
+          <a href="#program" aria-label="learn more about out programs" className="btn">
             Learn More
           </a>
           <p className="school-intro">
