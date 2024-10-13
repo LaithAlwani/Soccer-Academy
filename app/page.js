@@ -96,7 +96,6 @@ export default async function Home() {
                   Register
                 </Link>
               )}
-              <span className="small">*Register Now, Pay Later!</span>
               {program.spots_left < 10 && program.spots_left > 0 && (
                 <span className="small red">Only {program.spots_left} spots left!</span>
               )}
