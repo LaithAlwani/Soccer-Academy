@@ -405,8 +405,7 @@ nav .burger-icon::after {
 }
 
 #contact {
-  background: linear-gradient(180deg, red 54%, #333);
-  height: 600px;
+  background: linear-gradient(180deg, red 50%, #333);
   max-width: 100%;
   margin-bottom: -1px;
 }
