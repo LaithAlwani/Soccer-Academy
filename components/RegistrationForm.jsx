@@ -139,17 +139,19 @@ export default function RegistrationForm({ programs }) {
             )}
           </div>
         ))}
-        <button type="button" className="btn" onClick={addPlayer}>
-          Add Player {playersInputFields.length +1 }
-        </button>
-        {/* <textarea rows={6} placeholder="Do you have any questions or concerns?" value={comments} onChange={e=>setComments(e.target.value)}/> */}
-        {!loading ? (
-          <button className="btn btn-primary" disabled={loading}>
-            Register
+        <div className="btn-gorup">
+          <button type="button" className="btn" onClick={addPlayer}>
+            Add Player {playersInputFields.length + 1}
           </button>
-        ) : (
-          <img src="/ball.gif" alt="soccer ball bouncing" className="ball-img" />
-        )}
+          {/* <textarea rows={6} placeholder="Do you have any questions or concerns?" value={comments} onChange={e=>setComments(e.target.value)}/> */}
+          {!loading ? (
+            <button className="btn btn-primary" disabled={loading}>
+              Register
+            </button>
+          ) : (
+            <img src="/ball.gif" alt="soccer ball bouncing" className="ball-img" />
+          )}
+        </div>
       </form>
     </section>
   );
