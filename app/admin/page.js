@@ -23,7 +23,7 @@ export default async function AdminPage() {
       <>
         <h1>Un Authorized Access.</h1>
         <p>This portal is only for Ottawa Stars staff</p>
-        <SignOutButton className="btn btn-primary" />
+        <SignOutButton redirecturl="/" className="btn btn-primary" />
       </>
     );
   }
