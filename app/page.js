@@ -27,11 +27,11 @@ export default async function Home() {
           />
         </div>
         <div className="btn-group">
-          <a href="#register" aria-label="register a child" className="btn btn-primary">
-            Register
-          </a>
           <a href="#program" aria-label="learn more about out programs" className="btn">
             Learn More
+          </a>
+          <a href="#register" aria-label="register a child" className="btn btn-primary">
+            Register
           </a>
           <p className="school-intro">
             Welcome to <strong>Ottawa Stars Soccer Academy</strong>, where young athletes embark on
@@ -56,7 +56,7 @@ export default async function Home() {
           </li>
           <li>
             <FaCheckCircle color="green" size={16} />
-            <h3>Youth Development Experienced Coaches</h3>
+            <h3>Experienced Coaches</h3>
           </li>
           <li>
             <FaCheckCircle color="green" size={16} />

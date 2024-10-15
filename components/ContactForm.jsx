@@ -58,7 +58,7 @@ export default function ContactForm() {
         />
         <textarea
           name="message"
-          rows={6}
+          rows={10}
           placeholder="Message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}

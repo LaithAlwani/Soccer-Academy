@@ -54,6 +54,7 @@ section {
 }
 ul {
   list-style: none;
+  padding: 0;
 }
 
 li {
@@ -85,13 +86,19 @@ input,
 select,
 textarea {
   width: 100%;
-  padding: 1rem;
-  line-height: 1.5;
-  font-size: 1.1em;
+  padding: 0.25rem 0.5rem;
+  min-height: 2.5rem;
   border-radius: 0.25rem;
-  border: 1px solid;
+  border: 1px solid #808080;
   margin-block: 0.5rem;
   resize: none;
+  background-color: rgb(var(--background-end-rgb));
+  
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline:  solid rgb(132, 209, 235);
 }
 
 .text-center {
@@ -242,7 +249,7 @@ nav .burger-icon::after {
 }
 
 .btn {
-  min-width: 7rem;
+  min-width: 8rem;
   padding: 1rem;
   margin-right: 0;
   border: 1px solid;
@@ -254,7 +261,7 @@ nav .burger-icon::after {
   color: #fff;
   text-shadow: 1px 1px #333;
 }
-.btn:focus {
+.btn:active {
   opacity: 0.5;
 }
 
@@ -374,7 +381,7 @@ nav .burger-icon::after {
   text-shadow: 1px 1px #7f7f7f;
   letter-spacing: 1px;
 }
-#coach{
+#coach {
   margin-bottom: 5rem;
 }
 
@@ -382,7 +389,6 @@ nav .burger-icon::after {
   position: relative;
   width: 100%;
   aspect-ratio: 1.25;
-
 }
 
 #coach .coach-img-wrapper img {
@@ -553,7 +559,7 @@ form .btn {
   .location-container .location-info {
     max-width: 33%;
   }
-  
+
   #coach .coach-img-wrapper {
     float: right;
     width: 50%;
@@ -569,8 +575,6 @@ form .btn {
   #coach p {
     width: 50%;
   }
-
-  
 
   .flex-reverse {
     flex-direction: row-reverse;

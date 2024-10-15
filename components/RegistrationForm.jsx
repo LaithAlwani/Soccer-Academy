@@ -120,8 +120,8 @@ export default function RegistrationForm({ programs }) {
               required
             />
             <select name="gender" onChange={(e) => handleChange(e, i)} required>
-              <option value="male">Boy</option>
-              <option value="female">Girl</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
             </select>
             <select name="program" onChange={(e) => handleChange(e, i)} required>
               <option value="">Choose program</option>
@@ -140,7 +140,7 @@ export default function RegistrationForm({ programs }) {
           </div>
         ))}
         <button type="button" className="btn" onClick={addPlayer}>
-          Add Another Player
+          Add Player {playersInputFields.length +1 }
         </button>
         {/* <textarea rows={6} placeholder="Do you have any questions or concerns?" value={comments} onChange={e=>setComments(e.target.value)}/> */}
         {!loading ? (
@@ -148,11 +148,7 @@ export default function RegistrationForm({ programs }) {
             Register
           </button>
         ) : (
-          <img
-            src="/ball.gif"
-            alt="soccer ball bouncing"
-            className="ball-img"
-          />
+          <img src="/ball.gif" alt="soccer ball bouncing" className="ball-img" />
         )}
       </form>
     </section>
