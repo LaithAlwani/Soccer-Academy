@@ -32,7 +32,7 @@ export default function ContactForm() {
     }
   };
   return (
-    <section>
+    <>
       <form onSubmit={handleSubmit}>
         <h2>Have Questions? We’re Here to Help!</h2>
         <input
@@ -74,6 +74,6 @@ export default function ContactForm() {
           <button className="btn btn-primary">Submit</button>
         )}
       </form>
-    </section>
+    </>
   );
 }
