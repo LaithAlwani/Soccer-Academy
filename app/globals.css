@@ -74,7 +74,6 @@ h1 {
 }
 
 form {
-  max-width: 38rem;
   margin-inline: auto;
 }
 
@@ -306,9 +305,9 @@ nav .burger-icon::after {
 #hero .hero-title {
   max-width: 62rem;
   width: 100%;
-  margin-inline: auto;
-  padding-top: 20rem;
-  padding-inline: 1rem;
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1rem;
 }
 
 .school-intro {
@@ -566,6 +565,16 @@ form .btn {
   #hero .hero-img-wrapper .main-img {
     object-position: center;
   }
+
+  #hero .hero-title {
+    max-width: 62rem;
+    width: 100%;
+    margin-inline: auto;
+    position: static;
+    padding-top: 20rem;
+    padding-inline: 1rem;
+  }
+
   .location-container .map {
     max-width: 50%;
   }
