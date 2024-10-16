@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import RegistrationForm from "@/components/RegistrationForm";
 import Program from "@/models/program";
 import connectToDB from "@/utils/database";
@@ -9,15 +10,16 @@ const getPrograms = async () => {
 };
 
 export const metadata = {
-  title:"Register"
-}
+  title: "Register",
+};
 
 export default async function RegisterPage() {
   const programs = await getPrograms();
 
   return (
-    <section>
+    <>
+      <Hero image="/register.jpg" alt="" title="Registration" />
       <RegistrationForm programs={programs} />
-    </section>
+    </>
   );
 }

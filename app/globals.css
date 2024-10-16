@@ -93,12 +93,11 @@ textarea {
   margin-block: 0.5rem;
   resize: none;
   background-color: rgb(var(--background-end-rgb));
-  
 }
 input:focus,
 select:focus,
 textarea:focus {
-  outline:  solid rgb(132, 209, 235);
+  outline: solid rgb(132, 209, 235);
 }
 
 .text-center {
@@ -283,7 +282,7 @@ nav .burger-icon::after {
 }
 
 #hero {
-  min-height: 60svh;
+  min-height: 45svh;
   max-width: 100vw;
   padding: 0;
 }
@@ -291,14 +290,25 @@ nav .burger-icon::after {
 #hero .hero-img-wrapper {
   position: relative;
   width: 100vw;
-  height: 60svh;
+  height: 45svh;
   background: linear-gradient(white 0%, transparent 25%, white 95%);
 }
 
 #hero .hero-img-wrapper img {
   object-fit: cover;
-  object-position: -6rem 30%;
+  object-position: center;
   z-index: -1;
+}
+#hero .hero-img-wrapper .main-img {
+  object-position: -6rem 30%;
+}
+
+#hero .hero-title {
+  max-width: 62rem;
+  width: 100%;
+  margin-inline: auto;
+  padding-top: 20rem;
+  padding-inline: 1rem;
 }
 
 .school-intro {
@@ -374,7 +384,7 @@ nav .burger-icon::after {
   justify-content: flex-start;
 }
 .small {
-  font-size: 16px;
+  font-size: 14px;
   padding-top: 1rem;
 }
 .red {
@@ -432,7 +442,7 @@ nav .burger-icon::after {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
 }
@@ -473,6 +483,7 @@ nav .burger-icon::after {
 }
 .call-btn-nav {
   display: none;
+  padding: 0.5rem;
 }
 .whatsapp-btn {
   position: fixed;
@@ -551,9 +562,9 @@ form .btn {
   nav .nav-links {
     display: flex;
   }
-  #hero .hero-img-wrapper img {
-    object-fit: cover;
-    object-position: bottom;
+  
+  #hero .hero-img-wrapper .main-img {
+    object-position: center;
   }
   .location-container .map {
     max-width: 50%;

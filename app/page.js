@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Map from "@/components/Map";
 import { FaCheckCircle } from "react-icons/fa";
+import Hero from "@/components/Hero";
 
 const getPrograms = async () => {
   await connectToDB();
@@ -16,33 +17,26 @@ export default async function Home() {
   const programs = await getPrograms();
   return (
     <>
-      <section id="hero">
-        <div className="hero-img-wrapper">
-          <Image
-            src="/hero-m.webp"
-            alt="ottawa stars hero image of youth playing soccer"
-            priority
-            quality={75}
-            fill
-          />
-        </div>
-        <div className="btn-group">
-          <a href="#program" aria-label="learn more about out programs" className="btn">
-            Learn More
-          </a>
-          <a href="#register" aria-label="register a child" className="btn btn-primary">
-            Register
-          </a>
-          <p className="school-intro">
-            Welcome to <strong>Ottawa Stars Soccer Academy</strong>, where young athletes embark on
-            an exciting journey to learn soccer fundamentals. Our academy is dedicated to nurturing
-            the talents of both boys and girls through top-tier training programs. Led by a seasoned
-            coach with over 25 years of international youth development experience, we provide a
-            supportive and dynamic environment that fosters growth, teamwork, and a lifelong passion
-            for the beautiful game. Join us and watch your child thrive both on and off the field!
-          </p>
-        </div>
-      </section>
+      <Hero
+        image="/hero-m.webp"
+        alt="ottawa stars hero image of youth playing soccer"
+        styles="main-img"
+      />
+      <div className="btn-group">
+        <a href="#program" aria-label="learn more about out programs" className="btn">
+          Learn More
+        </a>
+        <a href="#register" aria-label="register a child" className="btn btn-primary">
+          Register
+        </a>
+        <h1>Welcome to Ottawa Stars Soccer Academy</h1>
+        <p className="school-intro">
+          At <strong>Ottawa Stars Soccer Academy</strong>, we're committed to nurturing young soccer
+          talents through high-quality coaching and a supportive environment. Open to boys and girls
+          ages 5 to 12, we offer flexible, age-appropriate programs tailored to develop soccer
+          skills, teamwork, and sportsmanship.
+        </p>
+      </div>
       <section id="program" className="">
         <h2>Our Program Offers:</h2>
         <ul>
@@ -125,8 +119,8 @@ export default async function Home() {
             <p>
               Weekdays between <strong>6:30-8:30PM</strong>
             </p>
-            <p>
-              please check{" "}
+            <p className="small">
+              *please check{" "}
               <strong>
                 <em>
                   <a href="#register" aria-label="register section">

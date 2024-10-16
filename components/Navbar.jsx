@@ -27,7 +27,7 @@ export default function Navbar() {
       </Link>
       <div className="flex-center flex-reverse">
         <a href="tel:6138841155" target="_blank" rel="noopener noreferrer" className="btn btn-primary flex-center call-btn-nav">
-          CALL NOW<FaPhoneFlip />
+         <span>CALL NOW</span><FaPhoneFlip />
         </a>
         <a href="tel:6138841155" aria-label="Call Now" target="_blank" rel="noopener noreferrer" className="flex-center call-btn">
           <FaPhoneFlip size={20}/>

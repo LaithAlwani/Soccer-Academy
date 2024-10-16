@@ -66,7 +66,6 @@ export default function RegistrationForm({ programs }) {
 
   return (
     <section>
-      <h1>Registrations</h1>
       <form onSubmit={handleSubmit}>
         <h2>Parent Information</h2>
         <input

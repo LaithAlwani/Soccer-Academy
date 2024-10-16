@@ -32,9 +32,8 @@ export default function ContactForm() {
     }
   };
   return (
-    <>
+    <section>
       <form onSubmit={handleSubmit}>
-        <h2>Get In Touch</h2>
         <input
           type="text"
           placeholder="Name"
@@ -74,6 +73,6 @@ export default function ContactForm() {
           <button className="btn btn-primary">Submit</button>
         )}
       </form>
-    </>
+    </section>
   );
 }
