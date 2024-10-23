@@ -118,10 +118,10 @@ export default function RegistrationForm({ programs }) {
               onChange={(e) => handleChange(e, i)}
               required
             />
-            <select name="gender" onChange={(e) => handleChange(e, i)} required>
+            {/* <select name="gender" onChange={(e) => handleChange(e, i)} required>
               <option value="male">Male</option>
               <option value="female">Female</option>
-            </select>
+            </select> */}
             <select name="program" onChange={(e) => handleChange(e, i)} required>
               <option value="">Choose program</option>
               {programs.map((program) => (
