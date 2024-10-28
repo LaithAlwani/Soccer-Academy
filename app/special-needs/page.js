@@ -40,7 +40,7 @@ export default function SpecialNeedsPage() {
   };
   return (
     <>
-      <Hero image="/hero-m.webp" alt="kids playing soccer" title="Special Needs Program" />
+      <Hero image="/hero-m.webp" alt="kids playing soccer" title="Special Needs" />
       <section>
         <h2>A Soccer Program Tailored for All Abilities</h2>
         <p>
