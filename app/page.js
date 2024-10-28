@@ -107,34 +107,42 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <section id="location">
-        <h2>Location:</h2>
+      <section id="locations">
+        <h2>Locations:</h2>
         <div className="location-container">
           <div className="location-info">
-            <p>
-              All practices will be held at <strong>St. Patrick School.</strong>
-            </p>
+            <h3>St. Patrick School.</h3>
 
             <strong>68 Larkin Dr, Nepean, ON K2J 1A9</strong>
-            <p>
-              Weekdays between <strong>6:30-8:30PM</strong>
-            </p>
-            <p className="small">
-              *please check{" "}
-              <strong>
-                <em>
-                  <a href="#register" aria-label="register section">
-                    Registeration
-                  </a>
-                </em>
-              </strong>{" "}
-              section for more information on time and date.
-            </p>
           </div>
           <div className="map">
             <Image src="/location.webp" alt="practice location" fill />
           </div>
         </div>
+        <div className="location-container">
+          <div className="location-info">
+            <h3>St. Mary School</h3>
+
+            <strong> 5536 Bank St, Gloucester, ON K1X 1G9</strong>
+          </div>
+          <div className="map">
+            <Image src="/location_02.webp" alt="practice location" fill />
+          </div>
+        </div>
+        <p>
+          Weekdays between <strong>6:30-8:30PM</strong>
+        </p>
+        <p className="small">
+          *please check{" "}
+          <strong>
+            <em>
+              <a href="#register" aria-label="register section">
+                Registeration
+              </a>
+            </em>
+          </strong>{" "}
+          section for more information on time and date.
+        </p>
       </section>
       <section id="coach">
         <h2>Meet the Head Coach!</h2>

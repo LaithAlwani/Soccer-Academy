@@ -5,7 +5,6 @@ import { SignOutButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { MdPhone } from "react-icons/md";
 
-
 import React from "react";
 
 const getPlayers = async () => {
@@ -55,8 +54,13 @@ export default async function AdminPage() {
                     <strong>{parent}</strong>
                   </li>
                   <li>comments: {comments}</li>
-                  
-                  <li><a href={`tel:+${phone}`}><MdPhone size={24} color="red" /></a></li>
+
+                  <li>
+                    <a href={`tel:+${phone}`}>
+                      <MdPhone size={24} color="red" />
+                    </a>
+                    {phone}
+                  </li>
                 </ul>
                 {player.waiver && (
                   <a href={player.waiver} className="btn">
