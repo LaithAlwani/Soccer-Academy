@@ -121,7 +121,7 @@ export default async function Home() {
         </div>
         <div className="location-container">
           <div className="location-info">
-            <h3>St. Mary School</h3>
+            <h3>St. Mary School <span className="small">(opens January 2025)</span></h3>
 
             <strong> 5536 Bank St, Gloucester, ON K1X 1G9</strong>
           </div>
