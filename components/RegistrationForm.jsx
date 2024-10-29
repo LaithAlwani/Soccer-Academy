@@ -4,8 +4,6 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { MdOutlineDeleteOutline, MdAdd } from "react-icons/md";
 
-
-
 export default function RegistrationForm({ programs }) {
   const router = useRouter();
   const [name, setName] = useState("");
@@ -17,19 +15,34 @@ export default function RegistrationForm({ programs }) {
       age: 0,
       gender: "male",
       comments: "",
-      program: null,
+      programs: [],
     },
   ]);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e, index) => {
+    console.log(e.target.name, e.target.checked);
     let data = [...playersInputFields];
-    data[index][e.target.name] = e.target.value;
+    if (e.target.name === "programs") {
+      if (e.target.checked) {
+        data[index][e.target.name].push(e.target.value);
+      } else {
+        console.log(e.target.value)
+        const i = data[index][e.target.name].indexOf(e.target.value);
+        console.log(i)
+        if (i > -1) {
+          data[index][e.target.name].splice(i, 1);
+        }
+      }
+    } else {
+      data[index][e.target.name] = e.target.value;
+    }
+    console.log(data);
     setPlayersInputFields(data);
   };
 
   const addPlayer = () => {
-    let newField = { name: "", age: 0, gender: "male", comments: "", program: null };
+    let newField = { name: "", age: 0, gender: "male", comments: "", programs: [] };
     setPlayersInputFields((prev) => [...prev, newField]);
   };
 
@@ -42,8 +55,9 @@ export default function RegistrationForm({ programs }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     for (const input of playersInputFields) {
-      if (!input.program) return toast.error("please choose a program");
+      if (!input.programs.length) return toast.error("please choose a program");
     }
+    console.log(playersInputFields);
     try {
       setLoading(true);
       const data = {
@@ -121,11 +135,30 @@ export default function RegistrationForm({ programs }) {
               required
             />
             <select name="location" onChange={(e) => handleChange(e, i)} required>
-            <option value="" disabled selected>Choose Location</option>
+              <option value="" disabled selected>
+                Choose Location
+              </option>
               <option value="st. patrik">St. Patrik School, 68 Larkin Dr.</option>
               <option value="st. mary">St. Mary School, 5536 Bank St.</option>
             </select>
-            <select name="program" onChange={(e) => handleChange(e, i)} required>
+            {playerInput.location &&
+              programs
+                .filter((program) => program.location === playerInput.location)
+                .map((program) => (
+                  <>
+                    <input
+                      type="checkbox"
+                      key={program._id}
+                      id={program._id}
+                      name="programs"
+                      onChange={(e) => handleChange(e, i)}
+                      value={program._id}
+                    />
+                    <label htmlFor={program.title}>{program.title}</label>
+                  </>
+                ))}
+
+            {/* <select name="program" onChange={(e) => handleChange(e, i)} required>
               <option value="" disabled selected>{playerInput.location? "Choose program" :"Please choose a location first"}</option>
               {programs
                 .filter((program) => program.location === playerInput.location)
@@ -134,7 +167,7 @@ export default function RegistrationForm({ programs }) {
                     {program.title} {program.time}
                   </option>
                 ))}
-            </select>
+            </select> */}
             {playerInput?.name && (
               <textarea
                 name="comments"
