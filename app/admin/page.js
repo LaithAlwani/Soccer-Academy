@@ -9,8 +9,11 @@ import React from "react";
 
 const getPlayers = async () => {
   await connectToDB();
-  const players = await Player.find().sort({ createdAt: -1 }).populate("program");
-
+  const players = await Player.find()
+    .sort({ createdAt: -1 })
+    .populate("programs")
+    .populate("program");
+  console.log(players);
   return players;
 };
 export default async function AdminPage() {
@@ -33,17 +36,24 @@ export default async function AdminPage() {
       <SignOutButton className="btn btn-primary" />
       <h3>Number of registrations: {allPlayers.length}</h3>
       {allPlayers.map((player) => {
-        const { parent, name, age, gender, comments, email, phone, program } = player;
+        const { parent, name, age, gender, comments, email, phone, programs, program } = player;
         return (
           player && (
             <div key={player._id}>
+              {console.log(player)}
               <details>
                 <summary>
                   <strong>{name}</strong>
+
                   <span>
                     {" "}
                     {program?.title} {program?.time}
                   </span>
+                  {programs?.map((p) => (
+                    <>
+                      <span>{p.title} {p.time}</span>,{" "}
+                    </>
+                  ))}
                 </summary>
                 <ul>
                   <li>age: {age}</li>

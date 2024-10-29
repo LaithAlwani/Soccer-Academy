@@ -1,7 +1,7 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap"); */
 
 :root {
-  --border-radius: 2rem;
+  --border-radius: 0.25rem;
   /* --font-mono: "Roboto", sans-serif; */
 
   --foreground-rgb: 51, 51, 51;
@@ -98,6 +98,11 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: solid rgb(132, 209, 235);
+}
+
+input[type="checkbox"] {
+  width: 1rem;
+  outline: none;
 }
 
 .text-center {
@@ -456,14 +461,6 @@ nav .burger-icon::after {
   object-fit: cover;
 }
 
-.coupon {
-  margin: 0 0 1rem;
-  background-color: rgba(255, 0, 0, 0.8);
-  display: block;
-  max-width: 600px;
-  margin-inline: auto;
-}
-
 .flex-center {
   display: flex;
   align-items: center;
@@ -491,6 +488,34 @@ nav .burger-icon::after {
   right: 0.5rem;
 
   z-index: 99;
+}
+.add-player {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  text-decoration: underline;
+  color: #3366cc;
+  margin-block: 0.5rem;
+  font-weight: 700;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 0;
+  transition: height 0.2s ease-in-out;
+}
+
+.programs-grid.open{
+  height: 10rem;
+}
+
+.programs-grid > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
 }
 
 footer {
@@ -603,8 +628,10 @@ form .btn {
   #coach p {
     width: 50%;
   }
+  .programs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 
-  
   footer .footer-container {
     flex-direction: row;
   }

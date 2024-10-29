@@ -27,12 +27,10 @@ const playerSchema = new Schema(
       type: String,
       required: true,
     },
+    program:{ type: Schema.Types.ObjectId, ref: "Program" },
     comments: String,
-    program: {
-      type: Schema.Types.ObjectId,
-      ref: "Program",
-    },
-    waiver:String
+    programs: [{ type: Schema.Types.ObjectId, ref: "Program" }],
+    waiver: String,
   },
   { timestamps: true }
 );
