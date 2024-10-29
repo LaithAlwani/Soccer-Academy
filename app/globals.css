@@ -491,9 +491,9 @@ nav .burger-icon::after {
   justify-content: flex-end;
   margin-left: auto;
   text-decoration: underline;
-  color: rgba(6, 6, 255, 0.686);
-  margin-block:0.5rem
-  
+  color: #3366CC;
+  margin-block:0.5rem;
+  font-weight: 700;
 }
 
 footer {
