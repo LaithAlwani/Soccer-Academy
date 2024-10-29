@@ -126,7 +126,7 @@ export default function RegistrationForm({ programs }) {
               <option value="st. mary">St. Mary School, 5536 Bank St.</option>
             </select>
             <select name="program" onChange={(e) => handleChange(e, i)} required>
-              <option value="" disabled selected>Choose program</option>
+              <option value="" disabled selected>{playerInput.location? "Choose program" :"Please choose a location first"}</option>
               {programs
                 .filter((program) => program.location === playerInput.location)
                 .map((program) => (
