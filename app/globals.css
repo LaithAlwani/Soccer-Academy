@@ -100,6 +100,11 @@ textarea:focus {
   outline: solid rgb(132, 209, 235);
 }
 
+input[type="checkbox"] {
+  width: 1rem;
+  outline: none;
+}
+
 .text-center {
   text-align: center;
 }
@@ -456,7 +461,6 @@ nav .burger-icon::after {
   object-fit: cover;
 }
 
-
 .flex-center {
   display: flex;
   align-items: center;
@@ -485,15 +489,33 @@ nav .burger-icon::after {
 
   z-index: 99;
 }
-.add-player{
+.add-player {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-left: auto;
   text-decoration: underline;
-  color: #3366CC;
-  margin-block:0.5rem;
+  color: #3366cc;
+  margin-block: 0.5rem;
   font-weight: 700;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 0;
+  transition: height 0.2s ease-in-out;
+}
+
+.programs-grid.open{
+  height: 10rem;
+}
+
+.programs-grid > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
 }
 
 footer {
@@ -606,8 +628,10 @@ form .btn {
   #coach p {
     width: 50%;
   }
+  .programs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 
-  
   footer .footer-container {
     flex-direction: row;
   }

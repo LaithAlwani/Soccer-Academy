@@ -21,23 +21,21 @@ export default function RegistrationForm({ programs }) {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e, index) => {
-    console.log(e.target.name, e.target.checked);
     let data = [...playersInputFields];
     if (e.target.name === "programs") {
       if (e.target.checked) {
         data[index][e.target.name].push(e.target.value);
       } else {
-        console.log(e.target.value)
-        const i = data[index][e.target.name].indexOf(e.target.value);
-        console.log(i)
-        if (i > -1) {
-          data[index][e.target.name].splice(i, 1);
+        const idx = data[index][e.target.name].indexOf(e.target.value);
+
+        if (idx > -1) {
+          data[index][e.target.name].splice(idx, 1);
         }
       }
     } else {
       data[index][e.target.name] = e.target.value;
     }
-    console.log(data);
+
     setPlayersInputFields(data);
   };
 
@@ -135,39 +133,32 @@ export default function RegistrationForm({ programs }) {
               required
             />
             <select name="location" onChange={(e) => handleChange(e, i)} required>
-              <option value="" disabled selected>
+              <option value="" selected hidden>
                 Choose Location
               </option>
               <option value="st. patrik">St. Patrik School, 68 Larkin Dr.</option>
               <option value="st. mary">St. Mary School, 5536 Bank St.</option>
             </select>
-            {playerInput.location &&
-              programs
-                .filter((program) => program.location === playerInput.location)
-                .map((program) => (
-                  <>
-                    <input
-                      type="checkbox"
-                      key={program._id}
-                      id={program._id}
-                      name="programs"
-                      onChange={(e) => handleChange(e, i)}
-                      value={program._id}
-                    />
-                    <label htmlFor={program.title}>{program.title}</label>
-                  </>
-                ))}
-
-            {/* <select name="program" onChange={(e) => handleChange(e, i)} required>
-              <option value="" disabled selected>{playerInput.location? "Choose program" :"Please choose a location first"}</option>
-              {programs
-                .filter((program) => program.location === playerInput.location)
-                .map((program) => (
-                  <option key={program._id} value={program._id}>
-                    {program.title} {program.time}
-                  </option>
-                ))}
-            </select> */}
+            <div className={`programs-grid ${playerInput.location ? "open" : ""}`}>
+              {playerInput.location &&
+                programs
+                  .filter((program) => program.location === playerInput.location)
+                  .map((program) => (
+                    <div>
+                      <input
+                        type="checkbox"
+                        key={program._id}
+                        id={program._id}
+                        name="programs"
+                        onChange={(e) => handleChange(e, i)}
+                        value={program._id}
+                      />
+                      <label>
+                        {program.title} {program.time}
+                      </label>
+                    </div>
+                  ))}
+            </div>
             {playerInput?.name && (
               <textarea
                 name="comments"
