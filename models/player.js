@@ -27,6 +27,7 @@ const playerSchema = new Schema(
       type: String,
       required: true,
     },
+    program:{ type: Schema.Types.ObjectId, ref: "Program" },
     comments: String,
     programs: [{ type: Schema.Types.ObjectId, ref: "Program" }],
     waiver: String,
