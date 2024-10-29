@@ -60,8 +60,6 @@ export default async function Home() {
       </section>
       <section id="register">
         <h2>Registerations:</h2>
-        <h3 className="btn coupon">Early Bird discounts</h3>
-
         <div className="programs-container">
           {programs.map((program) => (
             <div key={program._id} className="program">

@@ -1,7 +1,7 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap"); */
 
 :root {
-  --border-radius: 2rem;
+  --border-radius: 0.25rem;
   /* --font-mono: "Roboto", sans-serif; */
 
   --foreground-rgb: 51, 51, 51;
@@ -456,13 +456,6 @@ nav .burger-icon::after {
   object-fit: cover;
 }
 
-.coupon {
-  margin: 0 0 1rem;
-  background-color: rgba(255, 0, 0, 0.8);
-  display: block;
-  max-width: 600px;
-  margin-inline: auto;
-}
 
 .flex-center {
   display: flex;
@@ -491,6 +484,16 @@ nav .burger-icon::after {
   right: 0.5rem;
 
   z-index: 99;
+}
+.add-player{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  text-decoration: underline;
+  color: rgba(6, 6, 255, 0.686);
+  margin-block:0.5rem
+  
 }
 
 footer {

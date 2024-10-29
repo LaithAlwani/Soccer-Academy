@@ -2,7 +2,9 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { MdOutlineDeleteOutline } from "react-icons/md";
+import { MdOutlineDeleteOutline, MdAdd } from "react-icons/md";
+
+
 
 export default function RegistrationForm({ programs }) {
   const router = useRouter();
@@ -118,17 +120,20 @@ export default function RegistrationForm({ programs }) {
               onChange={(e) => handleChange(e, i)}
               required
             />
-            {/* <select name="gender" onChange={(e) => handleChange(e, i)} required>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select> */}
+            <select name="location" onChange={(e) => handleChange(e, i)} required>
+            <option value="" disabled selected>Choose Location</option>
+              <option value="st. patrik">St. Patrik School, 68 Larkin Dr.</option>
+              <option value="st. mary">St. Mary School, 5536 Bank St.</option>
+            </select>
             <select name="program" onChange={(e) => handleChange(e, i)} required>
-              <option value="">Choose program</option>
-              {programs.map((program) => (
-                <option key={program._id} value={program._id}>
-                  {program.title} {program.time}
-                </option>
-              ))}
+              <option value="" disabled selected>Choose program</option>
+              {programs
+                .filter((program) => program.location === playerInput.location)
+                .map((program) => (
+                  <option key={program._id} value={program._id}>
+                    {program.title} {program.time}
+                  </option>
+                ))}
             </select>
             {playerInput?.name && (
               <textarea
@@ -139,10 +144,9 @@ export default function RegistrationForm({ programs }) {
           </div>
         ))}
         <div className="btn-gorup">
-          <button type="button" className="btn" onClick={addPlayer}>
-            Add Player {playersInputFields.length + 1}
-          </button>
-          {/* <textarea rows={6} placeholder="Do you have any questions or concerns?" value={comments} onChange={e=>setComments(e.target.value)}/> */}
+          <span type="button" className="add-player" onClick={addPlayer}>
+            Add Player <MdAdd />
+          </span>
           {!loading ? (
             <button className="btn btn-primary" disabled={loading}>
               Register
