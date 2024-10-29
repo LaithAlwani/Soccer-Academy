@@ -144,10 +144,9 @@ export default function RegistrationForm({ programs }) {
                 programs
                   .filter((program) => program.location === playerInput.location)
                   .map((program) => (
-                    <div>
+                    <div key={program._id}>
                       <input
                         type="checkbox"
-                        key={program._id}
                         id={program._id}
                         name="programs"
                         onChange={(e) => handleChange(e, i)}
