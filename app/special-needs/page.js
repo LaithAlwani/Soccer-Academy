@@ -40,66 +40,150 @@ export default function SpecialNeedsPage() {
   };
   return (
     <>
-      <Hero image="/hero-m.webp" alt="kids playing soccer" title="Special Needs" />
+      <Hero image="/hero-m.webp" alt="kids playing soccer" title="Inclusive Soccer Program" />
       <section>
-        <h2>A Soccer Program Tailored for All Abilities</h2>
+        <h2>Empowering Every Child to Play, Connect, and Thrive</h2>
         <p>
-          At Ottawa Stars Soccer Academy, we are committed to providing a safe, inclusive, and
-          encouraging soccer program tailored for children with unique needs, such as ADHD and
-          Autism. This program aims to help children build skills, connect with others, and have
-          fun, all within a supportive environment crafted just for them.
+          A soccer program designed to support children and teens with diverse needs—because every
+          child deserves the chance to shine in a safe, inclusive environment."
         </p>
-
-        <h2>Why Choose Us?</h2>
-        <p>
-          With over 12 years of experience supporting children and youth with mental health
-          challenges, Ottawa Stars Soccer Academy has the knowledge and commitment needed to foster
-          a positive, empowering environment for all our players.
-        </p>
-        <h3>Experienced Support: </h3>
-        <p>
-          Our team has extensive experience working with children who have Autism, ADHD, anxiety,
-          depression, and low self-esteem.
-        </p>
-
-        <h3>Applied Behavior Analysis (ABA) Therapy: </h3>
-        <p>
-          Our expertise in ABA therapy allows us to meet each child’s unique needs, helping them
-          succeed both on and off the field.
-        </p>
+        <div className="btn-group">
+          <a href="#about" className="btn">
+            Learn More
+          </a>
+          <a href="#waiting-list" className="btn  btn-primary">
+            Waiting List
+          </a>
+        </div>
       </section>
-      <section>
-        <h2>What Makes Our Program Unique</h2>
+      <section id="about">
+        <h2>About The Program</h2>
+        <p>
+          Does your child or teenager love soccer but face challenges that make joining a regular
+          program difficult? Ottawa Stars Soccer Academy is excited to introduce a new, inclusive
+          program crafted for children and teens who may experience social anxiety, ADHD,
+          depression, low self-esteem, Autism, and more.
+        </p>
+        <p>
+          Our goal is to create a fun, supportive environment where young athletes can learn, grow,
+          and connect with others. With a structured yet flexible approach, we tailor training to
+          meet each participant's needs, helping them build skills and confidence on and off the
+          field.
+        </p>
+        <ul>
+          <li>Skill Development: Learn soccer fundamentals in an adaptable way.</li>
+          <li>Social Interaction: Opportunities for teamwork and friendship.</li>
+          <li>Confidence Building: Activities focused on personal growth and self-esteem.</li>
+          <li>
+            Supportive Environment: Coaches with specialized training provide guidance suited to
+            each child’s needs.
+          </li>
+        </ul>
+        <h2>Who Can Join?</h2>
+        <p>
+          Our inclusive soccer program is open to children and teens facing a variety of challenges.
+          We offer a supportive space tailored for those who may struggle in traditional sports
+          programs. Our coaches and staff understand the unique needs of children with:
+        </p>
         <ul>
           <li>
             <FaCheckCircle color="green" size={16} />
-            <strong>Modified Practice Sessions</strong>
+            <strong>Social Anxiety</strong>
           </li>
           <li>
             <FaCheckCircle color="green" size={16} />
 
-            <strong>6:1 Player-to-Coach Ratio</strong>
+            <strong>ADHD</strong>
           </li>
           <li>
             <FaCheckCircle color="green" size={16} />
-            <strong>Focus on Fun and Positive Growth</strong>
+            <strong>Autism</strong>
+          </li>
+          <li>
+            <FaCheckCircle color="green" size={16} />
+            <strong>Depression & Low Self-Esteem</strong>
           </li>
         </ul>
       </section>
       <section>
-        <h2>Personalized Assessment</h2>
+        <h2>Our Approach to Supportive Coaching</h2>
+        Our coaches and support staff have extensive experience in Applied Behavior Analysis (ABA)
+        and other intervention techniques. They understand the unique needs of each child and apply
+        a personalized approach to ensure that every participant feels comfortable, supported, and
+        encouraged. Key elements of our approach include:
+        <ul>
+          <li>
+            Structured Routines: We provide consistent routines that help participants feel secure
+            and engaged.
+          </li>
+          <li>
+            Positive Reinforcement: Each child receives positive feedback and encouragement to build
+            confidence.
+          </li>
+          <li>
+            Social Skills Development: Group activities are designed to foster cooperation,
+            communication, and friendship.
+          </li>
+          <li>
+            Individualized Support: Our coaches adapt techniques to meet each child’s learning style
+            and abilities."
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Creating a Safe, Inclusive, and Enjoyable Environment</h2>
         <p>
-          Each player will undergo a brief assessment to understand their needs and ensure they feel
-          comfortable and supported in our program.
+          At Ottawa Stars Soccer Academy, we prioritize safety, inclusivity, and enjoyment. We
+          maintain a low player-to-coach ratio (6:1) to provide individual attention and make sure
+          that every child is supported. Before registration, we conduct a one-on-one assessment to
+          understand each child’s needs, ensuring they’re placed in a group that best supports their
+          growth.
+        </p>
+        <ul>
+          <li>Player-to-Coach Ratio: 6:1 for personalized support</li>
+          <li>Pre-Registration Assessment: Tailoring our approach to each child</li>
+          <li>
+            Encouraging Environment: A place where every child can feel comfortable and thrive
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Program Pricing</h2>
+        <p>
+          We offer flexible options to accommodate your family’s schedule and ensure your child
+          receives the support they need in a consistent, structured environment.
+        </p>
+        <h3>Pricing Options:</h3>
+        <ul>
+          <li>Once a Week: $399 per season</li>
+          <li>Twice a Week: $599 per season</li>
+        </ul>
+        <p className="small">
+          *Our pricing includes all program materials, personalized coaching, and ongoing support.
         </p>
       </section>
       <section>
-        <h2>Join the Waiting List</h2>
+        <h2>Join the Waiting List, Here’s How to Get Started</h2>
         <p>
-          <strong>Interested in enrolling your child?</strong> Sign up for our waiting list to receive updates on
-          assessments and openings!
+          We’re excited to welcome your child to our inclusive soccer community! To get started:
         </p>
-        <form onSubmit={handleSubmit}>
+        <ul>
+          <li>Join the waiting list by filling out the form below.</li>
+          <li>
+            Our team will be in touch within the next couple of weeks to arrange your initial
+            assessment.
+          </li>
+          <li>
+            Once the assessment is completed, finalize the registration by filling out the online
+            form to secure your child’s place in the program.
+          </li>
+          <li>
+            Become part of the Team: After registration, your child will be placed in a group
+            tailored to their age and needs, ensuring a positive and rewarding experience.
+          </li>
+        </ul>
+
+        <form onSubmit={handleSubmit} id="waiting-list">
           <input
             type="text"
             placeholder="Name"
