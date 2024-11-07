@@ -45,7 +45,7 @@ export default function SpecialNeedsPage() {
         <h2>Empowering Every Child to Play, Connect, and Thrive</h2>
         <p>
           A soccer program designed to support children and teens with diverse needs—because every
-          child deserves the chance to shine in a safe, inclusive environment."
+          child deserves the chance to shine in a safe, inclusive environment.
         </p>
         <div className="btn-group">
           <a href="#about" className="btn">
@@ -67,7 +67,7 @@ export default function SpecialNeedsPage() {
         <p>
           Our goal is to create a fun, supportive environment where young athletes can learn, grow,
           and connect with others. With a structured yet flexible approach, we tailor training to
-          meet each participant's needs, helping them build skills and confidence on and off the
+          meet each participant&apos;s needs, helping them build skills and confidence on and off the
           field.
         </p>
         <ul>
@@ -76,7 +76,7 @@ export default function SpecialNeedsPage() {
           <li>Confidence Building: Activities focused on personal growth and self-esteem.</li>
           <li>
             Supportive Environment: Coaches with specialized training provide guidance suited to
-            each child’s needs.
+            each child&apos;s needs.
           </li>
         </ul>
         <h2>Who Can Join?</h2>
@@ -125,8 +125,8 @@ export default function SpecialNeedsPage() {
             communication, and friendship.
           </li>
           <li>
-            Individualized Support: Our coaches adapt techniques to meet each child’s learning style
-            and abilities."
+            Individualized Support: Our coaches adapt techniques to meet each child&apos;s learning style
+            and abilities.
           </li>
         </ul>
       </section>
@@ -136,7 +136,7 @@ export default function SpecialNeedsPage() {
           At Ottawa Stars Soccer Academy, we prioritize safety, inclusivity, and enjoyment. We
           maintain a low player-to-coach ratio (6:1) to provide individual attention and make sure
           that every child is supported. Before registration, we conduct a one-on-one assessment to
-          understand each child’s needs, ensuring they’re placed in a group that best supports their
+          understand each child&apos;s needs, ensuring they&apos;re placed in a group that best supports their
           growth.
         </p>
         <ul>
@@ -150,7 +150,7 @@ export default function SpecialNeedsPage() {
       <section>
         <h2>Program Pricing</h2>
         <p>
-          We offer flexible options to accommodate your family’s schedule and ensure your child
+          We offer flexible options to accommodate your family&apos;s schedule and ensure your child
           receives the support they need in a consistent, structured environment.
         </p>
         <h3>Pricing Options:</h3>
@@ -163,9 +163,9 @@ export default function SpecialNeedsPage() {
         </p>
       </section>
       <section>
-        <h2>Join the Waiting List, Here’s How to Get Started</h2>
+        <h2>Join the Waiting List, Here&apos;s How to Get Started</h2>
         <p>
-          We’re excited to welcome your child to our inclusive soccer community! To get started:
+          We&apos;re excited to welcome your child to our inclusive soccer community! To get started:
         </p>
         <ul>
           <li>Join the waiting list by filling out the form below.</li>
@@ -175,7 +175,7 @@ export default function SpecialNeedsPage() {
           </li>
           <li>
             Once the assessment is completed, finalize the registration by filling out the online
-            form to secure your child’s place in the program.
+            form to secure your child&apos;s place in the program.
           </li>
           <li>
             Become part of the Team: After registration, your child will be placed in a group
