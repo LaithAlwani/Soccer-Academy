@@ -88,7 +88,7 @@ export default async function Home() {
           <strong>Ottawa Stars Soccer Academy </strong>is seeking sponsors! Packages start at
           $100/year and include amazing exposure opportunities, like having your logo on our
           website, advertisements, training shirts, and game shirts, plus mentions in our social
-          media posts. The more you invest, the greater your brand's visibility across our platforms
+          media posts. The more you invest, the greater your brand&apos;s visibility across our platforms
           and events. Partner with us to make a meaningful impact and boost your brand!
         </p>
       </section>
