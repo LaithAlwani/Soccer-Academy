@@ -58,7 +58,42 @@ export default async function Home() {
           </li>
         </ul>
       </section>
-      <section id="register">
+      <h2>Felxible Registration</h2>
+      <section className="divided-container red-linear-bg">
+        <div>
+          <h3>1 Session per week</h3>
+          <p>$240</p>
+          <span className="small">*Recommended for beginners</span>
+        </div>
+        <div>
+          <h3>2 Sessions per week</h3>
+          <p>$450</p>
+          <span className="small">*Recommended for most improvment</span>
+        </div>
+        <div>
+          <h3>3 Sessions per week</h3>
+          <p>$600</p>
+          <span className="small">*Recommended for skilled players</span>
+        </div>
+      </section>
+      <section id="sponsors" className="black-linear-bg">
+        <h2>We are looking to sponsor</h2>
+        <ul>
+          <li>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus pariatur aut,
+            officiis culpa hic autem sit fugit vel!{" "}
+          </li>
+          <li>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus pariatur aut,
+            officiis culpa hic autem sit fugit vel!
+          </li>
+          <li>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus pariatur aut,
+            officiis culpa hic autem sit fugit vel!{" "}
+          </li>
+        </ul>
+      </section>
+      {/* <section id="register">
         <h2>Registerations:</h2>
         <div className="programs-container">
           {programs.map((program) => (
@@ -92,78 +127,13 @@ export default async function Home() {
                 <span className="small red">Only {program.spots_left} spots left!</span>
               )}
               {program.spots_left === 0 && <span className="small red">Program is Full</span>}
-              {/* <Link
-                href={
-                  process.env.NODE_ENV === "development"
-                    ? program.test_payment_link
-                    : program.payment_link
-                }
-                className="btn">
-                Register
-              </Link> */}
+              
             </div>
           ))}
         </div>
-      </section>
-      <section id="locations">
-        <h2>Locations:</h2>
-        <div className="location-container">
-          <div className="location-info">
-            <h3>St. Patrick School.</h3>
+      </section> */}
 
-            <strong>68 Larkin Dr, Nepean, ON K2J 1A9</strong>
-          </div>
-          <div className="map">
-            <Image src="/location.webp" alt="practice location" fill />
-          </div>
-        </div>
-        <div className="location-container">
-          <div className="location-info">
-            <h3>St. Mary School <span className="small">(opens January 2025)</span></h3>
-
-            <strong> 5536 Bank St, Gloucester, ON K1X 1G9</strong>
-          </div>
-          <div className="map">
-            <Image src="/location_02.webp" alt="practice location" fill />
-          </div>
-        </div>
-        <p>
-          Weekdays between <strong>6:30-8:30PM</strong>
-        </p>
-        <p className="small">
-          *please check{" "}
-          <strong>
-            <em>
-              <a href="#register" aria-label="register section">
-                Registeration
-              </a>
-            </em>
-          </strong>{" "}
-          section for more information on time and date.
-        </p>
-      </section>
-      <section id="coach">
-        <h2>Meet the Head Coach!</h2>
-        <div className="coach-img-wrapper">
-          <Image
-            src={"/coach.webp"}
-            alt="coach rafed holding soccer ball with former FIFA president sepp Blatter"
-            className="coach-rafed"
-            fill
-          />
-          <span>*Coach Rafid with former FIFA president Sepp Blatter, Riyadh SA.</span>
-        </div>
-        <p>
-          Coach Rafed Alwani is a Soccer Academies Consultant and a Canada Soccer certified coach
-          with over 25 years of experience in youth soccer coaching and development. He began his
-          coaching career with A.C. Fiorentina Canada, where he coached for seven years. In 2008, he
-          moved to Saudi Arabia, where he coached Al-Nasser Club Youth for four years, established
-          one of the country’s largest academies, and acted as a consultant for several soccer
-          academies. Now back in Canada, Ottawa Stars Soccer Academy is his latest creation where
-          players can have fun, develop, and achieve results.
-        </p>
-      </section>
-      <section id="contact">
+      <section id="contact" className="red-linear-bg">
         <ContactForm />
       </section>
     </>

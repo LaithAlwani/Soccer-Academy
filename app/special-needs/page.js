@@ -42,12 +42,12 @@ export default function SpecialNeedsPage() {
     <>
       <Hero image="/hero-m.webp" alt="kids playing soccer" title="Inclusive Soccer Program" />
       <section>
-        <h2>Empowering Every Child to Play, Connect, and Thrive</h2>
-        <p>
-          A soccer program designed to support children and teens with diverse needs—because every
-          child deserves the chance to shine in a safe, inclusive environment.
-        </p>
         <div className="btn-group">
+          <h2>Empowering Every Child to Play, Connect, and Thrive</h2>
+          <p>
+            A soccer program designed to support children and teens with diverse needs—because every
+            child deserves the chance to shine in a safe, inclusive environment.
+          </p>
           <a href="#about" className="btn">
             Learn More
           </a>
@@ -67,8 +67,8 @@ export default function SpecialNeedsPage() {
         <p>
           Our goal is to create a fun, supportive environment where young athletes can learn, grow,
           and connect with others. With a structured yet flexible approach, we tailor training to
-          meet each participant&apos;s needs, helping them build skills and confidence on and off the
-          field.
+          meet each participant&apos;s needs, helping them build skills and confidence on and off
+          the field.
         </p>
         <ul>
           <li>Skill Development: Learn soccer fundamentals in an adaptable way.</li>
@@ -125,8 +125,8 @@ export default function SpecialNeedsPage() {
             communication, and friendship.
           </li>
           <li>
-            Individualized Support: Our coaches adapt techniques to meet each child&apos;s learning style
-            and abilities.
+            Individualized Support: Our coaches adapt techniques to meet each child&apos;s learning
+            style and abilities.
           </li>
         </ul>
       </section>
@@ -136,8 +136,8 @@ export default function SpecialNeedsPage() {
           At Ottawa Stars Soccer Academy, we prioritize safety, inclusivity, and enjoyment. We
           maintain a low player-to-coach ratio (6:1) to provide individual attention and make sure
           that every child is supported. Before registration, we conduct a one-on-one assessment to
-          understand each child&apos;s needs, ensuring they&apos;re placed in a group that best supports their
-          growth.
+          understand each child&apos;s needs, ensuring they&apos;re placed in a group that best
+          supports their growth.
         </p>
         <ul>
           <li>Player-to-Coach Ratio: 6:1 for personalized support</li>
@@ -165,7 +165,8 @@ export default function SpecialNeedsPage() {
       <section>
         <h2>Join the Waiting List, Here&apos;s How to Get Started</h2>
         <p>
-          We&apos;re excited to welcome your child to our inclusive soccer community! To get started:
+          We&apos;re excited to welcome your child to our inclusive soccer community! To get
+          started:
         </p>
         <ul>
           <li>Join the waiting list by filling out the form below.</li>
@@ -182,7 +183,8 @@ export default function SpecialNeedsPage() {
             tailored to their age and needs, ensuring a positive and rewarding experience.
           </li>
         </ul>
-
+      </section>
+      <section id="contact" className="red-linear-bg">
         <form onSubmit={handleSubmit} id="waiting-list">
           <input
             type="text"
