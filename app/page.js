@@ -1,10 +1,7 @@
 import ContactForm from "@/components/ContactForm";
 import Program from "@/models/program";
 import connectToDB from "@/utils/database";
-import Image from "next/image";
-import Link from "next/link";
 import Map from "@/components/Map";
-import { FaCheckCircle } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
 import Hero from "@/components/Hero";
 
@@ -42,19 +39,19 @@ export default async function Home() {
         <h2>Our Program Offers:</h2>
         <ul>
           <li>
-            <FaCheck color="green"  />
+            <FaCheck className="check-mark" />
             <h3>Soccer Fundamentals and Skills</h3>
           </li>
           <li>
-            <FaCheck color="green"  />
+            <FaCheck className="check-mark" />
             <h3>Teamwork and Sportsmanship</h3>
           </li>
           <li>
-            <FaCheck color="green"  />
+            <FaCheck className="check-mark" />
             <h3>Experienced Coaches</h3>
           </li>
           <li>
-            <FaCheck color="green" />
+            <FaCheck className="check-mark"/>
             <h3>Fun and Engaging Evironment</h3>
           </li>
         </ul>
@@ -65,7 +62,6 @@ export default async function Home() {
           <div>
             <h3>1 Session per week</h3>
             <p>$199</p>
-            
           </div>
           <div>
             <h3>2 Sessions per week</h3>
@@ -78,15 +74,22 @@ export default async function Home() {
             <span className="small">*Recommended for skilled players</span>
           </div>
         </div>
+        <p className="small">
+          *$20 one time enrollment fee wich covers admin and fees and trainig shirt
+        </p>
+        <p className="small">
+          *Prices are per season and include all program materials, personalized coaching, and
+          ongoing support.
+        </p>
       </section>
       <section id="sponsors" className="school-intro">
         <h2>We are looking for sponsors</h2>
         <p>
-          <strong>Ottawa Stars Soccer Academy </strong>is seeking sponsors! Packages start at $100/year and include
-          amazing exposure opportunities, like having your logo on our website, advertisements,
-          training shirts, and game shirts, plus mentions in our social media posts. The more you
-          invest, the greater your brand's visibility across our platforms and events. Partner with
-          us to make a meaningful impact and boost your brand!
+          <strong>Ottawa Stars Soccer Academy </strong>is seeking sponsors! Packages start at
+          $100/year and include amazing exposure opportunities, like having your logo on our
+          website, advertisements, training shirts, and game shirts, plus mentions in our social
+          media posts. The more you invest, the greater your brand's visibility across our platforms
+          and events. Partner with us to make a meaningful impact and boost your brand!
         </p>
       </section>
 
