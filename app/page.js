@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Map from "@/components/Map";
 import { FaCheckCircle } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa6";
 import Hero from "@/components/Hero";
 
 const getPrograms = async () => {
@@ -41,97 +42,53 @@ export default async function Home() {
         <h2>Our Program Offers:</h2>
         <ul>
           <li>
-            <FaCheckCircle color="green" size={16} />
+            <FaCheck color="green"  />
             <h3>Soccer Fundamentals and Skills</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={16} />
+            <FaCheck color="green"  />
             <h3>Teamwork and Sportsmanship</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={16} />
+            <FaCheck color="green"  />
             <h3>Experienced Coaches</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={16} />
+            <FaCheck color="green" />
             <h3>Fun and Engaging Evironment</h3>
           </li>
         </ul>
       </section>
       <h2>Felxible Registration</h2>
-      <section className="divided-container red-linear-bg">
-        <div>
-          <h3>1 Session per week</h3>
-          <p>$240</p>
-          <span className="small">*Recommended for beginners</span>
-        </div>
-        <div>
-          <h3>2 Sessions per week</h3>
-          <p>$450</p>
-          <span className="small">*Recommended for most improvment</span>
-        </div>
-        <div>
-          <h3>3 Sessions per week</h3>
-          <p>$600</p>
-          <span className="small">*Recommended for skilled players</span>
+      <section id="register" className="divided-container red-linear-bg">
+        <div className="container">
+          <div>
+            <h3>1 Session per week</h3>
+            <p>$199</p>
+            
+          </div>
+          <div>
+            <h3>2 Sessions per week</h3>
+            <p>$399</p>
+            <span className="small">*most player improvment</span>
+          </div>
+          <div>
+            <h3>3 Sessions per week</h3>
+            <p>$549</p>
+            <span className="small">*Recommended for skilled players</span>
+          </div>
         </div>
       </section>
-      <section id="sponsors" className="black-linear-bg">
-        <h2>We are looking to sponsor</h2>
-        <ul>
-          <li>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus pariatur aut,
-            officiis culpa hic autem sit fugit vel!{" "}
-          </li>
-          <li>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus pariatur aut,
-            officiis culpa hic autem sit fugit vel!
-          </li>
-          <li>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus pariatur aut,
-            officiis culpa hic autem sit fugit vel!{" "}
-          </li>
-        </ul>
+      <section id="sponsors" className="school-intro">
+        <h2>We are looking for sponsors</h2>
+        <p>
+          <strong>Ottawa Stars Soccer Academy </strong>is seeking sponsors! Packages start at $100/year and include
+          amazing exposure opportunities, like having your logo on our website, advertisements,
+          training shirts, and game shirts, plus mentions in our social media posts. The more you
+          invest, the greater your brand's visibility across our platforms and events. Partner with
+          us to make a meaningful impact and boost your brand!
+        </p>
       </section>
-      {/* <section id="register">
-        <h2>Registerations:</h2>
-        <div className="programs-container">
-          {programs.map((program) => (
-            <div key={program._id} className="program">
-              <h2>{program.title}</h2>
-              {program.spots_left > 0 && (
-                <span className="sale-price-container">
-                  <span className="bubble-container">
-                    <Image src="/bubble.webp" alt="bubble icon" fill />
-                  </span>
-                  <span className="sale-price">${program.sale_price}</span>
-                </span>
-              )}
-              <h3 className={program.spots_left > 0 ? "price" : ""}>${program.price}</h3>
-              <ul>
-                <li>{program.time}</li>
-                <li>
-                  {program.start_date} - {program.end_date}
-                </li>
-              </ul>
-              {program.spots_left === 0 ? (
-                <Link href="/register" aria-label="Join the waiting list" className="btn">
-                  Join waiting list
-                </Link>
-              ) : (
-                <Link href="/register" aria-label="register now" className="btn">
-                  Register
-                </Link>
-              )}
-              {program.spots_left < 10 && program.spots_left > 0 && (
-                <span className="small red">Only {program.spots_left} spots left!</span>
-              )}
-              {program.spots_left === 0 && <span className="small red">Program is Full</span>}
-              
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       <section id="contact" className="red-linear-bg">
         <ContactForm />

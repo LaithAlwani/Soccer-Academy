@@ -1,24 +1,32 @@
 import Hero from "@/components/Hero";
 import Image from "next/image";
+import { GoGoal } from "react-icons/go";
+import { FaEye } from "react-icons/fa";
 
 export default function page() {
   return (
     <>
       <Hero image="/hero-m.webp" title="About Us" />
       <section className="divided-container red-linear-bg">
-        <div>
-          <h2>Mission</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit est laboriosam iste
-            illum voluptate cumque. Nostrum tenetur officia.
-          </p>
-        </div>
-        <div>
-          <h2>Vision</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste consectetur vitae placeat
-            deleniti odit maxime non ex tempore architecto dolorem laboriosam.
-          </p>
+        <div className="container">
+          <div>
+            <GoGoal size={48} />
+            <h2>Mission</h2>
+            <p>
+              Ottawa Stars Soccer Academy is dedicated to empowering youth through soccer, fostering
+              personal growth, teamwork, and a passion for the game in an inclusive and supportive
+              environment.
+            </p>
+          </div>
+          <div>
+            <FaEye size={48} />
+            <h2>Vision</h2>
+            <p>
+              Our vision is to inspire and nurture the next generation of athletes, creating a
+              community where every child has the opportunity to thrive and achieve their fullest
+              potential in soccer.
+            </p>
+          </div>
         </div>
       </section>
       <section id="coach">
