@@ -1,10 +1,8 @@
 import ContactForm from "@/components/ContactForm";
 import Program from "@/models/program";
 import connectToDB from "@/utils/database";
-import Image from "next/image";
-import Link from "next/link";
 import Map from "@/components/Map";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa6";
 import Hero from "@/components/Hero";
 
 const getPrograms = async () => {
@@ -41,129 +39,61 @@ export default async function Home() {
         <h2>Our Program Offers:</h2>
         <ul>
           <li>
-            <FaCheckCircle color="green" size={16} />
+            <FaCheck className="check-mark" />
             <h3>Soccer Fundamentals and Skills</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={16} />
+            <FaCheck className="check-mark" />
             <h3>Teamwork and Sportsmanship</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={16} />
+            <FaCheck className="check-mark" />
             <h3>Experienced Coaches</h3>
           </li>
           <li>
-            <FaCheckCircle color="green" size={16} />
+            <FaCheck className="check-mark"/>
             <h3>Fun and Engaging Evironment</h3>
           </li>
         </ul>
       </section>
-      <section id="register">
-        <h2>Registerations:</h2>
-        <div className="programs-container">
-          {programs.map((program) => (
-            <div key={program._id} className="program">
-              <h2>{program.title}</h2>
-              {program.spots_left > 0 && (
-                <span className="sale-price-container">
-                  <span className="bubble-container">
-                    <Image src="/bubble.webp" alt="bubble icon" fill />
-                  </span>
-                  <span className="sale-price">${program.sale_price}</span>
-                </span>
-              )}
-              <h3 className={program.spots_left > 0 ? "price" : ""}>${program.price}</h3>
-              <ul>
-                <li>{program.time}</li>
-                <li>
-                  {program.start_date} - {program.end_date}
-                </li>
-              </ul>
-              {program.spots_left === 0 ? (
-                <Link href="/register" aria-label="Join the waiting list" className="btn">
-                  Join waiting list
-                </Link>
-              ) : (
-                <Link href="/register" aria-label="register now" className="btn">
-                  Register
-                </Link>
-              )}
-              {program.spots_left < 10 && program.spots_left > 0 && (
-                <span className="small red">Only {program.spots_left} spots left!</span>
-              )}
-              {program.spots_left === 0 && <span className="small red">Program is Full</span>}
-              {/* <Link
-                href={
-                  process.env.NODE_ENV === "development"
-                    ? program.test_payment_link
-                    : program.payment_link
-                }
-                className="btn">
-                Register
-              </Link> */}
-            </div>
-          ))}
-        </div>
-      </section>
-      <section id="locations">
-        <h2>Locations:</h2>
-        <div className="location-container">
-          <div className="location-info">
-            <h3>St. Patrick School.</h3>
-
-            <strong>68 Larkin Dr, Nepean, ON K2J 1A9</strong>
+      <h2>Felxible Registration</h2>
+      <section id="register" className="divided-container red-linear-bg">
+        <div className="container">
+          <div>
+            <h3>1 Session per week</h3>
+            <p>$199</p>
           </div>
-          <div className="map">
-            <Image src="/location.webp" alt="practice location" fill />
+          <div>
+            <h3>2 Sessions per week</h3>
+            <p>$399</p>
+            <span className="small">*most player improvment</span>
+          </div>
+          <div>
+            <h3>3 Sessions per week</h3>
+            <p>$549</p>
+            <span className="small">*Recommended for skilled players</span>
           </div>
         </div>
-        <div className="location-container">
-          <div className="location-info">
-            <h3>St. Mary School <span className="small">(opens January 2025)</span></h3>
-
-            <strong> 5536 Bank St, Gloucester, ON K1X 1G9</strong>
-          </div>
-          <div className="map">
-            <Image src="/location_02.webp" alt="practice location" fill />
-          </div>
-        </div>
-        <p>
-          Weekdays between <strong>6:30-8:30PM</strong>
+        <p className="small">
+          *$20 one time enrollment fee wich covers admin and fees and trainig shirt
         </p>
         <p className="small">
-          *please check{" "}
-          <strong>
-            <em>
-              <a href="#register" aria-label="register section">
-                Registeration
-              </a>
-            </em>
-          </strong>{" "}
-          section for more information on time and date.
+          *Prices are per season and include all program materials, personalized coaching, and
+          ongoing support.
         </p>
       </section>
-      <section id="coach">
-        <h2>Meet the Head Coach!</h2>
-        <div className="coach-img-wrapper">
-          <Image
-            src={"/coach.webp"}
-            alt="coach rafed holding soccer ball with former FIFA president sepp Blatter"
-            className="coach-rafed"
-            fill
-          />
-          <span>*Coach Rafid with former FIFA president Sepp Blatter, Riyadh SA.</span>
-        </div>
+      <section id="sponsors" className="school-intro">
+        <h2>We are looking for sponsors</h2>
         <p>
-          Coach Rafed Alwani is a Soccer Academies Consultant and a Canada Soccer certified coach
-          with over 25 years of experience in youth soccer coaching and development. He began his
-          coaching career with A.C. Fiorentina Canada, where he coached for seven years. In 2008, he
-          moved to Saudi Arabia, where he coached Al-Nasser Club Youth for four years, established
-          one of the country’s largest academies, and acted as a consultant for several soccer
-          academies. Now back in Canada, Ottawa Stars Soccer Academy is his latest creation where
-          players can have fun, develop, and achieve results.
+          <strong>Ottawa Stars Soccer Academy </strong>is seeking sponsors! Packages start at
+          $100/year and include amazing exposure opportunities, like having your logo on our
+          website, advertisements, training shirts, and game shirts, plus mentions in our social
+          media posts. The more you invest, the greater your brand&apos;s visibility across our platforms
+          and events. Partner with us to make a meaningful impact and boost your brand!
         </p>
       </section>
-      <section id="contact">
+
+      <section id="contact" className="red-linear-bg">
         <ContactForm />
       </section>
     </>

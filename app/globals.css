@@ -1,8 +1,5 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap"); */
-
 :root {
   --border-radius: 0.25rem;
-  /* --font-mono: "Roboto", sans-serif; */
 
   --foreground-rgb: 51, 51, 51;
   --background-start-rgb: 214, 219, 220;
@@ -11,20 +8,9 @@
   --box-shadow: #797979;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-end-rgb: #333;
-    --background-start-rgb: 0, 0, 0;
-
-    --box-shadow: #1c1c1c;
-} */
-
 * {
   box-sizing: border-box;
-  /* font-family: var(--font-mono); */
   scroll-behavior: smooth;
-  /* letter-spacing: 0.25px; */
 }
 
 html,
@@ -324,6 +310,11 @@ nav .burger-icon::after {
   max-width: 62rem;
   min-height: 130px;
   margin: auto;
+  text-align: center;
+}
+
+#sponsors {
+  padding-block-end: 6rem;
 }
 
 .programs-container {
@@ -394,15 +385,13 @@ nav .burger-icon::after {
 .small {
   font-size: 14px;
   padding-top: 1rem;
+  text-align: center;
 }
 .red {
   color: red;
   font-weight: 700;
   text-shadow: 1px 1px #7f7f7f;
   letter-spacing: 1px;
-}
-#coach {
-  margin-bottom: 5rem;
 }
 
 #coach .coach-img-wrapper {
@@ -578,10 +567,48 @@ form .btn {
   text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    /* color-scheme: dark; */
-  }
+.divided-container {
+  background-color: red;
+  color: white;
+  max-width: 100vw;
+}
+.divided-container > .container {
+  max-width: 62rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.divided-container .container > div {
+  position: relative;
+  padding-inline-end: 1rem;
+  
+}
+
+.divided-container .container > div::after {
+  display: block;
+  content: "";
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+  height: 2px;
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+
+.divided-container .container > div:last-child::after {
+  display: none;
+}
+.check-mark{
+  width: 1.25rem;
+  height: 1.25rem;
+  min-width: 1.25rem;
+  color: green;
 }
 
 @media only screen and (min-width: 1080px) {
@@ -625,6 +652,28 @@ form .btn {
   }
   .programs-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .divided-container .container {
+    flex-direction: row;
+    margin-inline: auto;
+  }
+  .divided-container .container > div {
+    border-right: 1px solid #fff;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .divided-container .container > div:last-child {
+    border-right: none;
+    width: 100%;
+  }
+  .divided-container .container > div::after {
+    content: none;
   }
 
   footer .footer-container {
