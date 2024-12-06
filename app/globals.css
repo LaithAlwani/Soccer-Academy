@@ -384,7 +384,6 @@ nav .burger-icon::after {
 }
 .small {
   font-size: 14px;
-  padding-top: 1rem;
   text-align: center;
 }
 .red {
@@ -496,12 +495,7 @@ nav .burger-icon::after {
 .programs-grid {
   display: grid;
   grid-template-columns: 1fr;
-  height: 0;
   transition: height 0.2s ease-in-out;
-}
-
-.programs-grid.open {
-  height: 10rem;
 }
 
 .programs-grid > div {
@@ -583,7 +577,6 @@ form .btn {
 .divided-container .container > div {
   position: relative;
   padding-inline-end: 1rem;
-  
 }
 
 .divided-container .container > div::after {
@@ -604,7 +597,7 @@ form .btn {
 .divided-container .container > div:last-child::after {
   display: none;
 }
-.check-mark{
+.check-mark {
   width: 1.25rem;
   height: 1.25rem;
   min-width: 1.25rem;

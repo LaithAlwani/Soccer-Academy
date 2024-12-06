@@ -15,32 +15,21 @@ export default function RegistrationForm({ programs }) {
       age: 0,
       gender: "male",
       comments: "",
-      programs: [],
+      program: "",
     },
   ]);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e, index) => {
     let data = [...playersInputFields];
-    if (e.target.name === "programs") {
-      if (e.target.checked) {
-        data[index][e.target.name].push(e.target.value);
-      } else {
-        const idx = data[index][e.target.name].indexOf(e.target.value);
 
-        if (idx > -1) {
-          data[index][e.target.name].splice(idx, 1);
-        }
-      }
-    } else {
-      data[index][e.target.name] = e.target.value;
-    }
+    data[index][e.target.name] = e.target.value;
 
     setPlayersInputFields(data);
   };
 
   const addPlayer = () => {
-    let newField = { name: "", age: 0, gender: "male", comments: "", programs: [] };
+    let newField = { name: "", age: 0, gender: "male", comments: "", program: "" };
     setPlayersInputFields((prev) => [...prev, newField]);
   };
 
@@ -53,9 +42,8 @@ export default function RegistrationForm({ programs }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     for (const input of playersInputFields) {
-      if (!input.programs.length) return toast.error("please choose a program");
+      if (!input.program) return toast.error("please choose a program");
     }
-    console.log(playersInputFields);
     try {
       setLoading(true);
       const data = {
@@ -73,9 +61,8 @@ export default function RegistrationForm({ programs }) {
       }
     } catch (err) {
       toast.error("please try again, or contact us!");
-    } finally {
       setLoading(false);
-    }
+    } 
   };
 
   return (
@@ -132,32 +119,15 @@ export default function RegistrationForm({ programs }) {
               onChange={(e) => handleChange(e, i)}
               required
             />
-            <select name="location" onChange={(e) => handleChange(e, i)} required>
-              <option value="" selected hidden>
-                Choose Location
-              </option>
-              <option value="st. patrik">St. Patrik School, 68 Larkin Dr.</option>
-              <option value="st. mary">St. Mary School, 5536 Bank St.</option>
+            <select name="program" id="" value={playerInput.program} onChange={(e) => handleChange(e, i)}>
+              <option value="" disabled> Select a Program</option>
+              {programs?.map((program) => (
+                <option key={program._id} value={program._id}>
+                  {program.title} {program.time}
+                </option>
+              ))}
             </select>
-            <div className={`programs-grid ${playerInput.location ? "open" : ""}`}>
-              {playerInput.location &&
-                programs
-                  .filter((program) => program.location === playerInput.location)
-                  .map((program) => (
-                    <div key={program._id}>
-                      <input
-                        type="checkbox"
-                        id={program._id}
-                        name="programs"
-                        onChange={(e) => handleChange(e, i)}
-                        value={program._id}
-                      />
-                      <label>
-                        {program.title} {program.time}
-                      </label>
-                    </div>
-                  ))}
-            </div>
+            
             {playerInput?.name && (
               <textarea
                 name="comments"

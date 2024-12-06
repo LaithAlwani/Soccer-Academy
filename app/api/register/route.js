@@ -1,5 +1,4 @@
-import Cart from "@/models/cart";
-import Player from "@/models/player";
+import Program from "@/models/program";
 import connectToDB from "@/utils/database";
 import { NextResponse } from "next/server";
 
@@ -9,14 +8,19 @@ export async function POST(req) {
   try {
     await connectToDB();
     for (const player of players) {
-      await Player.create({ ...player, parent, email, phone });
-      
-    }
-    // await players.forEach(async (player) => {
-    //   console.log(player)
+      const { program } = player;
 
-    // })
-    // const cart = await Cart.create({ parent, players, comments });
+      await Program.findByIdAndUpdate(program, {
+        $push: {
+          players: {
+            name: player.name,
+            age: player.age,
+            comments: player.comments,
+            parent: { name: parent, email, phone },
+          },
+        },
+      });
+    }
     return NextResponse.json({ message: `Thank you!`, data }, { status: 201 });
   } catch (err) {
     console.log(err);
