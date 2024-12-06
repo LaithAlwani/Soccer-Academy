@@ -34,7 +34,7 @@ export default function ContactForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h2>Have Questions? We’re Here to Help!</h2>
+        <h2>Have Questions?<br/> We’re Here to Help!</h2>
         <input
           type="text"
           placeholder="Name"

@@ -20,18 +20,11 @@ const programSchema = new Schema(
     },
     location: String,
     sessions: Number,
-    sessions_length: Number,
     time: String,
-    is_early_bird: Boolean,
-    early_bird_price: Number,
-    payment_link: {
-      type: String,
-      required: true,
-    },
-    test_payment_link: String,
-    price:Number,
+
     sale_price: Number,
-    spots_left:Number,
+    spots_left: { type: Number, default: 0 },
+    players: [{ type: Object }, { timestamps: true }],
   },
   { timestamps: true }
 );

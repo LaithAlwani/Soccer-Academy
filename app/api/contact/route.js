@@ -31,7 +31,7 @@ export async function POST(req) {
       message:
         "Thank you for contacting us, an Ottawa Stars admin will contact you as soon as possible",
     });
-    return NextResponse.json({ message: result.accepted });
+    return NextResponse.json({ message: `Thank you ${name}!` });
   } catch (err) {
     console.log(err);
     return NextResponse.json({ message: `Unable to send request` }, { status: 500 });

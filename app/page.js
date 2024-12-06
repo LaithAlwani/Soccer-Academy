@@ -51,7 +51,7 @@ export default async function Home() {
             <h3>Experienced Coaches</h3>
           </li>
           <li>
-            <FaCheck className="check-mark"/>
+            <FaCheck className="check-mark" />
             <h3>Fun and Engaging Evironment</h3>
           </li>
         </ul>
@@ -60,25 +60,29 @@ export default async function Home() {
       <section id="register" className="divided-container red-linear-bg">
         <div className="container">
           <div>
-            <h3>1 Session per week</h3>
+            <h3>Mini Stars</h3>
             <p>$199</p>
+            <span className="">12 sessions once a week</span>
+            <span className="small">*Ages 5-6</span>
           </div>
           <div>
-            <h3>2 Sessions per week</h3>
-            <p>$399</p>
-            <span className="small">*most player improvment</span>
+            <h3>Junior Stars</h3>
+            <p>$375</p>
+            <span className="small">26 sessions twice a week</span>
+            <span className="small">*Ages 7-8</span>
           </div>
           <div>
-            <h3>3 Sessions per week</h3>
-            <p>$549</p>
-            <span className="small">*Recommended for skilled players</span>
+            <h3>Rising Stars</h3>
+            <p>$375</p>
+            <span className="">26 sessions twice a week</span>
+            <span className="small">*Ages 9 -11</span>
           </div>
         </div>
         <p className="small">
-          *$20 one time enrollment fee wich covers admin and fees and trainig shirt
+          * plus $20 one time enrollment fee, includes admin fees and training shirt.
         </p>
         <p className="small">
-          *Prices are per season and include all program materials, personalized coaching, and
+          *Prices are per season and include personalized coaching, and
           ongoing support.
         </p>
       </section>
@@ -88,8 +92,8 @@ export default async function Home() {
           <strong>Ottawa Stars Soccer Academy </strong>is seeking sponsors! Packages start at
           $100/year and include amazing exposure opportunities, like having your logo on our
           website, advertisements, training shirts, and game shirts, plus mentions in our social
-          media posts. The more you invest, the greater your brand&apos;s visibility across our platforms
-          and events. Partner with us to make a meaningful impact and boost your brand!
+          media posts. The more you invest, the greater your brand&apos;s visibility across our
+          platforms and events. Partner with us to make a meaningful impact and boost your brand!
         </p>
       </section>
 

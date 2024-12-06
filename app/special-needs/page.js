@@ -3,7 +3,7 @@
 import Hero from "@/components/Hero";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { FaCheck, FaChevronRight  } from "react-icons/fa6";
+import { FaCheck, FaChevronRight } from "react-icons/fa6";
 
 export default function SpecialNeedsPage() {
   const [name, setName] = useState();
@@ -198,29 +198,23 @@ export default function SpecialNeedsPage() {
         </ul>
       </section>
 
-      <h2>Program Pricing</h2>
+      <h2>Pricing</h2>
 
-      <p className="school-intro">
-        We offer <strong>flexible</strong> options to accommodate your family&apos;s schedule and
-        ensure your child receives the support they need in a consistent, structured environment.
-      </p>
       <section id="register" className="divided-container red-linear-bg">
         <div className="container">
           <div>
             <h3>1 Session per week</h3>
+            <span className="small">Fri. 6:30-7:30 PM</span>
             <h4>$399</h4>
-          </div>
-          <div>
-            <h3>2 Sessions per week</h3>
-            <h4>$599</h4>
+
+            <span className="small">*12 sessions</span>
           </div>
         </div>
         <p className="small">
           *$20 one time enrollment fee wich covers admin and fees and trainig shirt
         </p>
         <p className="small">
-          *Prices are per season and include all program materials, personalized coaching, and
-          ongoing support.
+          *Prices are per season and include personalized coaching, and ongoing support.
         </p>
       </section>
 
@@ -232,25 +226,25 @@ export default function SpecialNeedsPage() {
         </p>
         <ul>
           <li>
-            <FaChevronRight  className="check-mark" />
+            <FaChevronRight className="check-mark" />
             <p>Join the waiting list by filling out the form below.</p>
           </li>
           <li>
-            <FaChevronRight  className="check-mark" />
+            <FaChevronRight className="check-mark" />
             <p>
               Our team will be in touch within the next couple of weeks to arrange your initial
               assessment.
             </p>
           </li>
           <li>
-            <FaChevronRight  className="check-mark" />
+            <FaChevronRight className="check-mark" />
             <p>
               Once the assessment is completed, finalize the registration by filling out the online
               form to secure your child&apos;s place in the program.
             </p>
           </li>
           <li>
-            <FaChevronRight  className="check-mark" />
+            <FaChevronRight className="check-mark" />
             <p>
               Become part of the Team: After registration, your child will be placed in a group
               tailored to their age and needs, ensuring a positive and rewarding experience.

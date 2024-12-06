@@ -9,10 +9,7 @@ import React from "react";
 
 const getPlayers = async () => {
   await connectToDB();
-  const players = await Player.find()
-    .sort({ createdAt: -1 })
-    .populate("programs")
-    .populate("program");
+  const players = await Program.find().sort({ createdAt: 1 }).populate("players");
   console.log(players);
   return players;
 };
@@ -29,59 +26,49 @@ export default async function AdminPage() {
       </>
     );
   }
-  const allPlayers = await getPlayers();
+  const programs = await getPlayers();
 
   return (
     <section>
       <SignOutButton className="btn btn-primary" />
-      <h3>Number of registrations: {allPlayers.length}</h3>
-      {allPlayers.map((player) => {
-        const { parent, name, age, gender, comments, email, phone, programs, program } = player;
-        return (
-          player && (
-            <div key={player._id}>
-              {console.log(player)}
-              <details>
-                <summary>
-                  <strong>{name}</strong>
-
-                  <span>
-                    {" "}
-                    {program?.title} {program?.time}
-                  </span>
-                  {programs?.map((p) => (
-                    <>
-                      <span>{p.title} {p.time}</span>,{" "}
-                    </>
-                  ))}
-                </summary>
-                <ul>
-                  <li>age: {age}</li>
-                  <li>gender: {gender}</li>
-                  <li>email: {email}</li>
-                  <li>
-                    parent:
-                    <strong>{parent}</strong>
-                  </li>
-                  <li>comments: {comments}</li>
-
-                  <li>
-                    <a href={`tel:+${phone}`}>
-                      <MdPhone size={24} color="red" />
-                    </a>
-                    {phone}
-                  </li>
-                </ul>
-                {player.waiver && (
-                  <a href={player.waiver} className="btn">
-                    Waiver
-                  </a>
-                )}
-              </details>
-            </div>
-          )
-        );
-      })}
+      <h3>Number of registrations: {programs.length}</h3>
+      {programs.map((program) => (
+        <>
+          <details open>
+            <summary>{program.title}</summary>
+            <p>
+              Total players: <strong>{program.players.length}</strong>
+            </p>
+            <ul>
+              {program.players.map((player, i) => (
+                <details key={i}>
+                  <summary>
+                    <strong>{player.name}</strong>
+                  </summary>
+                  <ul>
+                    <li>age: {player.age}</li>
+                    <li>parent: {player.parent.name}</li>
+                    <li>
+                      email: <a href={`mailto:{player.parent.email}`}>{player.parent.email}</a>
+                    </li>
+                    <li>
+                      phone:{player.parent.phone}
+                      <a  href={`tel:+${player.parent.phone}`}>
+                        <MdPhone color="red" size={24} />
+                      </a>
+                    </li>
+                    <li>
+                      <pre>{player.comments}</pre>
+                    </li>
+                  </ul>
+                  <hr />
+                </details>
+              ))}
+            </ul>
+          </details>
+          <hr />
+        </>
+      ))}
     </section>
   );
 }
