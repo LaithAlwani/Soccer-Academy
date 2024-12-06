@@ -20,21 +20,28 @@ export async function POST(req) {
       sender,
       receipients: sender.address,
       subject: topic,
-      message: `${name} 
-       email: ${email} 
-    ${message}`,
+      message: `
+      <h3>${topic}</3>
+      <p>An inquiry has been recieved from <strong>${name}</strong></p>
+       <p>email: ${email}</p>
+       <pre>${message}</pre>`,
     });
     const result = await sendEmail({
       sender,
       receipients,
       subject: "Inquiry Recived",
-      message:
-        "Thank you for contacting us, an Ottawa Stars admin will contact you as soon as possible",
+      message: `<h1>Thank you!</h1>
+      <p>Hi ${name},</p>
+      <p>Thank you for contacting us</p>
+      <p>An Ottawa Stars admin will contact you as soon as possible</p>`,
     });
     return NextResponse.json({ message: `Thank you ${name}!` });
   } catch (err) {
     console.log(err);
-    return NextResponse.json({ message: `Unable to send request` }, { status: 500 });
+    return NextResponse.json(
+      { message: `Unable to send request` },
+      { status: 500 }
+    );
   }
 
   // try {
