@@ -2,10 +2,10 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-export default function ContactForm() {
+export default function ContactForm({ waitingList = false }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -15,14 +15,14 @@ export default function ContactForm() {
       setLoading(true);
       const res = await fetch("/api/contact", {
         method: "POST",
-        body: JSON.stringify({ name, email, topic, message }),
+        body: JSON.stringify({ name, email, phone, message, waitingList }),
       });
       if (res.ok) {
         const data = await res.json();
         toast.success(data.message);
         setName("");
         setEmail("");
-        setTopic("");
+        setPhone("");
         setMessage("");
       }
     } catch (err) {
@@ -34,7 +34,20 @@ export default function ContactForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h2>Have Questions?<br/> We’re Here to Help!</h2>
+        {!waitingList ? (
+          <h2>
+            Have Questions?
+            <br /> We’re Here to Help!
+          </h2>
+        ) : (
+          <>
+            <h2>
+              What are you waiting for?!
+              <br /> Join the waiting list!
+            </h2>
+            <span className="small">* Limited spots available</span>
+          </>
+        )}
         <input
           type="text"
           placeholder="Name"
@@ -51,9 +64,9 @@ export default function ContactForm() {
         />
         <input
           type="text"
-          placeholder="Topic"
-          value={topic}
-          onChange={(e) => setTopic(e.target.value)}
+          placeholder="Phone (optional)"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
           required
         />
         <textarea
@@ -65,11 +78,7 @@ export default function ContactForm() {
           required
         />
         {loading ? (
-          <img
-            src="/ball.gif"
-            alt="soccer ball bouncing"
-            className="ball-img"
-          />
+          <img src="/ball.gif" alt="soccer ball bouncing" className="ball-img" />
         ) : (
           <button className="btn btn-primary">Submit</button>
         )}
