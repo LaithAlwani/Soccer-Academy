@@ -1,43 +1,8 @@
-"use client";
-
+import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
-import { useState } from "react";
-import toast from "react-hot-toast";
 import { FaCheck, FaChevronRight } from "react-icons/fa6";
-
 export default function SpecialNeedsPage() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [message, setMessage] = useState();
-  const [loading, setLoading] = useState();
 
-  const reset = () => {
-    setName("");
-    setEmail("");
-    setMessage("");
-    setPhone("");
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const res = await fetch("/api/waiting-list", {
-        method: "POST",
-        body: JSON.stringify({ name, email, phone, message }),
-      });
-      if (res.ok) {
-        const data = await res.json();
-        toast.success(data.message);
-        reset();
-      }
-    } catch (err) {
-      toast.error(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
   return (
     <>
       <Hero image="/hero-m.webp" alt="kids playing soccer" title="Inclusive Soccer Program" />
@@ -253,41 +218,7 @@ export default function SpecialNeedsPage() {
         </ul>
       </section>
       <section id="contact" className="red-linear-bg">
-        <form onSubmit={handleSubmit} id="waiting-list">
-          <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Phone Number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <textarea
-            name=""
-            id=""
-            rows={10}
-            value={message}
-            placeholder="Let us know about your child"
-            onChange={(e) => setMessage(e.target.value)}></textarea>
-          {!loading ? (
-            <button className="btn">Join Waiting List</button>
-          ) : (
-            <img src="/ball.gif" alt="soccer ball bouncing" className="ball-img" />
-          )}
-        </form>
+        <ContactForm waitingList={true} />
       </section>
     </>
   );
