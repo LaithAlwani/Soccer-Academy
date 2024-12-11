@@ -1,7 +1,6 @@
 import ContactForm from "@/components/ContactForm";
 import Program from "@/models/program";
 import connectToDB from "@/utils/database";
-import Map from "@/components/Map";
 import { FaCheck } from "react-icons/fa6";
 import Hero from "@/components/Hero";
 
@@ -16,7 +15,8 @@ export default async function Home() {
   return (
     <>
       <Hero
-        image="/hero-m.webp"
+        image="/hero_m.jpg"
+        altImage="/hero_01.jpg"
         alt="ottawa stars hero image of youth playing soccer"
         styles="main-img"
       />
@@ -60,19 +60,25 @@ export default async function Home() {
         <div className="container">
           <div>
             <h3>Mini Stars</h3>
-            <p>$199 down from $240</p>
+            <h4>$200</h4>
+            <span className="small">down from</span>
+            <h5>$250</h5>
             <span className="">practice once a week</span>
             <span className="small">*Ages 5-6</span>
           </div>
           <div>
             <h3>Junior Stars</h3>
-            <p>$375 down from $450</p>
+            <h4>$375</h4>
+            <span className="small">down from</span>
+            <h5>$450</h5>
             <span className="small">practice twice a week</span>
             <span className="small">*Ages 7-8</span>
           </div>
           <div>
             <h3>Rising Stars</h3>
-            <p>$375 down from $450</p>
+            <h4>$375</h4>
+            <span className="small">down from</span>
+            <h5>$450</h5>
             <span className="">practice twice a week</span>
             <span className="small">*Ages 9 -11</span>
           </div>

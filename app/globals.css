@@ -413,7 +413,7 @@ form .btn {
 
 @media only screen and (min-width: 769px) {
   #hero .hero-img-wrapper .main-img {
-    object-position: center;
+    object-position: top;
   }
 
   .divided-container .container {
