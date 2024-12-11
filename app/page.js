@@ -60,20 +60,20 @@ export default async function Home() {
         <div className="container">
           <div>
             <h3>Mini Stars</h3>
-            <p>$199</p>
-            <span className="">12 sessions once a week</span>
+            <p>$199 down from $240</p>
+            <span className="">practice once a week</span>
             <span className="small">*Ages 5-6</span>
           </div>
           <div>
             <h3>Junior Stars</h3>
-            <p>$375</p>
-            <span className="small">26 sessions twice a week</span>
+            <p>$375 down from $450</p>
+            <span className="small">practice twice a week</span>
             <span className="small">*Ages 7-8</span>
           </div>
           <div>
             <h3>Rising Stars</h3>
-            <p>$375</p>
-            <span className="">26 sessions twice a week</span>
+            <p>$375 down from $450</p>
+            <span className="">practice twice a week</span>
             <span className="small">*Ages 9 -11</span>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default async function Home() {
         <h2>We are looking for sponsors</h2>
         <p>
           <strong>Ottawa Stars Soccer Academy </strong>is seeking sponsors! Packages start at
-          $100/year and include amazing exposure opportunities, like having your logo on our
+          <strong> $100/year</strong> and include amazing exposure opportunities, like having your logo on our
           website, advertisements, training shirts, and game shirts, plus mentions in our social
           media posts. The more you invest, the greater your brand&apos;s visibility across our
           platforms and events. Partner with us to make a meaningful impact and boost your brand!

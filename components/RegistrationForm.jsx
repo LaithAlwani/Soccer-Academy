@@ -46,7 +46,6 @@ export default function RegistrationForm({ programs }) {
       return toast.error("Please read and sign waiver by checking the box");
     }
     for (const input of playersInputFields) {
-      
       if (!input.program) return toast.error("please choose a program");
     }
     try {
@@ -127,11 +126,20 @@ export default function RegistrationForm({ programs }) {
                 Select a Program
               </option>
               {programs?.map((program) => (
-                <option key={program._id} value={program._id}>
-                  {program.title} {program.time}
+                <option
+                  key={program._id}
+                  value={program._id}
+                  disabled={12 - program.players.length <= 0}>
+                  {program.title} {" "}
+                  {12 - program.players.length <= 0
+                    ? `(spots left: ${12 - program.players.length})`
+                    : `${program.time} $${program.sale_price} (spots left: ${12 - program.players.length})`}
                 </option>
               ))}
             </select>
+            <span className="small">
+              *If a program is Full please contact us to register for the waiting list
+            </span>
 
             {playerInput?.name && (
               <textarea
@@ -156,7 +164,6 @@ export default function RegistrationForm({ programs }) {
               rel="noopener noreferrer">
               ً<strong>wavier</strong>
             </a>
-            
           </label>
         </span>
         <span type="button" className="add-player" onClick={addPlayer}>
