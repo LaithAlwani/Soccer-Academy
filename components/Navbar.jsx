@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { FaPhoneFlip, FaWhatsapp, FaSquareWhatsapp   } from "react-icons/fa6";
+import { FaPhoneFlip, FaSquareWhatsapp } from "react-icons/fa6";
+import "@/styles/navbar.css"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
