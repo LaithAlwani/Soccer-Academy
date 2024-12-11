@@ -31,8 +31,8 @@ export default async function Home() {
         <p className="school-intro">
           At <strong>Ottawa Stars Soccer Academy</strong>, we&apos;re committed to nurturing young
           soccer talents through high-quality coaching and a supportive environment. Open to boys
-          and girls ages 5 to 12, we offer age-appropriate programs tailored to develop
-          soccer skills, teamwork, and sportsmanship.
+          and girls ages 5 to 12, we offer age-appropriate programs tailored to develop soccer
+          skills, teamwork, and sportsmanship.
         </p>
       </div>
       <section id="program" className="">
@@ -56,7 +56,7 @@ export default async function Home() {
           </li>
         </ul>
       </section>
-      <section id="register" className="divided-container red-linear-bg">
+      <section id="register" className="divided-container ">
         <div className="container">
           <div>
             <h3>Mini Stars</h3>
@@ -81,8 +81,7 @@ export default async function Home() {
           * plus $20 one time enrollment fee, includes admin fees and training shirt.
         </p>
         <p className="small">
-          *Prices are per season and include personalized coaching, and
-          ongoing support.
+          *Prices are per season and include personalized coaching, and ongoing support.
         </p>
       </section>
       <section id="sponsors" className="school-intro">
@@ -95,10 +94,7 @@ export default async function Home() {
           platforms and events. Partner with us to make a meaningful impact and boost your brand!
         </p>
       </section>
-
-      <section id="contact" className="red-linear-bg">
-        <ContactForm />
-      </section>
+      <ContactForm />
     </>
   );
 }

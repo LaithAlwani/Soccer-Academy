@@ -10,7 +10,6 @@ import React from "react";
 const getPlayers = async () => {
   await connectToDB();
   const players = await Program.find().sort({ createdAt: 1 }).populate("players");
-  console.log(players);
   return players;
 };
 export default async function AdminPage() {

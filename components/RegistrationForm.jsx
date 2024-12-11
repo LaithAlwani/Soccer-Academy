@@ -9,6 +9,7 @@ export default function RegistrationForm({ programs }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [waiverSigned, setWaiverSigned] = useState(null);
   const [playersInputFields, setPlayersInputFields] = useState([
     {
       name: "",
@@ -41,8 +42,11 @@ export default function RegistrationForm({ programs }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!waiverSigned) {
+      return toast.error("Please read and sign waiver by checking the box");
+    }
     for (const input of playersInputFields) {
-      console.log(input);
+      
       if (!input.program) return toast.error("please choose a program");
     }
     try {
@@ -51,6 +55,7 @@ export default function RegistrationForm({ programs }) {
         parent: name,
         email,
         phone,
+        waiverSigned,
         players: [...playersInputFields],
       };
       const res = await fetch("/api/register", {
@@ -111,12 +116,7 @@ export default function RegistrationForm({ programs }) {
               onChange={(e) => handleChange(e, i)}
               required
             />
-            <input
-              name="dob"
-              type="date"
-              onChange={(e) => handleChange(e, i)}
-              required
-            />
+            <input name="dob" type="date" onChange={(e) => handleChange(e, i)} required />
             <span className="small">*Child&apos;s date of birth</span>
             <select
               name="program"
@@ -124,7 +124,6 @@ export default function RegistrationForm({ programs }) {
               value={playerInput.program}
               onChange={(e) => handleChange(e, i)}>
               <option value="" disabled>
-                {" "}
                 Select a Program
               </option>
               {programs?.map((program) => (
@@ -142,18 +141,34 @@ export default function RegistrationForm({ programs }) {
             )}
           </div>
         ))}
-        <div className="btn-gorup">
-          <span type="button" className="add-player" onClick={addPlayer}>
-            Add Player <MdAdd />
-          </span>
-          {!loading ? (
-            <button className="btn btn-primary" disabled={loading}>
-              Register
-            </button>
-          ) : (
-            <img src="/ball.gif" alt="soccer ball bouncing" className="ball-img" />
-          )}
-        </div>
+        <span className="waiver">
+          <input
+            type="checkbox"
+            name="waiver"
+            id="waiver"
+            onChange={(e) => setWaiverSigned(e.target.checked)}
+          />
+          <label htmlFor="waiver">
+            I have read, understood, and agree to the terms of the{" "}
+            <a
+              href="https://drive.google.com/file/d/1GxwTRJF34QDSJ5F8IfX17RJw1G9opGci/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer">
+              ً<strong>wavier</strong>
+            </a>
+            
+          </label>
+        </span>
+        <span type="button" className="add-player" onClick={addPlayer}>
+          Add Player <MdAdd />
+        </span>
+        {!loading ? (
+          <button className="btn btn-primary" disabled={loading}>
+            Register
+          </button>
+        ) : (
+          <img src="/ball.gif" alt="soccer ball bouncing" className="ball-img" />
+        )}
       </form>
     </section>
   );

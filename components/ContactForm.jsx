@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import "@/styles/contact.css"
 
 export default function ContactForm({ waitingList = false }) {
   const [name, setName] = useState("");
@@ -32,7 +33,7 @@ export default function ContactForm({ waitingList = false }) {
     }
   };
   return (
-    <>
+    <section id="contact">
       <form onSubmit={handleSubmit}>
         {!waitingList ? (
           <h2>
@@ -83,6 +84,6 @@ export default function ContactForm({ waitingList = false }) {
           <button className="btn btn-primary">Submit</button>
         )}
       </form>
-    </>
+    </section>
   );
 }

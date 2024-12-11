@@ -11,7 +11,6 @@ export async function POST(req) {
     else return NextResponse.json({ message: "Email address already exists!" })
     return NextResponse.json({ message: "Thank you!" }, { status: 200 });
   } catch (err) {
-    console.log(err);
     return NextResponse.json({ message: "Internal Error" }, { status: 500 });
   }
 }

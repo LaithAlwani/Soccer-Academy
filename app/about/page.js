@@ -2,12 +2,13 @@ import Hero from "@/components/Hero";
 import Image from "next/image";
 import { GoGoal } from "react-icons/go";
 import { FaEye } from "react-icons/fa";
+import "./styles.css";
 
 export default function page() {
   return (
     <>
       <Hero image="/hero-m.webp" title="About Us" />
-      <section className="divided-container red-linear-bg">
+      <section className="divided-container">
         <div className="container">
           <div>
             <GoGoal size={48} />
@@ -57,15 +58,15 @@ export default function page() {
             <h3>St. Patrick School.</h3>
 
             <strong>68 Larkin Dr, Nepean, ON K2J 1A9</strong>
+            <p>
+              Mondays, Thursdays and Fridays between <strong>6:30 - 8:30PM.</strong>
+            </p>
           </div>
           <div className="map">
             <Image src="/location.webp" alt="practice location" fill />
           </div>
         </div>
-        <p>
-          Weekdays between <strong>6:30-8:30PM</strong>
-        </p>
-        <p className="small">
+        {/* <p className="small">
           *please check our{" "}
           <strong>
             <em>
@@ -75,7 +76,7 @@ export default function page() {
             </em>
           </strong>{" "}
           page for more information.
-        </p>
+        </p> */}
       </section>
     </>
   );

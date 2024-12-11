@@ -2,7 +2,6 @@ import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import { FaCheck, FaChevronRight } from "react-icons/fa6";
 export default function SpecialNeedsPage() {
-
   return (
     <>
       <Hero image="/hero-m.webp" alt="kids playing soccer" title="Inclusive Soccer Program" />
@@ -165,7 +164,7 @@ export default function SpecialNeedsPage() {
 
       <h2>Pricing</h2>
 
-      <section id="register" className="divided-container red-linear-bg">
+      <section id="register" className="divided-container">
         <div className="container">
           <div>
             <h3>1 Session per week</h3>
@@ -217,9 +216,7 @@ export default function SpecialNeedsPage() {
           </li>
         </ul>
       </section>
-      <section id="contact" className="red-linear-bg">
-        <ContactForm waitingList={true} />
-      </section>
+      <ContactForm waitingList={true} />
     </>
   );
 }

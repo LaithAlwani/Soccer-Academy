@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   const { data } = await req.json();
-  const { parent, email, phone, players } = data;
+  const { parent, email, phone, players, waiverSigned } = data;
   try {
     await connectToDB();
     for (const player of players) {
@@ -17,6 +17,7 @@ export async function POST(req) {
             name: player.name,
             dob: player.dob,
             comments: player.comments,
+            waiver_signed: waiverSigned,
             parent: { name: parent, email, phone },
           },
         },
@@ -34,7 +35,6 @@ export async function POST(req) {
     }
     return NextResponse.json({ message: `Thank you!`, data }, { status: 201 });
   } catch (err) {
-    console.log(err);
     return NextResponse.json({ message: `error in registrations` }, { status: 500 });
   }
 }
