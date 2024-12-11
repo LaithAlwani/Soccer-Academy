@@ -24,7 +24,7 @@ const programSchema = new Schema(
 
     sale_price: Number,
     spots_left: { type: Number, default: 0 },
-    players: [{ type: Object }, { timestamps: true }],
+    players: [{ type: Object }],
   },
   { timestamps: true }
 );

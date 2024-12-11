@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   const { name, email, phone, message, waitingList } = await req.json();
   const sender = {
-    name: "Ottawa Stars",
+    name: "Ottawa Stars Soccer Academy",
     address: "admin@ottawastars.com",
   };
   const receipients = [

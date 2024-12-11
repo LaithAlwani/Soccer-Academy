@@ -1,5 +1,6 @@
 import Program from "@/models/program";
 import connectToDB from "@/utils/database";
+import { sendEmail } from "@/utils/mail";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -14,11 +15,21 @@ export async function POST(req) {
         $push: {
           players: {
             name: player.name,
-            age: player.age,
+            dob: player.dob,
             comments: player.comments,
             parent: { name: parent, email, phone },
           },
         },
+      });
+      await sendEmail({
+        sender: { name: "Ottawa Stars Soccer Academy", address: "admin@ottawastars.com" },
+        receipients: [{ name: parent, address: email }],
+        subject: "Thank you for Registering",
+        message: `Thank you <strong>${parent}</strong> for registering <strong>${player.name}</strong>!<br/>To secure your spot, please complete the payment of the registration fees promptly. 
+        Spots are limited and will be allocated on a first-come, first-served basis.<br/>
+        Payments can be made via e-transfer to admin@ottawastars.com or by
+        credit card online, which includes a 3% processing fee.<br/>If you have any questions,
+        feel free to contact us at 613-884-1155.<br/> Thank you! <br/> Ottawa Stars Soccer Academy`,
       });
     }
     return NextResponse.json({ message: `Thank you!`, data }, { status: 201 });

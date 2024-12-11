@@ -12,7 +12,7 @@ export default function RegistrationForm({ programs }) {
   const [playersInputFields, setPlayersInputFields] = useState([
     {
       name: "",
-      age: 0,
+      dob: null,
       gender: "male",
       comments: "",
       program: "",
@@ -29,7 +29,7 @@ export default function RegistrationForm({ programs }) {
   };
 
   const addPlayer = () => {
-    let newField = { name: "", age: 0, gender: "male", comments: "", program: "" };
+    let newField = { name: "", dob: null, gender: "male", comments: "", program: "" };
     setPlayersInputFields((prev) => [...prev, newField]);
   };
 
@@ -42,6 +42,7 @@ export default function RegistrationForm({ programs }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     for (const input of playersInputFields) {
+      console.log(input);
       if (!input.program) return toast.error("please choose a program");
     }
     try {
@@ -62,7 +63,7 @@ export default function RegistrationForm({ programs }) {
     } catch (err) {
       toast.error("please try again, or contact us!");
       setLoading(false);
-    } 
+    }
   };
 
   return (
@@ -111,23 +112,28 @@ export default function RegistrationForm({ programs }) {
               required
             />
             <input
-              type="number"
-              name="age"
-              placeholder="Age"
-              min="0"
-              max="20"
+              name="dob"
+              type="date"
               onChange={(e) => handleChange(e, i)}
               required
             />
-            <select name="program" id="" value={playerInput.program} onChange={(e) => handleChange(e, i)}>
-              <option value="" disabled> Select a Program</option>
+            <span className="small">*Child&apos;s date of birth</span>
+            <select
+              name="program"
+              id=""
+              value={playerInput.program}
+              onChange={(e) => handleChange(e, i)}>
+              <option value="" disabled>
+                {" "}
+                Select a Program
+              </option>
               {programs?.map((program) => (
                 <option key={program._id} value={program._id}>
                   {program.title} {program.time}
                 </option>
               ))}
             </select>
-            
+
             {playerInput?.name && (
               <textarea
                 name="comments"

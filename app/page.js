@@ -31,7 +31,7 @@ export default async function Home() {
         <p className="school-intro">
           At <strong>Ottawa Stars Soccer Academy</strong>, we&apos;re committed to nurturing young
           soccer talents through high-quality coaching and a supportive environment. Open to boys
-          and girls ages 5 to 12, we offer flexible, age-appropriate programs tailored to develop
+          and girls ages 5 to 12, we offer age-appropriate programs tailored to develop
           soccer skills, teamwork, and sportsmanship.
         </p>
       </div>
@@ -56,7 +56,6 @@ export default async function Home() {
           </li>
         </ul>
       </section>
-      <h2>Felxible Registration</h2>
       <section id="register" className="divided-container red-linear-bg">
         <div className="container">
           <div>
