@@ -7,10 +7,9 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <Hero image="/contactus.webp" alt="image of soccer balls" title="Get in Touch" />
-      <section>
-        <ContactForm />
-      </section>
+      <Hero image="/contact.webp" alt="image of soccer balls" title="Get in Touch" />
+
+      <ContactForm />
     </>
   );
 }

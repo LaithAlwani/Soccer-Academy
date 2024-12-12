@@ -46,7 +46,6 @@ export default function ContactForm({ waitingList = false }) {
               What are you waiting for?!
               <br /> Join the waiting list!
             </h2>
-            <span className="small">* Limited spots available</span>
           </>
         )}
         <input

@@ -18,7 +18,7 @@ export default async function RegisterPage() {
 
   return (
     <>
-      <Hero image="/register.jpg" alt="" title="Registration" />
+      <Hero image="/register.webp" alt="" title="Registration" />
       <RegistrationForm programs={programs} />
     </>
   );

@@ -74,28 +74,12 @@ export default function RegistrationForm({ programs }) {
     <section>
       <form onSubmit={handleSubmit}>
         <h2>Parent Information</h2>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <input
-          type="text"
-          placeholder="Phone Number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
+        <label htmlFor="">Full Name:</label>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+        <label htmlFor="">Email:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <label htmlFor="">Phone Number:</label>
+        <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} required />
 
         {playersInputFields.map((playerInput, i) => (
           <div key={i}>
@@ -107,16 +91,17 @@ export default function RegistrationForm({ programs }) {
                 </span>
               )}
             </h2>
+            <label htmlFor="">Full Name:</label>
             <input
               type="text"
               name="name"
               value={playerInput.name}
-              placeholder="Player Name"
               onChange={(e) => handleChange(e, i)}
               required
             />
+            <label htmlFor="">Date of Birth:</label>
             <input name="dob" type="date" onChange={(e) => handleChange(e, i)} required />
-            <span className="small">*Child&apos;s date of birth</span>
+            <label htmlFor="">Choose Program:</label>
             <select
               name="program"
               id=""
@@ -130,16 +115,15 @@ export default function RegistrationForm({ programs }) {
                   key={program._id}
                   value={program._id}
                   disabled={12 - program.players.length <= 0}>
-                  {program.title} {" "}
+                  {program.title}{" "}
                   {12 - program.players.length <= 0
                     ? `(spots left: ${12 - program.players.length})`
-                    : `${program.time} $${program.sale_price} (spots left: ${12 - program.players.length})`}
+                    : `${program.time} $${program.sale_price} (spots left: ${
+                        12 - program.players.length
+                      })`}
                 </option>
               ))}
             </select>
-            <span className="small">
-              *If a program is Full please contact us to register for the waiting list
-            </span>
 
             {playerInput?.name && (
               <textarea

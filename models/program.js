@@ -6,6 +6,7 @@ const programSchema = new Schema(
       type: String,
       required: true,
     },
+    sub_title: String,
     price: {
       type: Number,
       required: true,

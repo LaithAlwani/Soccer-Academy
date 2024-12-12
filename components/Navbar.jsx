@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { FaPhoneFlip, FaSquareWhatsapp } from "react-icons/fa6";
-import "@/styles/navbar.css"
+import { FaPhoneFlip, FaSquareWhatsapp, FaWhatsapp } from "react-icons/fa6";
+import "@/styles/navbar.css";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,15 +27,37 @@ export default function Navbar() {
         </div>
       </Link>
       <div className="flex-center flex-reverse">
-        <a href="tel:6138841155" target="_blank" rel="noopener noreferrer" className="btn btn-primary flex-center call-btn-nav">
-         <span>CALL NOW</span><FaPhoneFlip />
+        <a
+          href="tel:6138841155"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary flex-center call-btn-nav">
+          <span>CALL NOW</span>
+          <FaPhoneFlip />
         </a>
-        <a href="tel:6138841155" aria-label="Call Now" target="_blank" rel="noopener noreferrer" className="flex-center call-btn">
-          <FaPhoneFlip size={20}/>
-        </a>
-        <a aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer" href="https://wa.me/16138841155" className="whatsapp-btn">
-          <FaSquareWhatsapp  size={40} color="#25D366"/>
-        </a>
+        <ul className="nav-icons">
+          <li>
+            <a
+              href="tel:6138841155"
+              aria-label="Call Now"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-center call-btn">
+              <FaPhoneFlip size={25} />
+            </a>
+          </li>
+          <li>
+            <a
+              aria-label="Chat on WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://wa.me/16138841155"
+              className="flex-center whatsapp-btn">
+              <FaWhatsapp size={35} />
+            </a>
+          </li>
+        </ul>
+
         <div className="nav-links" onClick={() => setIsMenuOpen(false)}>
           <NavLinks />
         </div>
@@ -67,5 +89,9 @@ const NavLinks = () => {
 const ActiveLink = ({ name, path }) => {
   const pathname = usePathname();
   const active = pathname === path ? "active" : "";
-  return <a href={path} className={active}>{name}</a>;
+  return (
+    <a href={path} className={active}>
+      {name}
+    </a>
+  );
 };

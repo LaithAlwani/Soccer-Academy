@@ -55,6 +55,9 @@ a {
   text-decoration: none;
   display: inline-block;
 }
+span{
+  display: block;
+}
 
 h1 {
   font-size: 2rem;
@@ -95,28 +98,11 @@ input[type="checkbox"] {
   text-align: center;
 }
 
-
-
 .logo {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 64px;
-  background: transparent;
-  top: -0.25rem;
   aspect-ratio: 1.05;
 }
-
-
-
-.active {
-  color: red;
-}
-
-
-
-
 
 .btn {
   min-width: 8rem;
@@ -171,7 +157,7 @@ input[type="checkbox"] {
   z-index: -1;
 }
 #hero .hero-img-wrapper .main-img {
-  object-position: 0 30%;
+  object-position:  0% 10%;
 }
 
 #hero .hero-title {
@@ -198,66 +184,6 @@ input[type="checkbox"] {
   padding-block-end: 6rem;
 }
 
-.programs-container {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-}
-
-.programs-container .program {
-  position: relative;
-  width: 18rem;
-  min-height: 20rem;
-  background-color: rgb(175, 175, 175);
-  padding: 2rem 0.5rem;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 1px 5px 15px var(--box-shadow);
-}
-.program h2,
-.program h3 {
-  margin: 0;
-}
-.program .price {
-  text-decoration: line-through;
-}
-.program .sale-price-container {
-  position: absolute;
-  top: -0.75rem;
-  left: -1.5rem;
-  transform: rotate(-15deg);
-}
-.bubble-container {
-  display: block;
-  position: relative;
-  width: 128px;
-  aspect-ratio: 1.51;
-}
-
-.program .sale-price-container .sale-price {
-  position: absolute;
-  top: 1.75rem;
-  left: 2.3rem;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  transform: rotate(-14deg);
-}
-
-.programs-container ul {
-  padding: 0;
-}
-
-.programs-container ul li {
-  justify-content: center;
-  padding-block-end: 0.5rem;
-}
-
 .player-info {
   display: flex;
   align-items: center;
@@ -267,31 +193,8 @@ input[type="checkbox"] {
   font-size: 14px;
   text-align: center;
 }
-.red {
-  color: red;
-  font-weight: 700;
-  text-shadow: 1px 1px #7f7f7f;
-  letter-spacing: 1px;
-}
 
-.call-btn {
-  position: fixed;
-  bottom: 3.5rem;
-  right: 0.65rem;
-  width: 35px;
-  height: 35px;
-  border-radius: 0.25rem;
-  background-color: red;
-  color: #fff;
-}
 
-.whatsapp-btn {
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-
-  z-index: 99;
-}
 .add-player {
   display: flex;
   align-items: center;
@@ -364,23 +267,21 @@ form .btn {
   height: 64px;
 }
 
-.not-found {
-  text-align: center;
-}
-
 .divided-container {
   background-color: red;
   color: white;
   max-width: 100vw;
+  text-align: center;
 }
+
 .divided-container > .container {
   max-width: 62rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
 }
+
 .divided-container .container > div {
   position: relative;
   padding-inline-end: 1rem;

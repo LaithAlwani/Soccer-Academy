@@ -7,7 +7,7 @@ import "./styles.css";
 export default function page() {
   return (
     <>
-      <Hero image="/hero-m.webp" title="About Us" />
+      <Hero image="/about-min.jpg" title="About Us" />
       <section className="divided-container">
         <div className="container">
           <div>
