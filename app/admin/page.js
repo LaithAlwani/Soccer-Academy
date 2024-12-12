@@ -29,45 +29,44 @@ export default async function AdminPage() {
 
   return (
     <section>
-      <SignOutButton className="btn btn-primary" />
-      <h3>Number of registrations: {programs.length}</h3>
-      {programs.map((program) => (
-        <>
-          <details open>
-            <summary>{program.title}</summary>
-            <p>
-              Total players: <strong>{program.players.length}</strong>
-            </p>
+      {programs.map(({_id, title, players}) => (
+        <div key={_id}>
+          <details>
+            <summary>
+              <strong>
+                {title} ({players.length})
+              </strong>
+            </summary>
             <ul>
-              {program.players.map((player, i) => (
+              {players.map(({ name, dob, parent, comments }, i) => (
                 <details key={i}>
                   <summary>
-                    <strong>{player.name}</strong>
+                    <strong>
+                      {name} ({dob})
+                    </strong>
                   </summary>
                   <ul>
-                    <li>age: {player.age}</li>
-                    <li>parent: {player.parent.name}</li>
+                    <li>{parent.name}</li>
                     <li>
-                      email: <a href={`mailto:{player.parent.email}`}>{player.parent.email}</a>
+                      <a href={`mailto:{player.parent.email}`}>{parent.email}</a>
                     </li>
                     <li>
-                      phone:{player.parent.phone}
-                      <a  href={`tel:+${player.parent.phone}`}>
+                      {parent.phone}
+                      <a href={`tel:+${parent.phone}`}>
                         <MdPhone color="red" size={24} />
                       </a>
                     </li>
-                    <li>
-                      <pre>{player.comments}</pre>
-                    </li>
                   </ul>
+                  {comments && <pre>{comments}</pre>}
                   <hr />
                 </details>
               ))}
             </ul>
           </details>
           <hr />
-        </>
+        </div>
       ))}
+      <SignOutButton className="btn btn-primary" redirectUrl="/" />
     </section>
   );
 }
