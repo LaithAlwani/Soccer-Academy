@@ -118,7 +118,7 @@ export default function RegistrationForm({ programs }) {
                   {program.title}{" "}
                   {12 - program.players.length <= 0
                     ? `(spots left: ${12 - program.players.length})`
-                    : `${program.time} $${program.sale_price} (spots left: ${
+                    : `${program.time} - $${program.sale_price} - (spots left: ${
                         12 - program.players.length
                       })`}
                 </option>

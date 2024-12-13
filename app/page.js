@@ -59,9 +59,9 @@ export default async function Home() {
       </section>
       <section id="register" className="divided-container ">
         <h3>Early Bird Pricing!</h3>
-        <span className="small">Valid untilJan. 20th 2025.</span>
+        <span className="small">Valid until January 20th 20 25.</span>
         <div className="container">
-          {programs.map(({ _id, title, sub_title, price, sale_price, sessions }) => (
+          {programs.map(({ _id, title, sub_title, price, sale_price, sessions, time, players }) => (
             <div key={_id}>
               <h3>{title}</h3>
               <h4>${sale_price}</h4>
@@ -69,14 +69,19 @@ export default async function Home() {
               <h5>${price}</h5>
               <span>{sessions} Sessions a week</span>
               <span className="small">*{sub_title}</span>
+              <span>
+                {" "}
+                {12 - players.length <= 0
+                  ? `Join the waitinglist`
+                  : `  ${12 - players.length} spots left`}
+              </span>
             </div>
           ))}
         </div>
+
         <p className="small">
-          * plus $20 one time enrollment fee, includes admin fees and training shirt.
-        </p>
-        <p className="small">
-          *Prices are per season and include personalized coaching, and ongoing support.
+          *Prices are per season and includes <strong>training shirt</strong>, personalized coaching
+          and ongoing support.
         </p>
       </section>
       <section id="sponsors" className="school-intro">

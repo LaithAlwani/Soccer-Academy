@@ -57,6 +57,7 @@ a {
 }
 span{
   display: block;
+  margin-block: 0.25rem;
 }
 
 h1 {

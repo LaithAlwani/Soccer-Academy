@@ -4,7 +4,7 @@ import { FaCheck, FaChevronRight } from "react-icons/fa6";
 export default function SpecialNeedsPage() {
   return (
     <>
-      <Hero image="/hero-m.webp" alt="kids playing soccer" title="Inclusive Soccer Program" />
+      <Hero image="/hero.webp" alt="kids playing soccer" title="Inclusive Soccer Program" />
       <section>
         <div className="btn-group">
           <h2>Empowering Every Child to Play, Connect, and Thrive</h2>
