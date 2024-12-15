@@ -105,7 +105,7 @@ input[type="checkbox"] {
 }
 
 .btn {
-  min-width: 8rem;
+  min-width: 100%;
   padding: 1rem;
   margin-right: 0;
   border: none;
@@ -186,7 +186,7 @@ input[type="checkbox"] {
 #register p {
   margin: 0;
 }
-#register hr{
+#register hr {
   margin-bottom: 0;
 }
 
@@ -237,14 +237,14 @@ input[type="checkbox"] {
   color: white;
   width: 18rem;
   height: 24rem;
-  padding: 0 1rem;
+  padding: 1.5rem 1rem 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   box-shadow: 1px 1px 5px #333;
   font-weight: 500;
 }
-.progam-details{
+.progam-details {
   height: 5rem;
 }
 .strikethrough {

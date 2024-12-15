@@ -77,14 +77,17 @@ export default async function Home() {
               <h2 style={{ position: "relative", marginInline: "auto" }}>
                 <span className="strikethrough">${price}</span> ${sale_price}
               </h2>
-              <Link href="/register" className="btn">
-                Register
-              </Link>
+              <div>
+                <Link href="/register" className="btn">
+                  Register
+                </Link>
                 <span className="small">
-                  *{12 - players.length <= 0
+                  *
+                  {12 - players.length <= 0
                     ? `Join the waitinglist`
                     : `Only ${12 - players.length} spots left!`}
                 </span>
+              </div>
             </div>
           ))}
         </div>
