@@ -1,5 +1,5 @@
 :root {
-  --border-radius: 0.25rem;
+  --border-radius: 0;
 
   --foreground-rgb: 51, 51, 51;
   --background-start-rgb: 214, 219, 220;
@@ -78,7 +78,7 @@ textarea {
   width: 100%;
   padding: 0.25rem 0.5rem;
   min-height: 2.5rem;
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
   border: 1px solid #808080;
   margin-block: 0.5rem;
   resize: none;
@@ -109,7 +109,7 @@ input[type="checkbox"] {
   min-width: 8rem;
   padding: 1rem;
   margin-right: 0;
-  border: 1px solid;
+  border: none;
   border-radius: var(--border-radius);
   cursor: pointer;
   font-weight: bold;
@@ -139,8 +139,10 @@ input[type="checkbox"] {
   margin-block: 1rem;
 }
 
+
+
 #hero {
-  min-height: 45svh;
+  min-height: 60svh;
   max-width: 100vw;
   padding: 0;
 }
@@ -148,7 +150,7 @@ input[type="checkbox"] {
 #hero .hero-img-wrapper {
   position: relative;
   width: 100vw;
-  height: 45svh;
+  height: 60svh;
   background: linear-gradient(white 0%, transparent 25%, white 95%);
 }
 
@@ -158,7 +160,7 @@ input[type="checkbox"] {
   z-index: -1;
 }
 #hero .hero-img-wrapper .main-img {
-  object-position:  0% 10%;
+  object-position:  0 0;
 }
 
 #hero .hero-title {
@@ -181,6 +183,12 @@ input[type="checkbox"] {
   text-align: center;
 }
 
+#register h2,
+#register p{
+  margin: 0;
+
+} 
+
 #sponsors {
   padding-block-end: 6rem;
 }
@@ -192,7 +200,6 @@ input[type="checkbox"] {
 }
 .small {
   font-size: 14px;
-  text-align: center;
 }
 
 
@@ -214,6 +221,42 @@ input[type="checkbox"] {
 .waiver  a {
   text-decoration: underline;
   color: #3366cc;
+}
+
+.programs-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.program-container{
+  background-color: red;
+  color: white;
+  width: 18rem;
+  height: 24rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 1px 1px 5px #333;
+}
+.strikethrough {
+  position: absolute;
+  text-align: center;
+  top: -2rem;
+  left: -3rem;
+  transform: rotate(340deg);
+}
+
+.strikethrough:before {
+  border-bottom: 0.15rem solid black;
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 50%;
 }
 
 footer {
@@ -285,7 +328,7 @@ form .btn {
 
 .divided-container .container > div {
   position: relative;
-  padding-inline-end: 1rem;
+  padding-block: 0.5rem;
 }
 
 .divided-container .container > div::after {
@@ -315,7 +358,7 @@ form .btn {
 
 @media only screen and (min-width: 769px) {
   #hero .hero-img-wrapper .main-img {
-    object-position: top;
+    object-position: center;
   }
 
   .divided-container .container {

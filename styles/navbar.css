@@ -58,7 +58,6 @@ nav .burger-icon {
   display: flex;
   width: 100%;
   height: 0.1rem;
-  border-radius: 0.5rem;
   transition: transform 0.5s ease-in-out;
   background-color: rgb(var(--foreground-rgb));
 }
@@ -70,7 +69,7 @@ nav .burger-icon::after {
   left: 0;
   width: 100%;
   height: 0.1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   background-color: rgb(var(--foreground-rgb));
   transition: transform 0.25s ease-in-out;
 }
@@ -149,7 +148,7 @@ nav .nav-icons{
 nav .nav-icons  li a{
   width: 38px;
   height: 38px;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   color: #fff;
 }
 

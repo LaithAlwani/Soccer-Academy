@@ -4,6 +4,7 @@ import connectToDB from "@/utils/database";
 import { FaCheck } from "react-icons/fa6";
 import Hero from "@/components/Hero";
 import Image from "next/image";
+import Link from "next/link";
 
 const getPrograms = async () => {
   await connectToDB();
@@ -57,24 +58,32 @@ export default async function Home() {
           </li>
         </ul>
       </section>
-      <section id="register" className="divided-container ">
-        <h3>Early Bird Pricing!</h3>
-        <span className="small">Valid until January 20th 20 25.</span>
-        <div className="container">
+      <section id="register" className=" ">
+          <h2>Early Bird Pricing!</h2>
+          <p className="small">Valid until January 20th 2025.</p>
+        <div className="programs-container">
           {programs.map(({ _id, title, sub_title, price, sale_price, sessions, time, players }) => (
-            <div key={_id}>
-              <h3>{title}</h3>
-              <h4>${sale_price}</h4>
-              <span className="small">down from</span>
-              <h5>${price}</h5>
-              <span>{sessions} Sessions a week</span>
-              <span className="small">*{sub_title}</span>
-              <span>
-                {" "}
-                {12 - players.length <= 0
-                  ? `Join the waitinglist`
-                  : `  ${12 - players.length} spots left`}
-              </span>
+            <div key={_id} className="program-container">
+              <h2>
+                {title} <span className="small">*{sub_title}</span>
+              </h2>
+              <div>
+                <span>
+                  {sessions} session{sessions > 1 ? "s" : ""} / week
+                </span>
+                <span className="">{time}</span>
+                <span>
+                  {12 - players.length <= 0
+                    ? `Join the waitinglist`
+                    : `Only ${12 - players.length} spots left!`}
+                </span>
+              </div>
+              <h2 style={{ position: "relative", marginInline: "auto" }}>
+                <span className="strikethrough">${price}</span> ${sale_price}
+              </h2>
+              <Link href="/register" className="btn">
+                Register
+              </Link>
             </div>
           ))}
         </div>
