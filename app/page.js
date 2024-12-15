@@ -59,24 +59,20 @@ export default async function Home() {
         </ul>
       </section>
       <section id="register" className=" ">
-          <h2>Early Bird Pricing!</h2>
-          <p className="small">Valid until January 20th 2025.</p>
+        <h2>Early Bird Pricing!</h2>
+        <p className="small">Valid until January 20th 2025.</p>
         <div className="programs-container">
           {programs.map(({ _id, title, sub_title, price, sale_price, sessions, time, players }) => (
             <div key={_id} className="program-container">
               <h2>
                 {title} <span className="small">*{sub_title}</span>
+                <hr />
               </h2>
-              <div>
+              <div className="progam-details">
                 <span>
                   {sessions} session{sessions > 1 ? "s" : ""} / week
                 </span>
                 <span className="">{time}</span>
-                <span>
-                  {12 - players.length <= 0
-                    ? `Join the waitinglist`
-                    : `Only ${12 - players.length} spots left!`}
-                </span>
               </div>
               <h2 style={{ position: "relative", marginInline: "auto" }}>
                 <span className="strikethrough">${price}</span> ${sale_price}
@@ -84,6 +80,11 @@ export default async function Home() {
               <Link href="/register" className="btn">
                 Register
               </Link>
+                <span className="small">
+                  *{12 - players.length <= 0
+                    ? `Join the waitinglist`
+                    : `Only ${12 - players.length} spots left!`}
+                </span>
             </div>
           ))}
         </div>
