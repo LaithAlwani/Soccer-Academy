@@ -6,7 +6,7 @@ export default function Hero({ image, altImage, alt, title, styles }) {
     <section id="hero">
       <div className="hero-img-wrapper">
         <picture>
-        <source srcSet={altImage} media="(min-width: 600px)" />
+        <source srcSet={altImage} media="(min-width: 769px)" />
           <Image src={image} alt={alt} priority quality={75} fill className={styles} />
         </picture>
         <div className="hero-title">

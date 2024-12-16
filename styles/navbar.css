@@ -131,6 +131,7 @@ nav .flex-center {
 nav .call-btn-nav {
   display: none;
   padding: 0.5rem;
+  min-width: 8rem;
 }
 
 nav .active {

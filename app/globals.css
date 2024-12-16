@@ -136,6 +136,7 @@ input[type="checkbox"] {
 .btn-group > .btn {
   margin-inline: 0.25rem;
   margin-block: 1rem;
+  min-width: 8rem;
 }
 
 #hero {
@@ -363,9 +364,9 @@ form .btn {
 
 @media only screen and (min-width: 769px) {
   #hero .hero-img-wrapper .main-img {
-    object-position: center;
+    object-position: top;
   }
-
+  
   .divided-container .container {
     flex-direction: row;
     margin-inline: auto;
