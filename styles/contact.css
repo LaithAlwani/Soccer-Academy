@@ -2,7 +2,7 @@
   background: linear-gradient(180deg, red 50%, #333);
   max-width: 100%;
   margin-bottom: -1px;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 #contact form {
@@ -11,6 +11,6 @@
   background: white;
   padding: 1rem;
   border-radius: var(--border-radius);
-  margin-top: -3rem;
+  margin-top: -4rem;
   box-shadow: 1px 5px 15px #333;
 }

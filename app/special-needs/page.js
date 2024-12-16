@@ -5,20 +5,18 @@ export default function SpecialNeedsPage() {
   return (
     <>
       <Hero image="/hero.webp" alt="kids playing soccer" title="Inclusive Soccer Program" />
-      <section>
-        <div className="btn-group">
-          <h2>Empowering Every Child to Play, Connect, and Thrive</h2>
-          <p>
-            A soccer program designed to support children and teens with diverse needs—because every
-            child deserves the chance to shine in a safe, inclusive environment.
-          </p>
-          <a href="#about" className="btn">
-            Learn More
-          </a>
-          <a href="#waiting-list" className="btn  btn-primary">
-            Waiting List
-          </a>
-        </div>
+      <section className="btn-group">
+        <h2>Empowering Every Child to Play, Connect, and Thrive</h2>
+        <p>
+          A soccer program designed to support children and teens with diverse needs—because every
+          child deserves the chance to shine in a safe, inclusive environment.
+        </p>
+        <a href="#about" className="btn">
+          Learn More
+        </a>
+        <a href="#waiting-list" className="btn  btn-primary">
+          Waiting List
+        </a>
       </section>
       <section id="about">
         <h2>About The Program</h2>

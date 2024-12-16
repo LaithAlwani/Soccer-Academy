@@ -33,7 +33,7 @@ export default function ContactForm({ waitingList = false }) {
     }
   };
   return (
-    <section id="contact">
+    <section id={waitingList ? "waiting-list":"contact"}>
       <form onSubmit={handleSubmit}>
         {!waitingList ? (
           <h2>

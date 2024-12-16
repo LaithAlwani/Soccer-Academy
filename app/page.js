@@ -22,7 +22,7 @@ export default async function Home() {
         alt="ottawa stars hero image of youth playing soccer"
         styles="main-img"
       />
-      <div className="btn-group">
+      <section className="btn-group mt--4">
         <a href="#program" aria-label="learn more about out programs" className="btn">
           Learn More
         </a>
@@ -36,7 +36,7 @@ export default async function Home() {
           and girls ages 5 to 12, we offer age-appropriate programs tailored to develop soccer
           skills, teamwork, and sportsmanship.
         </p>
-      </div>
+      </section>
       <section id="program" className="">
         <h2>Our Program Offers:</h2>
         <ul>
