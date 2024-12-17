@@ -136,7 +136,7 @@ input[type="checkbox"] {
 .btn-group {
   width: 100%;
   text-align: center;
-  z-index: 1;
+  z-index: 0;
 }
 .btn-group > .btn {
   margin-inline: 0.25rem;
