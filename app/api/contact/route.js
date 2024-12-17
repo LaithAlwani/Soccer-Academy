@@ -17,10 +17,10 @@ export async function POST(req) {
     await sendEmail({
       sender,
       receipients,
-      subject: waitingList ? "You have joined the Waiting List" : "Inquiry Recived",
+      subject: waitingList ? "Appointment Request" : "Inquiry Recived",
       message: `<h1>Thank you!</h1>
       <p>Hello ${name},</p>
-      <p>Thank you for ${waitingList ? "Joining the waiting list" : "contacting us"}</p>
+      <p>Thank you for ${waitingList ? "requsting an appointment" : "contacting us"}</p>
       ${
         waitingList
           ? "<p>An email will be sent next couple of weeks with instructions on how to book a time slot for the assessment.</p>"

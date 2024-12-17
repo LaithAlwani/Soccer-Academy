@@ -44,7 +44,7 @@ export default function ContactForm({ waitingList = false }) {
           <>
             <h2>
               What are you waiting for?!
-              <br /> Join the waiting list!
+              <br /> Request an appointment!
             </h2>
           </>
         )}
@@ -80,7 +80,7 @@ export default function ContactForm({ waitingList = false }) {
         {loading ? (
           <img src="/ball.gif" alt="soccer ball bouncing" className="ball-img" />
         ) : (
-          <button className="btn btn-primary">Submit</button>
+          <button className="btn btn-primary">{waitingList? "Request appointment":"Submit"}</button>
         )}
       </form>
     </section>

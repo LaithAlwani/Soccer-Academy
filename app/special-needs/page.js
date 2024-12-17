@@ -14,8 +14,8 @@ export default function SpecialNeedsPage() {
         <a href="#about" className="btn">
           Learn More
         </a>
-        <a href="#waiting-list" className="btn  btn-primary">
-          Waiting List
+        <a href="#register" className="btn  btn-primary">
+        Register
         </a>
       </section>
       <section id="about">
@@ -180,8 +180,8 @@ export default function SpecialNeedsPage() {
         </p>
       </section>
 
-      <section id="sponsors">
-        <h2>Join the Waiting List, Here&apos;s How to Get Started</h2>
+      <section id="register">
+        <h2>Request an appointment, Here&apos;s How to Get Started</h2>
         <p>
           We&apos;re excited to welcome your child to our inclusive soccer community! To get
           started:
@@ -189,7 +189,7 @@ export default function SpecialNeedsPage() {
         <ul>
           <li>
             <FaChevronRight className="check-mark" />
-            <p>Join the waiting list by filling out the form below.</p>
+            <p>Request an appointment by filling out the form below.</p>
           </li>
           <li>
             <FaChevronRight className="check-mark" />
