@@ -62,7 +62,7 @@ export default async function Home() {
         <h2>Early Bird Pricing!</h2>
         <p className="small">Valid until January 20th 2025.</p>
         <div className="programs-container">
-          {programs.map(({ _id, title, sub_title, price, sale_price, sessions, time, players }) => (
+          {programs.map(({ _id, title, sub_title, price, sale_price, sessions, time, players, start_date, end_date }) => (
             <div key={_id} className="program-container">
               <h2>
                 {title} <span className="small">*{sub_title}</span>
@@ -72,7 +72,9 @@ export default async function Home() {
                 <span>
                   {sessions} session{sessions > 1 ? "s" : ""} / week
                 </span>
-                <span className="">{time}</span>
+                <span>{time}</span>
+                <span>Starts: {start_date}</span>
+                <span>Ends: {end_date}</span>
               </div>
               <h2 style={{ position: "relative", marginInline: "auto" }}>
                 <span className="strikethrough">${price}</span> ${sale_price}
