@@ -22,6 +22,14 @@ export async function POST(req) {
           },
         },
       });
+      
+      await sendEmail({
+        sender: { name: "Ottawa Stars Soccer Academy", address: "admin@ottawastars.com" },
+        receipients: [{ name: "me", address: "admin@ottawastars.com" }],
+        subject: "New Registration",
+        message: `A New player Registered<strong>${player.name}</strong> in ${Program.title}!<br/>`,
+      });
+
       await sendEmail({
         sender: { name: "Ottawa Stars Soccer Academy", address: "admin@ottawastars.com" },
         receipients: [{ name: parent, address: email }],
