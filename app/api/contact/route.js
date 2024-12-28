@@ -12,6 +12,7 @@ export async function POST(req) {
       name,
       address: email,
     },
+    { name: parent, address: "admin@ottawastars.com" },
   ];
   try {
     await sendEmail({

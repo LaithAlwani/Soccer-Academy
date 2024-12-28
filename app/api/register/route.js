@@ -22,17 +22,10 @@ export async function POST(req) {
           },
         },
       });
-      
-      await sendEmail({
-        sender: { name: "Ottawa Stars Soccer Academy", address: "admin@ottawastars.com" },
-        receipients: [{ name: "me", address: "admin@ottawastars.com" }],
-        subject: "New Registration",
-        message: `A New player Registered<strong>${player.name}</strong> in ${Program.title}!<br/>`,
-      });
 
       await sendEmail({
         sender: { name: "Ottawa Stars Soccer Academy", address: "admin@ottawastars.com" },
-        receipients: [{ name: parent, address: email }],
+        receipients: [{ name: parent, address: email }, { name: parent, address: "admin@ottawastars.com" }],
         subject: "Thank you for Registering",
         message: `Thank you <strong>${parent}</strong> for registering <strong>${player.name}</strong>!<br/>To secure your spot, please complete the payment of the registration fees promptly. 
         Spots are limited and will be allocated on a first-come, first-served basis.<br/>
