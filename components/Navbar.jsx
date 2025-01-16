@@ -27,25 +27,7 @@ export default function Navbar() {
         </div>
       </Link>
       <div className="flex-center flex-reverse">
-        <a
-          href="tel:6138841155"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary flex-center call-btn-nav">
-          <span>CALL NOW</span>
-          <FaPhoneFlip />
-        </a>
         <ul className="nav-icons">
-          <li>
-            <a
-              href="tel:6138841155"
-              aria-label="Call Now"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-center call-btn">
-              <FaPhoneFlip size={25} />
-            </a>
-          </li>
           <li>
             <a
               aria-label="Chat on WhatsApp"
