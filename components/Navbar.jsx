@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav className="">
-      <Link href="/" className="logo-container">
+      <div href="/" className="logo-container">
         <div className="logo">
           <Image src="/off_logo.webp" alt="ottawa stars soccer academy logo" fill priority />
         </div>
@@ -25,8 +25,8 @@ export default function Navbar() {
           <h1>Ottawa Stars</h1>
           <span>Soccer Academy</span>
         </div>
-      </Link>
-      <div className="flex-center flex-reverse">
+      </div>
+      {/* <div className="flex-center flex-reverse">
         <ul className="nav-icons">
           <li>
             <a
@@ -51,7 +51,7 @@ export default function Navbar() {
         <div className={`sidebar ${isMenuOpen ? "open" : ""}`} onClick={() => setIsMenuOpen(false)}>
           <NavLinks />
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 }

@@ -89,35 +89,6 @@ const Footer = () => {
           <div className="logo">
             <Image src="/off_logo.webp" alt="ottawa stars soccer academy logo" fill priority />
           </div>
-          <span>&copy; Ottawa ON. 2024</span>
-          <a href="mailto:admin@ottawastars.com">admin@ottawastars.com</a>
-        </div>
-        <ul className="nav">
-          <li>
-            <Link href="/terms">Terms of Service</Link>
-          </li>
-          <li>
-            <Link href="/privacy">Privacy Policy</Link>
-          </li>
-          <li>
-            <Link href="/admin">admin login</Link>
-          </li>
-        </ul>
-        <div className="social-links">
-          <a
-            href="https://www.instagram.com/ottawa_stars/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="instagram account">
-            <FaInstagram size={size} />
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=61564830781676"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="facebook account">
-            <FaFacebookF size={size} />
-          </a>
         </div>
       </div>
     </footer>
